@@ -1,0 +1,104 @@
+.properties {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    
+    gap: 1rem;
+    margin-bottom: 3rem;
+
+    .property {
+        cursor: pointer;
+        background-color: white;
+        box-shadow: 0 0 3px;
+    }
+    .property__img-container {
+        overflow: hidden;
+        margin: 0;
+    }
+    .property__img {
+        min-width: 335px;
+        object-fit: cover;
+        height: 13rem;
+        @media (min-width: 768px) {
+            height: 16rem;
+        }
+    }
+    .property__info {
+        padding: .7em;
+    }
+    .property__name {
+        font-size: map-get($size, subtitle);
+        margin-bottom: .5rem;
+    }
+    
+    .property__category {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        font-size: map-get($size, description);
+        color: map-get($colors, eerieBlack);
+        .icon {
+            font-size: inherit;
+        }
+    }
+    
+    .property__links {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+        margin-top: .5rem;
+    }
+    .property__link {
+        @include links(white);
+        padding: .4rem;
+        flex: 1;
+        max-width: 50%;
+        text-align: center;
+        background-color: map-get($colors, yaleBlue);
+        position: relative;
+        z-index: 1;
+
+        --btn-dimensions: 1px;
+        overflow: hidden;
+
+        &:after {
+            content: " ";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: var(--btn-dimensions);
+            height: var(--btn-dimensions);
+            border-radius: 50%;
+            z-index: -1;
+            background-color: map-get($colors, spanishBlue);
+            transition: width 500ms ease-in-out,
+            height 500ms ease-in-out;
+        }
+
+        &:hover::after {
+            --btn-dimensions: 90px;
+        }
+    }
+}
+
+@keyframes zoom-image {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.5);
+    }
+}
+
+@keyframes quitar-zoom {
+    from {
+        transform: scale(1.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}

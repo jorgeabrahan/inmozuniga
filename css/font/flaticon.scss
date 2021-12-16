@@ -1,0 +1,89 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?6c7605b628d1fc1f396f39aae5b7eca2") format("truetype"),
+url("./flaticon.woff?6c7605b628d1fc1f396f39aae5b7eca2") format("woff"),
+url("./flaticon.woff2?6c7605b628d1fc1f396f39aae5b7eca2") format("woff2"),
+url("./flaticon.eot?6c7605b628d1fc1f396f39aae5b7eca2#iefix") format("embedded-opentype"),
+url("./flaticon.svg?6c7605b628d1fc1f396f39aae5b7eca2#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "tag": "\f101",
+    "menu": "\f102",
+    "plus": "\f103",
+    "facebook": "\f104",
+    "instagram": "\f105",
+    "whatsapp": "\f106",
+    "youtube": "\f107",
+    "telephone": "\f108",
+    "location": "\f109",
+    "email": "\f10a",
+    "tik-tok": "\f10b",
+    "down-arrow": "\f10c",
+    "upload": "\f10d",
+    "arrow-point-to-right": "\f10e",
+    "left-arrow": "\f10f",
+    "cancel": "\f110",
+);
+
+.flaticon-tag:before {
+    content: map-get($flaticon-map, "tag");
+}
+.flaticon-menu:before {
+    content: map-get($flaticon-map, "menu");
+}
+.flaticon-plus:before {
+    content: map-get($flaticon-map, "plus");
+}
+.flaticon-facebook:before {
+    content: map-get($flaticon-map, "facebook");
+}
+.flaticon-instagram:before {
+    content: map-get($flaticon-map, "instagram");
+}
+.flaticon-whatsapp:before {
+    content: map-get($flaticon-map, "whatsapp");
+}
+.flaticon-youtube:before {
+    content: map-get($flaticon-map, "youtube");
+}
+.flaticon-telephone:before {
+    content: map-get($flaticon-map, "telephone");
+}
+.flaticon-location:before {
+    content: map-get($flaticon-map, "location");
+}
+.flaticon-email:before {
+    content: map-get($flaticon-map, "email");
+}
+.flaticon-tik-tok:before {
+    content: map-get($flaticon-map, "tik-tok");
+}
+.flaticon-down-arrow:before {
+    content: map-get($flaticon-map, "down-arrow");
+}
+.flaticon-upload:before {
+    content: map-get($flaticon-map, "upload");
+}
+.flaticon-arrow-point-to-right:before {
+    content: map-get($flaticon-map, "arrow-point-to-right");
+}
+.flaticon-left-arrow:before {
+    content: map-get($flaticon-map, "left-arrow");
+}
+.flaticon-cancel:before {
+    content: map-get($flaticon-map, "cancel");
+}

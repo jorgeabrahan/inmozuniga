@@ -1,0 +1,87 @@
+.section {
+    @include margins;
+    margin: 6rem auto;
+    min-height: 40vh;
+}
+
+.section__title {
+    font-size: map-get($size, title);
+}
+
+@mixin title-after {
+    content: " ";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 200px;
+    @media (min-width: 768px) {
+        width: 400px;
+    }
+    height: 3px;
+    background-color: map-get($colors, yaleBlue);
+}
+.section__title--nosub {
+    position: relative;
+    padding: .4rem 0;
+    &::after {
+        @include title-after();
+    }
+}
+.section__subtitle {
+    font-size: map-get($size, description);
+    color: map-get($colors, eerieBlack);
+    position: relative;
+    padding-bottom: .4rem;
+    &::after {
+        @include title-after();
+    }
+}
+
+.big {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .small {
+        display: none;
+    }
+    .big {
+        display: block;
+        margin: 0;
+    }
+}
+
+.more-container {
+    margin: 1rem;
+    text-align: center;
+}
+.more {
+    text-decoration: none;
+    display: inline-block;
+    margin: auto;
+    padding: 1em;
+    background-color: white;
+    box-shadow: 0 0 3px;
+    color: map-get($colors, yaleBlue);
+    transition: color 250ms ease, background-color 250ms ease;
+    &:hover {
+        color: map-get($colors, white);
+        background-color: map-get($colors, yaleBlue);
+    }
+    .icon {
+        font-size: map-get($size, subtitle);
+    }
+}
+
+.title-more {
+    margin-bottom: 2rem;
+    @media (min-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.section__title--nomore{
+    margin-bottom: 2rem;
+}

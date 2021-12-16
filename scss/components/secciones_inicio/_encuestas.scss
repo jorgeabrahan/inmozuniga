@@ -1,0 +1,51 @@
+@media (min-width: 1501px) {
+    .polls-title-more {
+        max-width: 1500px;
+        margin: 2rem auto;
+    }
+    .big {
+        display: block;
+    }
+    .polls-more {
+        margin: 0;
+    }
+}
+
+.polls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    gap: 1rem;
+    margin-bottom: 3rem;
+
+}
+.poll {
+    background-color: white;
+    box-shadow: 0 0 3px black;
+    cursor: pointer;    
+    &:hover > .poll__more {
+        background-color: map-get($colors, spanishBlue);
+    }
+}
+.poll__content {
+    padding: 2em .7em;
+}
+.poll__title, .poll__description {
+    font-size: map-get($size, description);
+}
+
+.poll__more {
+    width: 100%;
+    background-color: map-get($colors, yaleBlue);
+    color: white;
+    padding: .2em 0.7em;
+    text-align: right;
+    transition: background-color 500ms ease;
+}
+
+.poll__link {
+    color: white;
+    text-decoration: none;
+}

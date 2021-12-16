@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-39R41BL039"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-39R41BL039');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jor-G Design" />
+    <meta name="copyright" content="Jor-G Design">
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Comparte tus intereses con nosotros y buscaremos el hogar ideal para tí y tu familia. Contamos con proyectos residenciales, terrenos y propiedades tanto en venta como en renta." />
+    <meta name="keywords" content="inmobiliaria, zuniga, casa, vivienda, rentar, alquilar, Inmobiliaria zuniga,  cotizar proyectos" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Inmobiliaria Zúniga y Asoc.">
+    <meta property="og:url" content="https://inmobiliariazunigahn.web.app">
+    <meta property="og:image" content="https://inmobiliariazunigahn.web.app/img/Logos/LogoInmobiliariaZuniga.png">
+    <meta property="og:description" content="Comparte tus intereses con nosotros y buscaremos el hogar ideal para tí y tu familia. Contamos con proyectos residenciales, terrenos y propiedades tanto en venta como en renta.">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Inmobiliaria Zúniga y Asoc.">
+    <meta name="twitter:site" content="@InmobiliariaZuniga">
+    <meta name="twitter:description" content="Comparte tus intereses con nosotros y buscaremos el hogar ideal para tí y tu familia. Contamos con proyectos residenciales, terrenos y propiedades tanto en venta como en renta.">
+    <meta name="twitter:image" content="https://inmobiliariazunigahn.web.app/img/Logos/LogoInmobiliariaZuniga.png">
+    <meta name="twitter:image:alt" content="Logo Inmobiliaria Zúniga y Asoc">
+
+    <link rel=“canonical” href=“https://inmobiliariazunigahn.web.app/index.html” />
+
+    <!-- ICON IMAGE -->
+    <link rel="icon" href="/img/Logos/icono.png" />
+
+    <title>Inmobiliaria Zúniga - Cotizador</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Link para css de font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <!-- Documento que permite que las funciones de firebase funcionen -->
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+
+    <!-- Conexion con Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+
+    <!-- Conexion con el Storage -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+
+    <link rel="stylesheet" href="css/font/flaticon.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://fx-rate.net/conversion.php?size=medium&layout=vertical&currency_pair=HNL&currency=USD"></script>
+</head>
+<body>
+    <!-- MENU DE NAVEGACION -->
+    <header class="header">
+        <!-- BARRA NAVEGACION -->
+        <div class="navbar">
+            <!-- LOGO -->
+            <img src="img/Logos/LogoInmobiliariaZuniga.png" alt="Logo Inmobiliaria Zúniga" class="navbar__img">
+            <!-- MENU -->
+            <nav class="menu">
+                <!-- ICONO CERRAR MENU -->
+                <i class="flaticon-cancel icon close-icon"></i>
+                <!-- ENLACES MENU -->
+                <ul class="menu__items">
+                    <li class="menu__item">
+                        <a href="https://inmobiliariazunigahn.web.app/index#inicio" class="menu__link">
+                            Inicio
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="https://inmobiliariazunigahn.web.app/contactanos#seccionprincipal" class="menu__link">
+                            Contáctanos
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="https://inmobiliariazunigahn.web.app/propiedades#venta" class="menu__link">
+                            Propiedades
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="https://inmobiliariazunigahn.web.app/proyectos#projects" class="menu__link">
+                            Proyectos
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- ICONO ABRIR MENU -->
+            <i class="flaticon-menu icon open-icon"></i>
+        </div>
+    </header>
+
+    <!-- BANNER Y SLOGAN -->
+    <div class="banner">
+        <img src="img/cotizar.jpg" alt="Banner Inmobiliaria Zuniga" class="banner__img">
+        <h1 class="banner__slogan">Encuentra tu proyecto ideal</h1>
+        
+        <div class="banner__divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </div>
+
+    <main>
+        
+        <section class="form-projects-container">
+            <form class="form-projects" autocomplete="off">
+                <div class="form-projects__fieldset">
+                    <!-- <legend class="form-projects__legend">Selección</legend> -->
+                    <div class="form-projects__group">
+                        <label for="pagoMancomunado" class="form-projects__label">
+                            <input type="checkbox" name="pagoMancomunado" id="pagoMancomunado">
+                            Si planeas pagar mancomunado marca la casilla.
+                        </label>
+                    </div>
+                    <p class="form-projects__message">
+                        *<strong>Importante: </strong> solo aplicas al prestamo mancomunado si es con tu pareja o un familiar directo.
+                    </p>
+                </div>
+                <div class="form-projects__fieldset">
+                    <!-- <legend class="form-projects__legend">Edad</legend> -->
+                    <section class="form-projects__section">
+                        <div class="form-projects__group">
+                            <label for="edadPrimerCliente" class="form-projects__label">
+                                Edad:
+                            </label>
+                            <input type="text" class="form-projects__input form-projects__input--nosection" name="edadPrimerCliente" id="edadPrimerCliente" placeholder="ej: 21">
+                        </div>
+                        <div class="form-projects__group form-projects__group--mancomunado">
+                            <label for="edadSegundoCliente" class="form-projects__label">
+                                Edad (2da persona):
+                            </label>
+                            <input type="text" class="form-projects__input" name="edadSegundoCliente" id="edadSegundoCliente" placeholder="ej: 21">
+                        </div>
+                    </section>
+                    <p class="form-projects__message">
+                        *<strong>Importante: </strong> debes tener 21 años de edad cumplidos o más.
+                    </p>
+                </div>
+                <div class="form-projects__fieldset">
+                    <!-- <legend class="form-projects__legend">Salario</legend> -->
+                    <section class="form-projects__section">
+                        <div class="form-projects__group">
+                            <label for="salarioPrimerCliente" class="form-projects__label">
+                                Salario:
+                            </label>
+                            <input type="text" class="form-projects__input form-projects__input--nosection" name="salarioPrimerCliente" id="salarioPrimerCliente" placeholder="ej: 32000">
+                        </div>
+                        <div class="form-projects__group form-projects__group--mancomunado">
+                            <label for="salarioSegundoCliente" class="form-projects__label">
+                                Salario (2da persona):
+                            </label>
+                            <input type="text" class="form-projects__input" name="salarioSegundoCliente" id="salarioSegundoCliente" placeholder="ej: 32000">
+                        </div>
+                    </section>
+                    <div class="form-projects__group form-projects__group--mancomunado">
+                        <label for="totalSalarios" class="form-projects__label">
+                            Total:
+                        </label>
+                        <input type="text" class="form-projects__input form-projects__input--nosection" name="totalSalarios" id="totalSalarios" readonly>
+                    </div>
+                    <p class="form-projects__message">
+                        *<strong>Importante: </strong> el ingreso mínimo para aplicar a alguno de nuestros proyectos es de HNL 26,000.00.
+                    </p>
+                </div>
+                <div class="form-projects__fieldset">
+                    <!-- <legend class="form-projects__legend">Trabajo</legend> -->
+                    <section class="form-projects__section">
+                        <div class="form-projects__group">
+                            <label for="lugarDeTrabajo" class="form-projects__label">
+                                Caso:
+                            </label>
+                            <select class="form-projects__input" name="lugarDeTrabajo" id="lugarDeTrabajo">
+                                <option value="asalariado" selected>Asalariado</option>
+                                <option value="comercianteIndividual">Comerciante individual</option>
+                            </select>
+                        </div>
+                        <div class="form-projects__group">
+                            <label for="aniosAntiguedad" class="form-projects__label">
+                                Años antiguedad:
+                            </label>
+                            <select class="form-projects__input" name="aniosAntiguedad" id="aniosAntiguedad">
+                                <option value="0">
+                                    menos de 1 año
+                                </option>
+                                <option value="1" selected>
+                                    1 año
+                                </option>
+                                <option value="2">2 años</option>
+                                <option value="3">3 o mas años</option>
+                            </select>
+                        </div>
+                    </section>
+                    <section class="form-projects__section">
+                        <div class="form-projects__group form-projects__group--mancomunado">
+                            <label for="lugarDeTrabajoSegundo" class="form-projects__label">
+                                Caso (2da persona):
+                            </label>
+                            <select class="form-projects__input" name="lugarDeTrabajo" id="lugarDeTrabajoSegundo">
+                                <option value="asalariado" selected>
+                                    Asalariado
+                                </option>
+                                <option value="comercianteIndividual">
+                                    Comerciante individual
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-projects__group form-projects__group--mancomunado">
+                            <label for="aniosAntiguedadSegundo" class="form-projects__label">
+                                Años antiguedad (2da persona):
+                            </label>
+                            <select class="form-projects__input" name="aniosAntiguedad" id="aniosAntiguedadSegundo">
+                                <option value="0">
+                                    menos de 1 año
+                                </option>
+                                <option value="1" selected>
+                                    1 año
+                                </option>
+                                <option value="2">2 años</option>
+                                <option value="3">3 o mas años</option>
+                            </select>
+                        </div>
+                    </section>
+
+                    <p class="form-projects__message">
+                        *<strong>Importante: </strong> si es comerciante individual debe tener minimo 2 años, si es asalariado 1.
+                    </p>
+                </div>
+                <div class="form-projects__fieldset">
+                    <!-- <legend class="form-projects__legend">Preferencias</legend> -->
+                    <div class="form-projects__group">
+                        <label for="salarioPrimerCliente" class="form-projects__label">
+                            Preferencias:
+                        </label>
+                        <select class="form-projects__input form-projects__input--nosection" name="preferenciaCliente" id="preferenciaCliente">
+                            <option value="terreno">
+                                Terreno
+                            </option>
+                            <option value="terrenoConstruccion" selected>
+                                Terreno + Construcción
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <p class="form-projects__message form-projects__message--error" id="msgFormularioCotizar">
+                </p>
+                <input type="button" value="Cotizar" class="form-projects__button" id="btnFormularioCotizar">
+            </form>
+            <p class="exchange"></p>
+            <div class="form-projects__projects">
+                <!-- Valle escondido -->
+                <div class="projects__project">
+                    <a href="https://www.google.com/maps?q=15.455000877380371,-87.9654769897461&z=17&hl=es" target="_blank" class="project__location d-none">
+                        <i class="fa fa-location-arrow"></i>
+                        Valle escondido - 33 calle cerca de la panaderia Jerusalen.
+                    </a>
+                    <div class="project__option terrenoConstruccion 25064.70 d-none">
+                        <h3 class="option__title">
+                            Valle escondido - Terreno + Construcción
+                        </h3>
+                        <div class="option__categories">
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Precios</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Estilo rombo:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            1,054,285.00
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Prima del 10%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            105,428.00
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        A financiar:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            948,856.50
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cuota del 8.7%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            8,354.90
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Ingreso mínimo:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            25,064.70
+                                        </p>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Medidas</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Varas totales:
+                                    </p>
+                                    <p class="line__number">
+                                        215.14 <strong>v<sup>2</sup></strong>
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Mtrs de construcción:
+                                    </p>
+                                    <p class="line__number">
+                                        65 <strong>m<sup>2</sup></strong>
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cant. habitaciones:
+                                    </p>
+                                    <p class="line__number">
+                                        2
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cant. baños:
+                                    </p>
+                                    <p class="line__number">
+                                        2
+                                    </p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <div class="project__option terrenoConstruccion 27204.00 d-none">
+                        <h3 class="option__title">
+                            Valle escondido - Terreno + Construcción
+                        </h3>
+                        <div class="option__categories">
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Precios</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Estilo rombo:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            1,144,285.00
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Prima del 10%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            114,428.50
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        A financiar:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            1,029,856.50
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cuota del 8.7%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            9,086.12
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Ingreso mínimo:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            27,204.00
+                                        </p>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Medidas</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Varas totales:
+                                    </p>
+                                    <p class="line__number">
+                                        215.14 <strong>v<sup>2</sup></strong>
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Mtrs de construcción:
+                                    </p>
+                                    <p class="line__number">
+                                        75 <strong>m<sup>2</sup></strong>
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cant. habitaciones:
+                                    </p>
+                                    <p class="line__number">
+                                        3
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cant. baños:
+                                    </p>
+                                    <p class="line__number">
+                                        2
+                                    </p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+                <!-- Girona -->
+                <div class="projects__project">
+                    <a href="https://www.google.com/maps?q=15.522740364074707,-87.97673034667969&z=17&hl=es" target="_blank" class="project__location d-none">
+                        <i class="fa fa-location-arrow"></i>
+                        Residencial Girona - contiguo a paseo de las fuentes carretera hacia el Ocotillo.
+                    </a>
+                    <div class="project__option terrenoConstruccion 28724.01 d-none">
+                        <h3 class="option__title">
+                            Residencial Girona - Terreno + Construcción
+                        </h3>
+                        <div class="option__categories">
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Precios</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Estilo colonial:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            1,208,205.40
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Prima del 10%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            120,820.54
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        A financiar:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            1,087,384.86
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cuota del 8.7%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            9,574.67
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Ingreso mínimo:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            28,724.01
+                                        </p>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Medidas</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Varas totales:
+                                    </p>
+                                    <p class="line__number">
+                                        236.65 <strong>v<sup>2</sup></strong>
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Mtrs de construcción:
+                                    </p>
+                                    <p class="line__number">
+                                        60 <strong>m<sup>2</sup></strong>
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cant. habitaciones:
+                                    </p>
+                                    <p class="line__number">
+                                        2
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cant. baños:
+                                    </p>
+                                    <p class="line__number">
+                                        1
+                                    </p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <div class="project__option terrenoConstruccion 34595.52 d-none">
+                        <h3 class="option__title">
+                            Residencial Girona - Terreno + Construcción
+                        </h3>
+                        <div class="option__categories">
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Precios</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Estilo minimalista:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            1,455,175.25
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Prima del 10%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            145,517.52
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        A financiar:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            1,309,657.72
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cuota del 8.7%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            11,531.84
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Ingreso mínimo:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            34,595.52
+                                        </p>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Medidas</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Varas totales:
+                                    </p>
+                                    <p class="line__number">
+                                        236.65 <strong>v<sup>2</sup></strong>
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Mtrs de construcción:
+                                    </p>
+                                    <p class="line__number">
+                                        75 <strong>m<sup>2</sup></strong>
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cant. habitaciones:
+                                    </p>
+                                    <p class="line__number">
+                                        3
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cant. baños:
+                                    </p>
+                                    <p class="line__number">
+                                        2
+                                    </p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+                <!-- Altos de Valencia -->
+                <div class="projects__project">
+                    <a href="https://www.google.com/maps/place/15%C2%B030'43.1%22N+87%C2%B058'54.0%22W/@15.511981,-87.9838476,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d15.511981!4d-87.9816589?hl=es" target="_blank" class="project__location d-none">
+                        <i class="fa fa-location-arrow"></i>
+                        Altos de Valencia - contiguo a Salamanca carretera hacia el Ocotillo.
+                    </a>
+                    <div class="project__option terrenoConstruccion 34018.05 d-none">
+                        <h3 class="option__title">
+                            Altos de Valencia - Terreno + Construcción
+                        </h3>
+                        <div class="option__categories">
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Precios</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Estilo estandar:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            1,430,886.33
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Prima del 10%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            143,088.63
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        A financiar:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            1,287,797.69
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cuota del 8.7%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            11,339.35
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Ingreso mínimo:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            34,018.05
+                                        </p>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Medidas</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Varas totales:
+                                    </p>
+                                    <p class="line__number">
+                                        286.85 v<sup>2</sup>
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Mtrs de construcción:
+                                    </p>
+                                    <p class="line__number">
+                                        61.38 m<sup>2</sup>
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cant. habitaciones:
+                                    </p>
+                                    <p class="line__number">
+                                        2
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cant. baños:
+                                    </p>
+                                    <p class="line__number">
+                                        1
+                                    </p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <div class="project__option terrenoConstruccion 38605.05 d-none">
+                        <h3 class="option__title">
+                            Altos de Valencia - Terreno + Construcción
+                        </h3>
+                        <div class="option__categories">
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Precios</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Estilo estandar:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            1,623,826.33
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Prima del 10%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            162,382.63
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        A financiar:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            1,461,443.69
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cuota del 8.7%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            12,868.35
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Ingreso mínimo:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            HNL
+                                        </p>
+                                        <p class="line__number">
+                                            38,605.05
+                                        </p>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Medidas</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Varas totales:
+                                    </p>
+                                    <p class="line__number">
+                                        286.85 <strong>v<sup>2</sup></strong>
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Mtrs de construcción:
+                                    </p>
+                                    <p class="line__number">
+                                        78.92 <strong>m<sup>2</sup></strong>
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cant. habitaciones:
+                                    </p>
+                                    <p class="line__number">
+                                        3
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cant. baños:
+                                    </p>
+                                    <p class="line__number">
+                                        2
+                                    </p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <div class="project__option terreno 858 d-none">
+                        <h3 class="option__title">
+                            Altos de Valencia - Terreno
+                        </h3>
+                        <div class="option__categories">
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Precios</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Lote tipico:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            115.00 x<strong>v<sup>2</sup></strong>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Valor total:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            32,987.75
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Prima del 10%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            3,298.77
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        A financiar:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            29,688.98
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cuota del 10.5%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            286.00
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Ingreso mínimo:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            858.00
+                                        </p>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Medidas</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Varas totales:
+                                    </p>
+                                    <p class="line__number">
+                                        286.85 <strong>v<sup>2</sup></strong>
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Equivalencia en metros:
+                                    </p>
+                                    <p class="line__number">
+                                        200.45 <strong>m<sup>2</sup></strong>
+                                    </p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <div class="project__option terreno 1050 d-none">
+                        <h3 class="option__title">
+                            Altos de Valencia - Terreno
+                        </h3>
+                        <div class="option__categories">
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Precios</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Lote intermedio:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            115.00 x<strong>v<sup>2</sup></strong>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Valor total:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            37,936.20
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Prima del 10%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            3,793.62
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        A financiar:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            34,143.00
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cuota del 10.5%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            350.00
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Ingresos minimos:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            1,050.00
+                                        </p>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Medidas</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Varas totales:
+                                    </p>
+                                    <p class="line__number">
+                                        329.88 <strong>v<sup>2</sup></strong>
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Equivalencia en metros:
+                                    </p>
+                                    <p class="line__number">
+                                        230.52 <strong>m<sup>2</sup></strong>
+                                    </p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ciudad Jaragua -->
+                <div class="projects__project">
+                    <a href="https://www.google.com/maps/place/Ciudad+Jaragua/@15.5361274,-88.0592635,13z/data=!4m5!3m4!1s0x8f665abb29d20e83:0xa9f9eaa3c52a86ef!8m2!3d15.5753987!4d-88.0255264" target="_blank" class="project__location d-none">
+                        <i class="fa fa-location-arrow"></i>
+                        Ciudad Jaraguá - por blvrd. Mackey en interseccion con la calle hacia armenta.
+                    </a>
+                    <div class="project__option terreno 3417.93 d-none">
+                        <h3 class="option__title">
+                            Jaraguá - Terreno
+                        </h3>
+                        <div class="option__categories">
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Precios</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Lote tipico:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            200.00 x<strong>v<sup>2</sup></strong>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Valor total:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            96,382.00
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Prima del 10%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            9,638.00
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        A financiar:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            86,743.80
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cuota del 12%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            1,139.31
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Ingreso mínimo:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            3,417.93
+                                        </p>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Medidas</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Varas totales:
+                                    </p>
+                                    <p class="line__number">
+                                        481.91 <strong>v<sup>2</sup></strong>
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Equivalencia en metros:
+                                    </p>
+                                    <p class="line__number">
+                                        336.75 <strong>m<sup>2</sup></strong>
+                                    </p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <div class="project__option terreno 4089 d-none">
+                        <h3 class="option__title">
+                            Jaraguá - Terreno
+                        </h3>
+                        <div class="option__categories">
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Precios</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Lote esquina:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            210.00 x<strong>v<sup>2</sup></strong>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Valor total:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            115,287.90
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Prima del 10%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            11,528.79
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        A financiar:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            103,759.11
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cuota del 10.5%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            1,362.79
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Ingresos minimos:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            4,089.00
+                                        </p>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Medidas</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Varas totales:
+                                    </p>
+                                    <p class="line__number">
+                                        548.99 <strong>v<sup>2</sup></strong>
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Equivalencia en metros:
+                                    </p>
+                                    <p class="line__number">
+                                        383.63 <strong>m<sup>2</sup></strong>
+                                    </p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+                <!-- Altezza -->
+                <div class="projects__project">
+                    <a href="https://www.google.com/maps/@15.4905441,-88.0475858,18.75z" target="_blank" class="project__location d-none">
+                        <i class="fa fa-location-arrow"></i>
+                        Altezza - Col. Trejo, 12 calle de parque naciones unidas hacia arriba. 
+                    </a>
+                    <div class="project__option terrenoConstruccion 7000 d-none">
+                        <h3 class="option__title">
+                            Altezza - Terreno + Construcción
+                        </h3>
+                        <div class="option__categories">
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Precios</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Townhomes Folia:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            192,116.50
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Prima del 10%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            19,211.65
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        A financiar:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            172,904.85
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cuota del 12%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            2,000.00
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Ingreso mínimo:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            7,000.00
+                                        </p>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Medidas</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Varas totales:
+                                    </p>
+                                    <p class="line__number">
+                                        271.41 <strong>v<sup>2</sup></strong>
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Mtrs de construcción:
+                                    </p>
+                                    <p class="line__number">
+                                        155.33 <strong>m<sup>2</sup></strong>
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cant. habitaciones:
+                                    </p>
+                                    <p class="line__number">
+                                        2
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cant. baños:
+                                    </p>
+                                    <p class="line__number">
+                                        2.5
+                                    </p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <div class="project__option terrenoConstruccion 8018 d-none">
+                        <h3 class="option__title">
+                            Altezza - Terreno + Construcción
+                        </h3>
+                        <div class="option__categories">
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Precios</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Townhomes Folia:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            236,492.50
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Prima del 10%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            23,649.25
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        A financiar:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            212,843.25
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cuota del 12%:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            2,406.00
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Ingreso mínimo:
+                                    </p>
+                                    <div class="line__price">
+                                        <p class="line__format">
+                                            $
+                                        </p>
+                                        <p class="line__number">
+                                            8,018.00
+                                        </p>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="option__category" open>
+                                <summary class="option__subtitle">
+                                    <strong>Medidas</strong>
+                                </summary>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Varas totales:
+                                    </p>
+                                    <p class="line__number">
+                                        271.41 <strong>v<sup>2</sup></strong>
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Mtrs de construcción:
+                                    </p>
+                                    <p class="line__number">
+                                        210.80 <strong>m<sup>2</sup></strong>
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cant. habitaciones:
+                                    </p>
+                                    <p class="line__number">
+                                        3
+                                    </p>
+                                </div>
+                                <div class="category__line">
+                                    <p class="line__descripcion">
+                                        Cant. baños:
+                                    </p>
+                                    <p class="line__number">
+                                        3.5
+                                    </p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <h2 class="form-projects__title">
+                Contácta con un agente
+            </h2> -->
+            <div class="form-projects__agents">
+                <div class="agent--fp">
+                    <figure class="agent__image-container">
+                        <img src="img/Agentes/JanethMeza.jpg" alt="Agente Janeth Meza" title="Agente Janeth Meza" class="agent__image">
+                    </figure>
+                    <div class="agent__info">
+                        <h2 class="agent__name">
+                            Janeth Meza
+                        </h2>
+                        <p class="agent__role">
+                            Asesor Inmobiliario
+                        </p>
+                        <hr class="agent__divisor">
+                        <a href="tel:96041622" class="agent__number">
+                            +504 9604-1622
+                        </a>
+                        <a href="mailto:janeth.inmozuniga@gmail.com?subject=Deseo obtener mas información&body=He visitado su sitio web y me encuentro interesado en obtener más información acerca de..." class="agent__mail">
+                            janeth.inmozuniga
+                        </a>
+                    </div>
+                </div>
+                <div class="agent--fp">
+                    <figure class="agent__image-container">
+                        <img src="img/Agentes/SusanMorel.jpg" alt="Agente Susan Morel" title="Agente Susan Morel" class="agent__image">
+                    </figure>
+                    <div class="agent__info">
+                        <h2 class="agent__name">
+                            Susan Morel
+                        </h2>
+                        <p class="agent__role">
+                            Asesor Inmobiliario
+                        </p>
+                        <hr class="agent__divisor">
+                        <a href="tel:33843484" class="agent__number">
+                            +504 3384-3484
+                        </a>
+                        <a href="mailto:susan.inmozuniga@gmail.com?subject=Deseo obtener mas información&body=He visitado su sitio web y me encuentro interesado en obtener más información acerca de..." class="agent__mail">
+                            susan.inmozuniga
+                        </a>
+                    </div>
+                </div>
+                <div class="agent--fp">
+                    <figure class="agent__image-container">
+                        <img src="img/Agentes/FranklinArita.jpg" alt="Agente Franklin Arita" title="Agente Franklin Arita" class="agent__image">
+                    </figure>
+                    <div class="agent__info">
+                        <h2 class="agent__name">
+                            Franklin Arita
+                        </h2>
+                        <p class="agent__role">
+                            Asesor Inmobiliario
+                        </p>
+                        <hr class="agent__divisor">
+                        <a href="tel:89778805" class="agent__number">
+                            +504 8977-8805
+                        </a>
+                        <a href="mailto:franklin.inmozuniga@gmail.com?subject=Deseo obtener mas información&body=He visitado su sitio web y me encuentro interesado en obtener más información acerca de..." class="agent__mail">
+                            franklin.inmozuniga
+                        </a>
+                    </div>
+                </div>
+                <div class="agent--fp">
+                    <figure class="agent__image-container">
+                        <img src="img/Agentes/JulissaZúniga.jpg" alt="Agente Julissa Zúniga" title="Agente Julissa Zúniga" class="agent__image">
+                    </figure>
+                    <div class="agent__info">
+                        <h2 class="agent__name">
+                            Julissa Zúniga
+                        </h2>
+                        <p class="agent__role">
+                            Asesor de Rentas
+                        </p>
+                        <hr class="agent__divisor">
+                        <a href="tel:98585962" class="agent__number">
+                            +504 9858-5962
+                        </a>
+                        <a href="mailto:julissa.inmozuniga@gmail.com?subject=Deseo obtener mas información&body=He visitado su sitio web y me encuentro interesado en obtener más información acerca de..." class="agent__mail">
+                            julissa.inmozuniga
+                        </a>
+                    </div>
+                </div>
+                <div class="agent--fp">
+                    <figure class="agent__image-container">
+                        <img src="img/Agentes/GloriaZúniga.jpg" alt="Agente Gloria Zúniga" title="Agente Gloria Zúniga" class="agent__image">
+                    </figure>
+                    <div class="agent__info">
+                        <h2 class="agent__name">
+                            Gloria Zúniga
+                        </h2>
+                        <p class="agent__role">
+                            Gerente de Mercadéo
+                        </p>
+                        <hr class="agent__divisor">
+                        <a href="tel:33800295" class="agent__number">
+                            +504 3380-0295
+                        </a>
+                        <a href="mailto:mercadeo.inmozuniga@gmail.com?subject=Deseo obtener mas información&body=He visitado su sitio web y me encuentro interesado en obtener más información acerca de..." class="agent__mail">
+                            mercadeo.inmozuniga
+                        </a>
+                    </div>
+                </div>
+                <div class="agent--fp">
+                    <figure class="agent__image-container">
+                        <img src="img/Agentes/WilsonZúniga.jpg" alt="Agente Wilson Zúniga" title="Agente Wilson Zúniga" class="agent__image">
+                    </figure>
+                    <div class="agent__info">
+                        <h2 class="agent__name">
+                            Wilson Zúniga
+                        </h2>
+                        <p class="agent__role">
+                            Gerente de Ventas
+                        </p>
+                        <hr class="agent__divisor">
+                        <a href="tel:94529498" class="agent__number">
+                            +504 9452-9498
+                        </a>
+                        <a href="mailto:wilson.inmozuniga@gmail.com?subject=Deseo obtener mas información&body=He visitado su sitio web y me encuentro interesado en obtener más información acerca de..." class="agent__mail">
+                            wilson.inmozuniga
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+
+        <!-- CONTENIDO PIE DE PAGINA -->
+        <div class="footer__content">
+
+            <div class="footer__allcolumns">
+                <!-- COLUMNA PRINCIPAL -->
+                <div class="main__column">
+                    <img src="img/Logos/logoBlanco.png" alt="Logo Inmobiliaria Zúniga Blanco" class="main__img">
+                    <div class="main__links">
+                        <container class="main__subcolumn">
+                            <a href="https://inmobiliariazunigahn.web.app/contactanos#seccionprincipal" class="main__link">
+                                Contáctanos
+                            </a>
+                            <a href="https://inmobiliariazunigahn.web.app/politicas" class="main__link">
+                                Políticas
+                            </a>
+                        </container>
+                        <container class="main__subcolumn">
+                            <a href="https://inmobiliariazunigahn.web.app/propiedades#venta" class="main__link">
+                                Comprar
+                            </a>
+                            <a href="https://inmobiliariazunigahn.web.app/propiedades#renta" class="main__link">
+                                Rentar
+                            </a>
+                        </container>
+                    </div>
+                </div>
+
+                <!-- OTRAS COLUMNAS -->
+                <div class="footer__columns">
+
+                    <section class="column">
+                        <h2 class="column__title">Comprar</h2>
+                        <!-- LISTA ENLACES COLUMNA -->
+                        <ul class="column__list">
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#vivienda-venta" class="column__link">
+                                    Viviendas
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#terrenoresidencial-venta" class="column__link">
+                                    Terrenos Residenciales
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#terrenoplaya-venta" class="column__link">
+                                    Terrenos de playa
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#propiedaddeinversion-venta" class="column__link">
+                                    Propiedades de Inversión
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="column">
+                        <h2 class="column__title">Rentar</h2>
+                        <!-- LISTA ENLACES COLUMNA -->
+                        <ul class="column__list">
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#apartamento-renta" class="column__link">
+                                    Apartamentos
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#localcomercial-renta" class="column__link">
+                                    Locales Comerciales
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#bodega-renta" class="column__link">
+                                    Bodegas
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#naveindustrial-renta" class="column__link">
+                                    Naves Industriales
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="column">
+                        <h2 class="column__title">Categorias</h2>
+                        <!-- LISTA ENLACES COLUMNA -->
+                        <ul class="column__list">
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#vivienda-renta" class="column__link">
+                                    Viviendas en Venta y Renta
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#condominio-renta" class="column__link">
+                                    Condominios en Venta y Renta
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#townhouse-renta" class="column__link">
+                                    Town House en Venta y Renta
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#naveindustrial-renta" class="column__link">
+                                    Naves Industriales en Renta
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+
+                </div>
+            </div>
+
+            <hr class="footer__divisor">
+
+            <div class="footer__social-media">
+                <a href="https://www.facebook.com/inmobiliariazunigayasociados" target="_blank" class="social-media__link">
+                    <i class="fab fa-facebook social-media__icon"></i>
+                </a>
+                <a href="https://www.instagram.com/inmobiliariazuniga/" target="_blank" class="social-media__link">
+                    <i class="fab fa-instagram social-media__icon"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCTzraN0l1lE7OkgNYevJbvQ" target="_blank" class="social-media__link">
+                    <i class="fab fa-youtube social-media__icon"></i>
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=50497842424&text=Vengo%20de%20visitar%20su%20pagina%20y%20me%20encuentro%20interesado%20en%20obtener%20detalles%20sobre.." target="_blank" class="social-media__link">
+                    <i class="fab fa-whatsapp social-media__icon"></i>
+                </a>
+                <a href="tel:25500833" class="social-media__link">
+                    <i class="fa fa-phone social-media__icon"></i>
+                </a>
+            </div>
+
+            <!-- <p class="copyright">
+                &copy; Diseñada y elaborada por 
+                <a href="https://jor-gdesign.web.app" target="_blank" class="copyright__link">
+                    Jor-G Design
+                </a>
+            </p> -->
+
+        </div>
+
+    </footer>
+
+    <!-- PANTALLA DE CARGA MIENTRAS SE LEE LA BASE DE DATOS -->
+    <div class="load">
+        <img src="img/Logos/LogoInmobiliariaZuniga.png" alt="Logo de pantalla de carga" class="load__img">
+        <h2 class="load__text">Líderes en bienes raíces</h2>
+    </div>
+
+    <div class="abrir-menu" id="flechaAbrirMenu">
+        <div class="abrir">
+            <i class="fa fa-arrow-right abrir__icono"></i>
+        </div>
+    </div>
+
+    <!-- Apartado para mostrar el popup de la suscripcion de emails -->
+    <div class="popup d-none">
+        <div class="popup__container">
+            <div class="popup__info">
+                <img src="/img/newsletter.png" alt="imagen de boletin" class="popup__img">
+                <p class="popup__description">
+                    Suscribete si deseas recibir información actualizada sobre nuestras propiedades, proyectos y demás.
+                </p>
+            </div>
+            <div class="popup__btns">
+                <a class="popup__btn" href="https://docs.google.com/forms/d/e/1FAIpQLScGu-15HbS5JgOaFKOEz19NsA_Aahj64Y3S0EzPtVC_zzK7iw/viewform?usp=sf_link" target="_blank">Suscribirme</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="cookies d-none">
+        <div class="cookies__container">
+            <img src="img/cookie.png" class="cookies__image" alt="Imagen de las politicas de cookies">
+            <h2 class="cookies__title">Politicas de cookies</h2>
+            <p class="cookies__description">
+                Utilizamos cookies propias y de terceros para mejorar nuestros servicios.
+            </p>
+            <button class="cookies__btn">De acuerdo</button>
+            <a class="cookies__link" href="https://inmobiliariazunigahn.web.app/politicas#cookiesSection">Saber más</a>
+        </div>
+    </div>
+
+</body>
+
+<!-- JavaScript Interno -->
+<script src="js/load.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/app.js"></script>
+<script src="js/cotizar.js"></script>
+<script src="js/popupemails.js"></script>
+
+</html>

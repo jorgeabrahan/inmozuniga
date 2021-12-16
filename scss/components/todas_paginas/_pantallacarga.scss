@@ -1,0 +1,39 @@
+.load {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: map-get($colors, white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    .load__img {
+        animation: loadImg 2s forwards;
+        max-width: 500px;
+    }
+    .load__text {
+        text-align: center;
+        font-size: map-get($size, subtitle);
+        color: map-get($colors, eerieBlack);
+        animation-name: unvanish;
+        animation-delay: 1s;
+        opacity: 0;
+        animation-duration: 2s;
+        animation-direction: unset;
+        animation-fill-mode: forwards;
+    }
+}
+
+.vanish {
+    animation: vanish 1s forwards;
+}
+
+@keyframes loadImg {
+    from {
+        transform: scale(.25)
+    }
+}

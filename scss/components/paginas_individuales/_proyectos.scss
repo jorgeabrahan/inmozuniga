@@ -1,0 +1,173 @@
+.projects-margins {
+    @include margins;
+    margin: 3rem auto;
+}
+
+.project__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: var(--separation);
+    color: white;
+}
+.project__name {
+    font-size: map-get($size, subtitle);
+}
+.project__description {
+    font-size: map-get($size, description);
+}
+.project__buttons {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.project__btn {
+    cursor: pointer;
+    border: none;
+    background-color: map-get($colors, yaleBlue);
+    font-size: map-get($size, description);
+    padding: 0.5rem 2rem;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+
+    --btn-dimensions: 1px;
+    overflow: hidden;
+
+    &:after {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: var(--btn-dimensions);
+        height: var(--btn-dimensions);
+        border-radius: 50%;
+        z-index: -1;
+        background-color: map-get($colors, spanishBlue);
+        transition: width 500ms ease-in-out,
+            height 500ms ease-in-out;
+    }
+
+    &:hover::after {
+        --btn-dimensions: 100px;
+    }
+}
+
+
+.allstages {
+    @include margins;
+    margin: 0 auto 3rem;
+}
+
+
+.stage__info {
+    margin: 1rem 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
+    &:after {
+        content: " ";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        height: 3px;
+        width: 100%;
+        background-color: map-get($colors, yaleBlue);
+        transition: transform 500ms ease-in-out;
+        transform: scaleX(.3);
+        transform-origin: left;
+    }
+    &:hover::after {
+        transform: scaleX(.6);
+    }
+}
+.stage__name {
+    flex: 1;
+    pointer-events: none;
+    font-size: map-get($size, subtitle);
+}
+.stage__icon {
+    pointer-events: none;
+    font-size: map-get($size, subtitle);
+}
+
+.stage__details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    @media (max-width: 1250px) {
+        justify-content: center;
+    }
+}
+.stage__prices-contact {
+    @media (min-width: 1250px) {
+        flex: 2;
+    }
+}
+.prices__title {
+    font-size: map-get($size, subtitle);
+    font-family: CabinBold;
+}
+.prices__description {
+    list-style-position: inside;
+    list-style-type: square;
+}
+.prices__item {
+    font-size: map-get($size, description);
+}
+.stage__btn {
+    width: 100%;
+    @media (max-width: 1240px) {
+        max-width: 300px;
+    }
+    margin: 1rem auto 0;
+    padding: .4em;
+    text-align: center;
+    @include links(white);
+    background-color: map-get($colors, yaleBlue);
+
+    position: relative;
+    z-index: 1;
+
+    --btn-dimensions: 1px;
+    overflow: hidden;
+
+    &:after {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: var(--btn-dimensions);
+        height: var(--btn-dimensions);
+        border-radius: 50%;
+        z-index: -1;
+        background-color: map-get($colors, spanishBlue);
+        transition: width 500ms ease-in-out,
+        height 500ms ease-in-out;
+    }
+
+    &:hover::after {
+        --btn-dimensions: 120px;
+    }
+}
+
+.expand__slider {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    z-index: 500;
+    outline: 100vw solid rgba(0, 0, 0, 0.9);
+    background-color: white;
+}

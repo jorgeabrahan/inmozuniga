@@ -1,0 +1,134 @@
+.cookies {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    z-index: 500;
+
+    @media (max-width: 768px) {
+        top: 0;
+        left: 0;
+
+
+        height: 100%;
+
+        background: rgba(0, 0, 0, .7);
+
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+    }
+
+    @media (min-width: 769px) {
+        justify-content: flex-end;
+        bottom: 1rem;
+        @include margins;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    text-align: center;
+}
+
+.cookies__container {
+    width: 100%;
+    max-width: 390px;
+
+    @media (min-width: 769px) {
+        box-shadow: 0 0 10px black;
+
+        animation: cookiesAnimation 2000ms ease 1850ms 1 normal none,
+            cookiesAttentionAnimation 2000ms ease 3850ms 1 normal none;
+    }
+
+    background: white;
+    border-radius: .5em;
+    padding: 4em 1em 1em;
+    position: relative;
+
+}
+
+@keyframes cookiesAnimation {
+    0% {
+        opacity: 0;
+        transform: translateX(-250px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes cookiesAttentionAnimation {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+        transform-origin: 50% 50%;
+    }
+
+    10% {
+        transform: rotate(6deg);
+    }
+
+    20%,
+    40%,
+    60% {
+        transform: rotate(-8deg);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: rotate(8deg);
+    }
+
+    80% {
+        transform: rotate(-6deg);
+    }
+
+    90% {
+        transform: rotate(6deg);
+    }
+}
+
+
+.cookies__image {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    top: -35%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cookies__title {
+    font-size: map-get($size, subtitle);
+    margin-bottom: .5rem;
+}
+
+.cookies__description {
+    margin-bottom: .5rem;
+}
+
+.cookies__btn {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto .5rem;
+    border-radius: .5em;
+    background: map-get($colors, yaleBlue);
+    color: white;
+    border: none;
+    outline: none;
+    padding: 0.5rem 0;
+    cursor: pointer;
+}
+
+.cookies__link {
+    color: map-get($colors, yaleBlue);
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,166 @@
+.contact__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.info__cards {
+    width: 100%;
+}
+@media (min-width: 1024px) {
+    .contact__info {
+        gap: 1rem;
+    }
+    .info__cards {
+        flex: 1;
+        max-width: 650px;
+    }
+}
+.card {
+    background-color: white;
+    box-shadow: 0 0 3px black;
+    border-radius: 5px;
+    min-height: 10rem;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: .5rem;
+    @media (min-width: 1200px) {
+        padding: 1.5rem;
+    }
+    color: map-get($colors, yaleBlue);
+}
+.card__text {
+    flex: 7;
+}
+.card__title {
+    font-size: map-get($size, subtitle);
+    font-family: CabinBold;
+    margin-bottom: .5rem;
+}
+.card__link {
+    @include links(yaleBlue);
+    font-size: map-get($size, description);
+    position: relative;
+    padding-bottom: 0.25rem;
+    transition: padding 500ms ease-in-out;
+    @media (min-width: 768px) {
+        &:after {
+            content: " ";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            width: 100%;
+            background-color: map-get($colors, spanishBlue);
+            transition: transform 500ms ease-in-out;
+            transform-origin: left;
+            transform: scaleX(0);
+        }
+        &:hover::after {
+            transform: scaleX(.5);
+        }
+        &:hover {
+            padding-left: 1rem;
+        }
+    }
+}
+.card__icon {
+    align-self: flex-end;
+    margin-bottom: 1rem;
+    flex: 1;
+    font-size: map-get($size, icons);
+}
+
+.info__social-media {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+    width: 100%;
+    @media (min-width: 1024px) {
+        flex: 1;
+        max-width: 650px;
+        margin-top: 1rem;
+    }
+}
+.social-media {
+    background-color: white;
+    box-shadow: 0 0 3px black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    min-height: 10rem;
+    color: map-get($colors, yaleBlue);
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+    @media (min-width: 1100px) {
+        min-width: 15rem;
+    }
+    &:hover {
+        background-color: map-get($colors, yaleBlue);
+        color: white;
+    }
+}
+.social-media__icon {
+    font-size: clamp(5em, 7vw, 7em);
+    color: inherit;
+}
+.social-media__link {
+    @include links(yaleBlue);
+    color: inherit;
+    @media (min-width: 768px) {
+        font-size: map-get($size, description);
+    }
+}
+
+.contact__more-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+}
+.mision-vision {
+    @media (min-width: 1024px) {
+        flex: 1;
+        max-width:650px;
+    }
+    color: white;
+}
+.mision, .vision {
+    background-color: map-get($colors, yaleBlue);
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 3px black;
+}
+.mision__title, .vision__title {
+    font-size: map-get($size, title);
+    font-family: CabinBold;
+    margin-bottom: .5rem;
+}
+.mision__description, .vision__description {
+    font-size: map-get($size, description);
+    line-height: 1.5em;
+}
+.history {
+    @media (min-width: 1024px) {
+        flex: 1;
+        max-width: 650px;
+    }
+    margin: 1rem 0 3rem;
+}
+.history__title {
+    font-size: map-get($size, title);
+        font-family: CabinBold;
+        margin-bottom: .5rem;
+    }
+    .history__description {
+    font-size: map-get($size, description);
+    line-height: 1.5em;
+
+}

@@ -1,0 +1,383 @@
+    /* IMPORTACION DE FUENTES */
+@font-face {
+    font-family: CabinBold;
+    src: url(/fonts/Cabin-Bold.ttf);
+}
+@font-face {
+    font-family: CabinBoldItalic;
+    src: url(/fonts/Cabin-BoldItalic.ttf);
+}
+@font-face {
+    font-family: CabinItalic;
+    src: url(/fonts/Cabin-Italic.ttf);
+}
+@font-face {
+    font-family: CabinMedium;
+    src: url(/fonts/Cabin-Medium.ttf);
+}
+@font-face {
+    font-family: CabinMediumItalic;
+    src: url(/fonts/Cabin-MediumItalic.ttf);
+}
+@font-face {
+    font-family: CabinRegular;
+    src: url(/fonts/Cabin-Regular.ttf);
+}
+@font-face {
+    font-family: CabinSemiBold;
+    src: url(/fonts/Cabin-SemiBold.ttf);
+}
+@font-face {
+    font-family: CabinSemiBoldItalic;
+    src: url(/fonts/Cabin-SemiBoldItalic.ttf);
+}
+
+// Estilos de los svg divisores
+.main-banner__divider, .banner__divider {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+.main-banner__divider {
+    transform: rotate(180deg);
+}
+
+.main-banner__divider svg, .banner__divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+}
+.main-banner__divider svg {
+    height: 135px;
+}
+.banner__divider svg {
+    height: 75px;
+    transform: rotateY(180deg);
+}
+
+.shape-fill {
+    fill: #FFFFFF;
+}
+
+@media (max-width: 767px) {
+    .main-banner__divider svg, .banner__divider svg {
+        width: calc(100% + 1.3px);
+    }
+    .main-banner__divider svg {
+        height: 75px;
+    }
+    .banner__divider svg {
+        height: 60px;
+    }
+}
+
+
+/* PALETA DE COLORES */
+$colors: (
+    yaleBlue: #134B7C,
+    spanishBlue: #1E73BE,
+    verdiGris: #28AFB0,
+    appleGreen: #87AC00,
+    gold: #A38B00,
+    eerieBlack: #222222,
+    white: #FFFFFF,
+    sonicSilver: #707070,
+);
+
+.cheap {
+    color: map-get($colors, appleGreen);
+}
+
+/* TAMAÑOS DE LAS FUENTES */
+$size: (
+    slogan: clamp(2.4em, 5vw, 3.6em),
+    title: clamp(1.8em, 4vw, 2.7em),
+    icons: clamp(1.4em, 4vw, 2.5em),
+    subtitle: clamp(1.5em, 3vw, 1.9em),
+    description: clamp(1em, 2.8vw, 1.3em),
+    blogContent: clamp(1em, 2vw, 1.2em),
+);
+
+/* Se establece cabin regular como familia de fuente general */
+body {
+    font-family: CabinRegular;
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+html {
+    --default-img-height: 23rem;
+}
+@media (min-width: 1024px) {
+    html {
+        --default-img-height: 25rem;
+    }
+}
+
+/* FUNCIONES */
+
+@mixin margins {
+    padding: 0 20px;
+    max-width: 1500px;
+}
+
+@mixin flex($justify, $direction) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $justify;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin links($color) {
+    text-decoration: none;
+    display: block;
+    color: map-get($colors, $color);
+}
+
+
+
+/* CLASES GENERALES */
+.icon {
+    font-size: map-get($size, icons);
+}
+
+button {
+    &:active {
+        transform: scale(.9);
+    }
+}
+
+
+.agent__divisor {
+    display: block;
+    width: 85%;
+    margin: 0;
+    border-color: black;
+    margin-top: .3rem;
+    margin-bottom: .3rem;
+}
+
+@keyframes unvanish {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes vanish {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+
+//Boton para abrir menu en moviles
+.abrir-menu {
+    position: fixed;
+    left: 0;
+    bottom: 2rem;
+    z-index: 100;
+    cursor: pointer;
+    .abrir {
+        border-radius: 0 5px 5px 0;
+        background-color: map-get($colors, yaleBlue);
+        pointer-events: none;
+        .abrir__icono {
+            animation: mover 1s infinite linear alternate;
+            pointer-events: none;
+            color: white;
+            padding: 0.5rem 1rem .5rem .5rem;
+            font-size: map-get($size, subtitle);
+        }
+    }
+}
+
+@keyframes mover {
+    to {
+        padding-left: 1.3rem;
+    }
+}
+
+// Estilos al mensaje de error de la pagina 404
+.error {
+    @include margins;
+    margin: auto;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.error__container {
+    padding: 1rem;
+    max-width: 400px;
+    border-radius: 5px;
+    background: map-get($colors, yaleBlue);
+    color: white;
+    animation: animacionError 2s ease 0s 1 normal forwards;
+}
+.error__descripcion {
+    font-size: map-get($size, description);
+}
+.error__link {
+  color: inherit;
+}
+@keyframes animacionError {
+
+    0% {
+        animation-timing-function: ease-out;
+        transform: scale(1);
+        transform-origin: center center;
+      }
+
+      10% {
+        animation-timing-function: ease-in;
+        transform: scale(0.91);
+      }
+
+      17% {
+        animation-timing-function: ease-out;
+        transform: scale(0.98);
+      }
+
+      33% {
+        animation-timing-function: ease-in;
+        transform: scale(0.87);
+      }
+
+      45% {
+        animation-timing-function: ease-out;
+        transform: scale(1);
+      }
+}
+
+// Estilos a los slider utilizados en diversas paginas
+.slider-container {
+    @media (min-width: 1250px) {
+        flex: 4;
+    }
+    border: 3px solid map-get($colors, yaleBlue);
+    max-width: 1250px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-bottom: 1em;
+}
+.slider {
+    display: flex;
+    width: 400%;
+    margin-left: -100%;
+}
+.slider__section {
+    width: 100%;
+}
+.slider__img {
+    width: 100%;
+    height: 100%;
+}
+.slider__buttons {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+.slider__btn {
+    border: none;
+    background-color: map-get($colors, yaleBlue);
+    padding: .8em;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: opacity 250ms ease-in-out;
+    opacity: .6;
+    &:hover {
+        opacity: 1;
+    }
+}
+.slider__icon {
+    font-size: map-get($size, subtitle);
+    pointer-events: none;
+}
+
+
+
+// Estilos sub barra de navegacion en la pagina de propiedades y contacto
+.contact__section, .properties__section {
+    @include margins;
+    margin: 3rem auto;
+}
+.contact__navbar, .properties__navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.contact__btn, .properties__btn {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: map-get($size, description);
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    color: map-get($colors, yaleBlue);
+    font-family: CabinBold;
+}
+.contact__btn--active, .properties__btn--active {
+    color: white;
+    background-color: map-get($colors, yaleBlue);
+}
+.contact__divisor, .properties__divisor {
+    display: block;
+    width: 100%;
+    background-color: map-get($colors, yaleBlue);
+    height: 2px;
+    border: none;
+}
+.propertiesbycategory {
+    display: block;
+}
+
+
+/* IMPORTACION DE COMPONENTES */
+@import "/css/normalize.css";
+
+@import "components/secciones_inicio/agentes";
+@import "components/secciones_inicio/blogs";
+@import "components/secciones_inicio/encuestas";
+@import "components/secciones_inicio/necesidades";
+@import "components/secciones_inicio/proyectos";
+@import "components/secciones_inicio/propiedades";
+@import "components/secciones_inicio/seccionesindex";
+@import "components/secciones_inicio/categoriaspropiedad";
+
+@import "components/paginas_individuales/contactanos";
+@import "components/paginas_individuales/cotizador";
+@import "components/paginas_individuales/propiedad";
+@import "components/paginas_individuales/propiedades";
+@import "components/paginas_individuales/politicas";
+@import "components/paginas_individuales/proyectos";
+
+@import "components/todas_paginas/cabecera";
+@import "components/todas_paginas/piepagina";
+@import "components/todas_paginas/emailpopup";
+@import "components/todas_paginas/cookies";
+@import "components/todas_paginas/pantallacarga";
+
+.d-none {
+    display: none;
+}

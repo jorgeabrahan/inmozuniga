@@ -1,0 +1,143 @@
+.footer {
+    background-color: map-get($colors, eerieBlack);
+    .footer__content {
+        @include margins;
+        margin: auto;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        .footer__allcolumns {
+            @media (min-width: 1501px) {
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+                justify-content: space-between;
+            }
+        }
+        /* COLUMNA PRINCIPAL */
+        .main__column {
+            @media (min-width: 1024px) {
+                display: flex;
+                gap: 3rem;
+                align-items: center;
+                .main__links {
+                    width: 100%;
+                }
+            }
+            @media (min-width: 1501px) {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .main__img {
+                width: 250px;
+                margin-bottom: 1rem;
+                @media (min-width: 1501px) {
+                    width: 200px;
+                    margin-bottom: .5rem;
+                }
+            }
+            .main__links {
+                display: flex;
+                @media (min-width: 1501px) {
+                    flex-direction: column;
+
+                }
+                .main__subcolumn {
+                    flex: 1;
+                    @media (min-width: 768px) {
+                        display: flex;
+                        .main__link {
+                            flex: 1;
+                        }
+                    }
+                    @media (min-width: 1501px) {
+                        flex-direction: column;
+                    }
+                    .main__link {
+                        @include links(spanishBlue);
+                        font-size: map-get($size, subtitle);
+                        font-family: cabinBold;
+                        transition: all 250ms ease-in-out;
+                        @media (min-width: 1501px) {
+                            margin-bottom: .5rem;
+                        }
+                        &:hover {
+                            padding-left: .5rem;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+        /* OTRAS COLUMNAS */
+        .footer__columns {
+            display: flex;
+            flex-wrap: wrap;
+            .column {
+                flex: 1;
+                min-width: 300px;
+                @media (min-width: 1501px) {
+                    width: 400px;
+                }
+                .column__title {
+                    margin: 1.5rem 0 .5rem;
+                    color: white;
+                    font-size: map-get($size, title);
+                    font-family: CabinBold;
+                }
+                .column__list {
+                    list-style-type: none;
+                    .column__item {
+                        padding: 0.5rem 0;
+                        .column__link {
+                            @include links(spanishBlue);
+                            font-size: map-get($size, description);
+                            font-family: cabinMedium;
+                            transition: all 250ms ease-in-out;
+                            &:hover {
+                                padding-left: .5rem;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /* LINEA DIVISORA DE LAS COLUMNAS CON LOS ENLACES DE LAS REDES SOCIALES */
+        .footer__divisor {
+            color: white;
+            margin: 2rem 0;
+        }
+
+        .footer__social-media {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            .social-media__link {
+                @include links(white);
+                transition: all 250ms ease-in-out;
+                .social-media__icon {
+                    font-size: map-get($size, subtitle);
+                }
+                &:hover {
+                    transform: scale(1.25);
+                }
+            }
+        }
+        .copyright {
+            margin-top: 2rem;
+            text-align: center;
+            color: white;
+            .copyright__link {
+                color: map-get($colors, verdiGris);
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

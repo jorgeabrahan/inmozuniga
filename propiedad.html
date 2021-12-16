@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-39R41BL039"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-39R41BL039');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jor-G Design" />
+	<meta name="copyright" content="Jor-G Design">
+	<meta name="robots" content="index,follow" />
+
+    <link rel=“canonical” href=“https://inmobiliariazunigahn.web.app/propiedad/” />
+
+    <!-- ICON IMAGE -->
+	<link rel="icon" href="/img/Logos/icono.png" />
+
+    <title>Inmobiliaria Zúniga - Líderes en bienes raíces</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Link para css de font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+    <!-- Documento que permite que las funciones de firebase funcionen -->
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+
+    <!-- Conexion con Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+
+    <!-- Conexion con el Storage -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+
+    <link rel="stylesheet" href="css/font/flaticon.css">
+
+</head>
+
+<body>
+    <!-- MENU DE NAVEGACION -->
+    <header class="header">
+        <!-- BARRA NAVEGACION -->
+        <div class="navbar">
+            <!-- LOGO -->
+            <img src="img/Logos/LogoInmobiliariaZuniga.png" alt="Logo Inmobiliaria Zúniga" class="navbar__img">
+            <!-- MENU -->
+            <nav class="menu">
+                <!-- ICONO CERRAR MENU -->
+                <i class="flaticon-cancel icon close-icon"></i>
+                <!-- ENLACES MENU -->
+                <ul class="menu__items">
+                    <li class="menu__item">
+                        <a href="https://inmobiliariazunigahn.web.app/index#inicio" class="menu__link">
+                            Inicio
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="https://inmobiliariazunigahn.web.app/contactanos#seccionprincipal" class="menu__link">
+                            Contáctanos
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="https://inmobiliariazunigahn.web.app/propiedades#venta" class="menu__link menu__link--selected">
+                            Propiedades
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="https://inmobiliariazunigahn.web.app/proyectos#projects" class="menu__link">
+                            Proyectos
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- ICONO ABRIR MENU -->
+            <i class="flaticon-menu icon open-icon"></i>
+        </div>
+    </header>
+
+    <!-- BANNER Y SLOGAN -->
+    <div class="banner">
+        <img src="img/Banners/BannerPropiedades.jpg" alt="Banner Inmobiliaria Zuniga" class="banner__img">
+        <h1 class="banner__slogan">Nuestras Propiedades</h1>
+
+        <div class="banner__divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- PESTAÑA QUE MUESTRA MAS INFORMACION SOBRE LA PROPIEDAD SELECCIONADA -->
+    <main class="moreaboutproperty" id="masinfopropiedad">
+        <div class="moreaboutproperty__info">
+            <div class="property__details" id="contenedorDetallesPropiedad">
+            </div>
+            <div class="property__agents">
+                <div class="agent">
+                    <figure class="agent__image-container">
+                        <img src="img/Agentes/JanethMeza.jpg" alt="Agente Janeth Meza" title="Agente Janeth Meza" class="agent__image">
+                    </figure>
+                    <div class="agent__info">
+                        <h2 class="agent__name">
+                            Janeth Meza
+                        </h2>
+                        <p class="agent__role">
+                            Asesor Inmobiliario
+                        </p>
+                        <hr class="agent__divisor">
+                        <a href="" class="agent__number" data-number="96041622" target="_blank">
+                            +504 9604-1622
+                        </a>
+                        <a href="" class="agent__mail" data-mail="janeth.inmozuniga@gmail.com" target="_blank">
+                            janeth.inmozuniga
+                        </a>
+                    </div>
+                </div>
+                <div class="agent">
+                    <figure class="agent__image-container">
+                        <img src="img/Agentes/SusanMorel.jpg" alt="Agente Susan Morel" title="Agente Susan Morel" class="agent__image">
+                    </figure>
+                    <div class="agent__info">
+                        <h2 class="agent__name">
+                            Susan Morel
+                        </h2>
+                        <p class="agent__role">
+                            Asesor Inmobiliario
+                        </p>
+                        <hr class="agent__divisor">
+                        <a href="" class="agent__number" data-number="33843484" target="_blank">
+                            +504 3384-3484
+                        </a>
+                        <a href="" class="agent__mail" data-mail="susan.inmozuniga@gmail.com" target="_blank">
+                            susan.inmozuniga
+                        </a>
+                    </div>
+                </div>
+                <div class="agent">
+                    <figure class="agent__image-container">
+                        <img src="img/Agentes/FranklinArita.jpg" alt="Agente Franklin Arita" title="Agente Franklin Arita" class="agent__image">
+                    </figure>
+                    <div class="agent__info">
+                        <h2 class="agent__name">
+                            Franklin Arita
+                        </h2>
+                        <p class="agent__role">
+                            Asesor Inmobiliario
+                        </p>
+                        <hr class="agent__divisor">
+                        <a href="" class="agent__number" data-number="89778805" target="_blank">
+                            +504 8977-8805
+                        </a>
+                        <a href="" class="agent__mail" data-mail="franklin.inmozuniga@gmail.com" target="_blank">
+                            franklin.inmozuniga
+                        </a>
+                    </div>
+                </div>
+                <div class="agent">
+                    <figure class="agent__image-container">
+                        <img src="img/Agentes/JulissaZúniga.jpg" alt="Agente Julissa Zúniga" title="Agente Julissa Zúniga" class="agent__image">
+                    </figure>
+                    <div class="agent__info">
+                        <h2 class="agent__name">
+                            Julissa Zúniga
+                        </h2>
+                        <p class="agent__role">
+                            Asesor de Rentas
+                        </p>
+                        <hr class="agent__divisor">
+                        <a href="" class="agent__number" data-number="98585962" target="_blank">
+                            +504 9858-5962
+                        </a>
+                        <a href="" class="agent__mail" data-mail="julissa.inmozuniga@gmail.com" target="_blank">
+                            julissa.inmozuniga
+                        </a>
+                    </div>
+                </div>
+                <div class="agent">
+                    <figure class="agent__image-container">
+                        <img src="img/Agentes/GloriaZúniga.jpg" alt="Agente Gloria Zúniga" title="Agente Gloria Zúniga" class="agent__image">
+                    </figure>
+                    <div class="agent__info">
+                        <h2 class="agent__name">
+                            Gloria Zúniga
+                        </h2>
+                        <p class="agent__role">
+                            Gerente de Mercadéo
+                        </p>
+                        <hr class="agent__divisor">
+                        <a href="" class="agent__number" data-number="33800295" target="_blank">
+                            +504 3380-0295
+                        </a>
+                        <a href="" class="agent__mail" data-mail="mercadeo.inmozuniga@gmail.com" target="_blank">
+                            mercadeo.inmozuniga
+                        </a>
+                    </div>
+                </div>
+                <div class="agent">
+                    <figure class="agent__image-container">
+                        <img src="img/Agentes/WilsonZúniga.jpg" alt="Agente Wilson Zúniga" title="Agente Wilson Zúniga" class="agent__image">
+                    </figure>
+                    <div class="agent__info">
+                        <h2 class="agent__name">
+                            Wilson Zúniga
+                        </h2>
+                        <p class="agent__role">
+                            Gerente de Ventas
+                        </p>
+                        <hr class="agent__divisor">
+                        <a href="" class="agent__number" data-number="94529498" target="_blank">
+                            +504 9452-9498
+                        </a>
+                        <a href="" class="agent__mail" data-mail="wilson.inmozuniga@gmail.com" target="_blank">
+                            wilson.inmozuniga
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="footer">
+
+        <!-- CONTENIDO PIE DE PAGINA -->
+        <div class="footer__content">
+
+            <div class="footer__allcolumns">
+                <!-- COLUMNA PRINCIPAL -->
+                <div class="main__column">
+                    <img src="img/Logos/logoBlanco.png" alt="Logo Inmobiliaria Zúniga Blanco" class="main__img">
+                    <div class="main__links">
+                        <container class="main__subcolumn">
+                            <a href="https://inmobiliariazunigahn.web.app/contactanos#seccionprincipal" class="main__link">
+                                Contáctanos
+                            </a>
+                            <a href="https://inmobiliariazunigahn.web.app/politicas" class="main__link">
+                                Políticas
+                            </a>
+                        </container>
+                        <container class="main__subcolumn">
+                            <a href="https://inmobiliariazunigahn.web.app/propiedades#venta" class="main__link">
+                                Comprar
+                            </a>
+                            <a href="https://inmobiliariazunigahn.web.app/propiedades#renta" class="main__link">
+                                Rentar
+                            </a>
+                        </container>
+                    </div>
+                </div>
+
+                <!-- OTRAS COLUMNAS -->
+                <div class="footer__columns">
+
+                    <section class="column">
+                        <h2 class="column__title">Comprar</h2>
+                        <!-- LISTA ENLACES COLUMNA -->
+                        <ul class="column__list">
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#vivienda-venta" class="column__link">
+                                    Viviendas
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#terrenoresidencial-venta" class="column__link">
+                                    Terrenos Residenciales
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#terrenoplaya-venta" class="column__link">
+                                    Terrenos de playa
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#propiedaddeinversion-venta" class="column__link">
+                                    Propiedades de Inversión
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="column">
+                        <h2 class="column__title">Rentar</h2>
+                        <!-- LISTA ENLACES COLUMNA -->
+                        <ul class="column__list">
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#apartamento-renta" class="column__link">
+                                    Apartamentos
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#localcomercial-renta" class="column__link">
+                                    Locales Comerciales
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#bodega-renta" class="column__link">
+                                    Bodegas
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#naveindustrial-renta" class="column__link">
+                                    Naves Industriales
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="column">
+                        <h2 class="column__title">Categorias</h2>
+                        <!-- LISTA ENLACES COLUMNA -->
+                        <ul class="column__list">
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#vivienda-renta" class="column__link">
+                                    Viviendas en Venta y Renta
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#condominio-renta" class="column__link">
+                                    Condominios en Venta y Renta
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#townhouse-renta" class="column__link">
+                                    Town House en Venta y Renta
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmobiliariazunigahn.web.app/propiedades#naveindustrial-renta" class="column__link">
+                                    Naves Industriales en Renta
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+
+                </div>
+            </div>
+
+            <hr class="footer__divisor">
+
+            <div class="footer__social-media">
+                <a href="https://www.facebook.com/inmobiliariazunigayasociados" target="_blank" class="social-media__link">
+                    <i class="fab fa-facebook social-media__icon"></i>
+                </a>
+                <a href="https://www.instagram.com/inmobiliariazuniga/" target="_blank" class="social-media__link">
+                    <i class="fab fa-instagram social-media__icon"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCTzraN0l1lE7OkgNYevJbvQ" target="_blank" class="social-media__link">
+                    <i class="fab fa-youtube social-media__icon"></i>
+                </a>
+                <a href="" target="_blank" class="social-media__link walink">
+                    <i class="fab fa-whatsapp social-media__icon"></i>
+                </a>
+                <a href="tel:25500833" class="social-media__link">
+                    <i class="fa fa-phone social-media__icon"></i>
+                </a>
+            </div>
+
+            <!-- <p class="copyright">
+                &copy; Diseñada y elaborada por 
+                <a href="https://jor-gdesign.web.app" target="_blank" class="copyright__link">
+                    Jor-G Design
+                </a>
+            </p> -->
+
+        </div>
+
+    </footer>
+
+    <!-- PANTALLA DE CARGA MIENTRAS SE LEE LA BASE DE DATOS -->
+    <div class="load">
+        <img src="img/Logos/LogoInmobiliariaZuniga.png" alt="Logo de pantalla de carga" class="load__img">
+        <h2 class="load__text">Líderes en bienes raíces</h2>
+    </div>
+
+    <div class="abrir-menu" id="flechaAbrirMenu">
+        <div class="abrir">
+            <i class="fa fa-arrow-right abrir__icono"></i>
+        </div>
+    </div>
+
+    <!-- Apartado para mostrar el popup de la suscripcion de emails -->
+    <div class="popup d-none">
+        <div class="popup__container">
+            <div class="popup__info">
+                <img src="/img/newsletter.png" alt="imagen de boletin" class="popup__img">
+                <p class="popup__description">
+                    Suscribete si deseas recibir información actualizada sobre nuestras propiedades, proyectos y demás.
+                </p>
+            </div>
+            <div class="popup__btns">
+                <a class="popup__btn" href="https://docs.google.com/forms/d/e/1FAIpQLScGu-15HbS5JgOaFKOEz19NsA_Aahj64Y3S0EzPtVC_zzK7iw/viewform?usp=sf_link" target="_blank">Suscribirme</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="cookies d-none">
+        <div class="cookies__container">
+            <img src="img/cookie.png" class="cookies__image" alt="Imagen de las politicas de cookies">
+            <h2 class="cookies__title">Politicas de cookies</h2>
+            <p class="cookies__description">
+                Utilizamos cookies propias y de terceros para mejorar nuestros servicios.
+            </p>
+            <button class="cookies__btn">De acuerdo</button>
+            <a class="cookies__link" href="https://inmobiliariazunigahn.web.app/politicas#cookiesSection">Saber más</a>
+        </div>
+    </div>
+
+</body>
+
+
+<!-- JavaScript interno -->
+<script src="js/app.js"></script>
+<script src="js/load.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/slider.js"></script>
+<script src="js/popupemails.js"></script>
+
+<!-- Script para cargar informacion de la propiedad de la base de datos -->
+<script src="js/cargar/cargarPropiedad.js"></script>
+
+</html>

@@ -1,0 +1,50 @@
+.need {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    gap: 1rem;
+    margin-top: 1rem;
+    .need__btn {
+        @include links(white);
+        font-size: map-get($size, description);
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+        background-color: map-get($colors, yaleBlue);
+
+        position: relative;
+        z-index: 1;
+
+        --btn-dimensions: 1px;
+        overflow: hidden;
+
+        &:after {
+            content: " ";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: var(--btn-dimensions);
+            height: var(--btn-dimensions);
+            border-radius: 50%;
+            z-index: -1;
+            background-color: map-get($colors, spanishBlue);
+            transition: width 500ms ease-in-out,
+                height 500ms ease-in-out;
+        }
+
+        &:hover::after {
+            --btn-dimensions: 210px;
+        }
+    }
+}
+
+.needs-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 40vh;
+}

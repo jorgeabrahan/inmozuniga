@@ -1,0 +1,14 @@
+{
+    "files.autoSave": "onFocusChange",
+    "workbench.editor.enablePreview": false,
+    "editor.renderWhitespace": "none",
+    "editor.guides.indentation": false,
+    "editor.renderLineHighlight": "none",
+    "editor.overviewRulerBorder": false,
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.occurrencesHighlight": false,
+    "editor.glyphMargin": false,
+    "explorer.openEditors.visible": 0,
+    "workbench.activityBar.visible": false,
+    "editor.fontFamily": "JetBrainsMonoMedium Nerd Font"
+}

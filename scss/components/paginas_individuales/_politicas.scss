@@ -1,0 +1,56 @@
+.politics {
+    @include margins;
+    margin-block: 2rem;
+    margin-inline: auto;
+}
+
+.politics__group {
+    margin-bottom: 1rem;
+}
+
+.politics__subtitle {
+    margin-bottom: .5rem;
+    font-size: map-get($size, subtitle);
+}
+
+.politics__info {
+    line-height: 1.5;
+    font-size: map-get($size, description);
+}
+
+.politics__download {
+    font-size: map-get($size, description);
+    padding: .5rem 1rem;
+    background-color: map-get($colors, yaleBlue);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 3px;
+    color: white;
+    display: block;
+    margin-left: auto;
+    max-width: 300px;
+    position: relative;
+    z-index: 1;
+
+    --btn-dimensions: 1px;
+    overflow: hidden;
+
+    &:after {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: var(--btn-dimensions);
+        height: var(--btn-dimensions);
+        border-radius: 50%;
+        z-index: -1;
+        background-color: map-get($colors, spanishBlue);
+        transition: width 500ms ease-in-out,
+            height 500ms ease-in-out;
+    }
+
+    &:hover::after {
+        --btn-dimensions: 120px;
+    }
+}
