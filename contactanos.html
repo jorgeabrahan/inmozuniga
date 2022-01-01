@@ -27,18 +27,18 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Inmobiliaria Zúniga y Asoc.">
     <meta property="og:url" content="https://inmobiliariazunigahn.web.app">
-    <meta property="og:image" content="https://inmobiliariazunigahn.web.app/img/Logos/LogoInmobiliariaZuniga.png">
-    <meta property="og:description" content="Comparte tus intereses con nosotros y buscaremos el hogar ideal para tí y tu familia.">
+    <meta property="og:image" content="https://inmobiliariazunigahn.web.app/resources/images/logos/inmozuniga.png">
+    <meta property="og:description" content="Todos los medios para contactárnos estan aquí, desde nuestras redes hasta nuestro correo, numero y dirección.">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Inmobiliaria Zúniga y Asoc.">
     <meta name="twitter:site" content="@InmobiliariaZuniga">
     <meta name="twitter:description" content="Comparte tus intereses con nosotros y buscaremos el hogar ideal para tí y tu familia.">
-    <meta name="twitter:image" content="https://inmobiliariazunigahn.web.app/img/Logos/LogoInmobiliariaZuniga.png">
+    <meta name="twitter:image" content="https://inmobiliariazunigahn.web.app/resources/images/logos/inmozuniga.png">
     <meta name="twitter:image:alt" content="Logo Inmobiliaria Zúniga y Asoc">
 
     <!-- ICON IMAGE -->
-	<link rel="icon" href="/img/Logos/icono.png" />
+    <link rel="icon" href="/resources/images/logos/inmozuniga_simplificado.png" />
 
     <title>Inmobiliaria Zúniga - Contáctanos</title>
 
@@ -57,26 +57,20 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
 
     <!-- ENLACE AL CSS DE FLATICON -->
-    <link rel="stylesheet" href="css/font/flaticon.css">
+    <link rel="stylesheet" href="/resources/flaticon/flaticon.css">
 
 </head>
 
 <body>
 
-    <!-- MENU DE NAVEGACION -->
     <header class="header">
-        <!-- BARRA NAVEGACION -->
         <div class="navbar">
-            <!-- LOGO -->
-            <img src="img/Logos/LogoInmobiliariaZuniga.png" alt="Logo Inmobiliaria Zúniga" class="navbar__img">
-            <!-- MENU -->
+            <img src="/resources/images/logos/inmozuniga.png" alt="Logo Inmobiliaria Zúniga" class="navbar__img" onclick="open('/#inicio', '_self')">
             <nav class="menu">
-                <!-- ICONO CERRAR MENU -->
-                <i class="flaticon-cancel icon close-icon"></i>
-                <!-- ENLACES MENU -->
+                <i class="flaticon-cancel icon close-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(-100%)'"></i>
                 <ul class="menu__items">
                     <li class="menu__item">
-                        <a href="https://inmobiliariazunigahn.web.app/index#inicio" class="menu__link">
+                        <a href="https://inmobiliariazunigahn.web.app/#inicio" class="menu__link">
                             Inicio
                         </a>
                     </li>
@@ -86,24 +80,24 @@
                         </a>
                     </li>
                     <li class="menu__item">
-                        <a href="https://inmobiliariazunigahn.web.app/propiedades#venta" class="menu__link">
+                        <a href="https://inmobiliariazunigahn.web.app/propiedades" class="menu__link">
                             Propiedades
                         </a>
                     </li>
                     <li class="menu__item">
-                        <a href="https://inmobiliariazunigahn.web.app/proyectos#projects" class="menu__link">
+                        <a href="https://inmobiliariazunigahn.web.app/proyectos" class="menu__link">
                             Proyectos
                         </a>
                     </li>
                 </ul>
             </nav>
-            <!-- ICONO ABRIR MENU -->
-            <i class="flaticon-menu icon open-icon"></i>
+            <i class="flaticon-menu icon open-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(0)'"></i>
         </div>
     </header>
+
     <!-- BANNER Y SLOGAN -->
     <div class="banner">
-        <img src="img/Banners/BannerContactanos.jpg" alt="Banner Inmobiliaria Zuniga" class="banner__img">
+        <img src="/resources/images/banners/contactanos.jpg" alt="Banner Inmobiliaria Zuniga" class="banner__img">
         <h1 class="banner__slogan">Contáctanos</h1>
 
         <div class="banner__divider">
@@ -119,10 +113,10 @@
             <!-- BARRA DE NAVEGACION ENTRE LAS DOS PESTAÑAS DE CONTACTO -->
             <nav class="contact__navbar" id="contactanos">
                 <div class="contact__buttons">
-                    <button class="contact__btn contact__btn--active" id="contacto">
+                    <button class="contact__btn contact__btn--active" id="btnContact">
                         Contacto
                     </button>
-                    <button class="contact__btn" id="masinfo">
+                    <button class="contact__btn" id="btnMoreInfo">
                         Mas información
                     </button>
                 </div>
@@ -170,21 +164,21 @@
                     </div>
                 </div>
                 <div class="info__social-media">
-                    <div class="social-media">
+                    <div class="social-media" data-target="https://bit.ly/3H0ZNpc">
                         <i class="flaticon-facebook social-media__icon"></i>
-                        <a href="https://www.facebook.com/inmobiliariazunigayasociados" target="_blank" class="social-media__link">Inmobiliaria Zúniga</a>
+                        <a href="https://bit.ly/3H0ZNpc" target="_blank" class="social-media__link">Inmobiliaria Zúniga</a>
                     </div>
-                    <div class="social-media">
+                    <div class="social-media" data-target="https://bit.ly/3JcxoOI">
                         <i class="flaticon-instagram social-media__icon"></i>
-                        <a href="https://www.instagram.com/inmobiliariazuniga/" target="_blank" class="social-media__link">Inmobiliaria Zúniga</a>
+                        <a href="https://bit.ly/3JcxoOI" target="_blank" class="social-media__link">Inmobiliaria Zúniga</a>
                     </div>
-                    <div class="social-media">
+                    <div class="social-media" data-target="https://bit.ly/3moEQwA">
                         <i class="flaticon-youtube social-media__icon"></i>
-                        <a href="https://www.youtube.com/channel/UCTzraN0l1lE7OkgNYevJbvQ" target="_blank" class="social-media__link">Inmobiliaria Zúniga</a>
+                        <a href="https://bit.ly/3moEQwA" target="_blank" class="social-media__link">Inmobiliaria Zúniga</a>
                     </div>
-                    <div class="social-media">
+                    <div class="social-media" data-target="https://bit.ly/3phY7Bz">
                         <i class="flaticon-tik-tok social-media__icon"></i>
-                        <a href="https://www.tiktok.com/@inmozuniga?_d=secCgYIASAHKAESMgowMSnJMWHdz9sjzSY1n6mt6B15oVUnPYVWHM00%2FexRhxAh4G1U06emtnKryqoDusy4GgA%3D&object_id=6951145664143459334&page_open_method=scan_code&schema_type=4&sec_uid=MS4wLjABAAAAS_y1_dj2SRVoWRKLaLzERR0J4kqr27o8JkiNX_1nPSdJ96kVVJvKhy_dH5qJXEHt&share_app_id=1233&share_author_id=6951145664143459334&share_uid=6951145664143459334&tt_from=scan_code&utm_campaign=client_scan_code&utm_medium=2&utm_source=scan_code&source=h5_m&_r=1" target="_blank" class="social-media__link">Inmobiliaria Zúniga</a>
+                        <a href="https://bit.ly/3phY7Bz" target="_blank" class="social-media__link">Inmobiliaria Zúniga</a>
                     </div>
                 </div>
             </div>
@@ -227,7 +221,7 @@
             <div class="footer__allcolumns">
                 <!-- COLUMNA PRINCIPAL -->
                 <div class="main__column">
-                    <img src="img/Logos/logoBlanco.png" alt="Logo Inmobiliaria Zúniga Blanco" class="main__img">
+                    <img src="/resources/images/logos/inmozuniga_blanco.png" alt="Logo Inmobiliaria Zúniga Blanco" class="main__img">
                     <div class="main__links">
                         <container class="main__subcolumn">
                             <a href="https://inmobiliariazunigahn.web.app/contactanos#seccionprincipal" class="main__link">
@@ -304,7 +298,7 @@
                         </ul>
                     </section>
                     <section class="column">
-                        <h2 class="column__title">Categorias</h2>
+                        <h2 class="column__title">Categorías</h2>
                         <!-- LISTA ENLACES COLUMNA -->
                         <ul class="column__list">
                             <li class="column__item">
@@ -366,22 +360,24 @@
 
     <!-- PANTALLA DE CARGA MIENTRAS SE LEE LA BASE DE DATOS -->
     <div class="load">
-        <img src="img/Logos/LogoInmobiliariaZuniga.png" alt="Logo de pantalla de carga" class="load__img">
+        <img src="/resources/images/logos/inmozuniga.png" alt="Logo de pantalla de carga" class="load__img">
         <h2 class="load__text">Líderes en bienes raíces</h2>
     </div>
 
-    <div class="abrir-menu" id="flechaAbrirMenu">
-        <div class="abrir">
-            <i class="fa fa-arrow-right abrir__icono"></i>
+    <div class="arrow-menu" id="flechaAbrirMenu" onclick="document.querySelector('.menu').style.transform = 'translateX(0)'">
+        <div class="arrow-menu__container">
+            <i class="fa fa-arrow-right arrow-menu__icon"></i>
         </div>
     </div>
 
 
-    <!-- Apartado para mostrar el popup de la suscripcion de emails -->
     <div class="popup d-none">
         <div class="popup__container">
+            <div class="popup__icon" onclick="document.querySelector('.popup').classList.add('d-none')">
+                <i class="fa fa-times"></i>
+            </div>
             <div class="popup__info">
-                <img src="/img/newsletter.png" alt="imagen de boletin" class="popup__img">
+                <img src="/resources/images/general/newsletter.png" alt="imagen de boletin" class="popup__img">
                 <p class="popup__description">
                     Suscribete si deseas recibir información actualizada sobre nuestras propiedades, proyectos y demás.
                 </p>
@@ -394,23 +390,44 @@
 
     <div class="cookies d-none">
         <div class="cookies__container">
-            <img src="img/cookie.png" class="cookies__image" alt="Imagen de las politicas de cookies">
+            <img src="/resources/images/general/cookie.png" class="cookies__image" alt="Imagen de las politicas de cookies">
             <h2 class="cookies__title">Politicas de cookies</h2>
             <p class="cookies__description">
                 Utilizamos cookies propias y de terceros para mejorar nuestros servicios.
             </p>
-            <button class="cookies__btn">De acuerdo</button>
+            <button class="cookies__btn" onclick="document.querySelector('.cookies').classList.add('d-none')">De acuerdo</button>
             <a class="cookies__link" href="https://inmobiliariazunigahn.web.app/politicas#cookiesSection">Saber más</a>
         </div>
     </div>
 
 </body>
+
+<script>
+    let load = document.querySelector(".load");
+    load.addEventListener('animationend', (e) => {
+        if (e.animationName == 'loadImg') {
+            load.classList.add('vanish');
+        } else {
+            load.classList.add('d-none');
+        }
+    })
+
+    const bannerObserver = new IntersectionObserver(entries => {
+        const header = document.querySelector('.header');
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                header.classList.add('scrolled-header');
+            } else {
+                header.classList.remove('scrolled-header');
+            }
+        })
+    }, {rootMargin: "-100px 0px 0px 0px"})
+    bannerObserver.observe(document.querySelector('.banner'));
+</script>
 <!-- JavaScript Interno -->
-<script src="js/load.js"></script>
-<script src="js/contactanos.js"></script>
-<script src="js/navbar.js"></script>
-<script src="js/app.js"></script>
-<script src="js/socialmedia.js"></script>
-<script src="js/popupemails.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/general/popups.js"></script>
+
+<script src="/js/paginas_individuales/contactanos.js"></script>
 
 </html>

@@ -1,145 +1,143 @@
-.category {
-    .category__info {
+.category__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 0;
+    cursor: pointer;
+    gap: .5rem;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        height: 3px;
+        width: 100%;
+        transition: transform 500ms ease-in-out;
+        transform: scaleX(.5);
+        transform-origin: left;
+        background-color: map-get($colors, yaleBlue);
+
+        @media (min-width: 768px) {
+            transform: scaleX(.3);
+        }
+    }
+    &:hover::after {
+        transform: scaleX(.7);
+    }
+}
+.category__name {
+    flex: 1;
+    font-size: map-get($size, subtitle);
+    pointer-events: none;
+
+}
+
+.category__arrow {
+    pointer-events: none;
+    font-size: map-get($size, subtitle);
+}
+
+.category__properties {
+    display: none;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+    @media (min-width: 500px) {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    }
+
+    gap: 1rem;
+
+    @media (min-width: 1501px) {
+        padding: 0;
+    }
+
+}
+.category__property {
+    display: grid;
+    background-color: white;
+    cursor: pointer;
+
+    opacity: 0;
+
+    box-shadow: 0 0 1px;
+    transition: box-shadow 250ms ease-in-out;
+    
+    &:hover {
+        box-shadow: 0 0 10px;
+    }
+
+    --property-pad: .7rem;
+
+    .property__image {
+        object-fit: cover;
+        width: 100%;
+        height: 13rem;
+
+        @media (min-width: 768px) {
+            height: 16rem;
+        }
+    }
+
+    .property__title {
+        padding: .3rem var(--property-pad);
+        font-size: map-get($size, subtitle);
+    }
+
+    .property__description {
+        padding: 0 var(--property-pad);
+
+        font-size: map-get($size, description);
+    }
+
+    .property__btn-container {
+        align-self: flex-end;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin: 2rem 0;
+        justify-content: flex-end;
+        padding: 1rem var(--property-pad) var(--property-pad);
+
+    }
+    .property__btn {
         cursor: pointer;
-        gap: .5rem;
+        padding: .5em 1.5em;
+        border: none;
+        background: map-get($colors, yaleBlue);
+        color: white;
         position: relative;
+        z-index: 1;
+        text-decoration: none;
+        --btn-dimensions: 1px;
+        overflow: hidden;
 
-        &::after {
-            content: "";
+        &:after {
+            content: " ";
             position: absolute;
-            bottom: -3px;
-            left: 0;
-            height: 3px;
-            width: 100%;
-            transition: transform 500ms ease-in-out;
-            transform: scaleX(.5);
-            transform-origin: left;
-            background-color: map-get($colors, yaleBlue);
-
-            @media (min-width: 768px) {
-                transform: scaleX(.3);
-            }
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: var(--btn-dimensions);
+            height: var(--btn-dimensions);
+            border-radius: 50%;
+            z-index: -1;
+            background-color: map-get($colors, spanishBlue);
+            transition: width 500ms ease-in-out,
+            height 500ms ease-in-out;
         }
 
         &:hover::after {
-            transform: scaleX(.7);
-        }
-
-        .category__name {
-            flex: 1;
-            font-size: map-get($size, subtitle);
-            pointer-events: none;
-
-        }
-
-        .category__arrow {
-            pointer-events: none;
-            font-size: map-get($size, subtitle);
+            --btn-dimensions: 90px;
         }
     }
-
-    .category__properties {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-
-        @media (min-width: 500px) {
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        }
-
-        @media (min-width: 1024px) {
-            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-        }
-
-        gap: 1rem;
-
-        @media (min-width: 1501px) {
-            padding: 0;
-        }
-
-        .category__property {
-            display: grid;
-            box-shadow: 0 0 3px;
-            background-color: white;
-            cursor: pointer;
-
-            --property-pad: .7em;
-
-            .property__image {
-                object-fit: cover;
-                width: 100%;
-                height: 13rem;
-
-                @media (min-width: 768px) {
-                    height: 16rem;
-                }
-            }
-
-            .property__details {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                padding: var(--property-pad);
-
-                .property__title {
-                    font-size: map-get($size, subtitle);
-                }
-            }
-
-            .property__description {
-                padding: 0 var(--property-pad);
-
-                font-size: map-get($size, description);
-            }
-
-            .property__btn-container {
-                align-self: flex-end;
-                display: flex;
-                justify-content: flex-end;
-                padding: 1rem var(--property-pad) var(--property-pad);
-
-                .property__btn {
-                    cursor: pointer;
-                    padding: .5em 1.5em;
-                    border: none;
-                    background: map-get($colors, yaleBlue);
-                    color: white;
-                    position: relative;
-                    z-index: 1;
-                    text-decoration: none;
-                    --btn-dimensions: 1px;
-                    overflow: hidden;
-
-                    &:after {
-                        content: " ";
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        width: var(--btn-dimensions);
-                        height: var(--btn-dimensions);
-                        border-radius: 50%;
-                        z-index: -1;
-                        background-color: map-get($colors, spanishBlue);
-                        transition: width 500ms ease-in-out,
-                        height 500ms ease-in-out;
-                    }
-
-                    &:hover::after {
-                        --btn-dimensions: 90px;
-                    }
-                }
-            }
-        }
-    }
-    .category__message {
-        font-size: map-get($size, description);
-        font-family: CabinBold;
-        @media (min-width: 656px) {
-            grid-column: 1 / 3;
-        }
+}
+.category__message {
+    font-size: map-get($size, description);
+    font-family: CabinBold;
+    @media (min-width: 656px) {
+        grid-column: 1 / 3;
     }
 }

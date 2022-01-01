@@ -25,7 +25,7 @@
     <link rel=“canonical” href=“https://inmobiliariazunigahn.web.app/propiedad/” />
 
     <!-- ICON IMAGE -->
-	<link rel="icon" href="/img/Logos/icono.png" />
+    <link rel="icon" href="/resources/images/logos/inmozuniga_simplificado.png" />
 
     <title>Inmobiliaria Zúniga - Líderes en bienes raíces</title>
 
@@ -44,25 +44,19 @@
     <!-- Conexion con el Storage -->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
 
-    <link rel="stylesheet" href="css/font/flaticon.css">
+    <link rel="stylesheet" href="/resources/flaticon/flaticon.css">
 
 </head>
 
 <body>
-    <!-- MENU DE NAVEGACION -->
     <header class="header">
-        <!-- BARRA NAVEGACION -->
         <div class="navbar">
-            <!-- LOGO -->
-            <img src="img/Logos/LogoInmobiliariaZuniga.png" alt="Logo Inmobiliaria Zúniga" class="navbar__img">
-            <!-- MENU -->
+            <img src="/resources/images/logos/inmozuniga.png" alt="Logo Inmobiliaria Zúniga" class="navbar__img" onclick="open('/#inicio', '_self')">
             <nav class="menu">
-                <!-- ICONO CERRAR MENU -->
-                <i class="flaticon-cancel icon close-icon"></i>
-                <!-- ENLACES MENU -->
+                <i class="flaticon-cancel icon close-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(-100%)'"></i>
                 <ul class="menu__items">
                     <li class="menu__item">
-                        <a href="https://inmobiliariazunigahn.web.app/index#inicio" class="menu__link">
+                        <a href="https://inmobiliariazunigahn.web.app/#inicio" class="menu__link">
                             Inicio
                         </a>
                     </li>
@@ -72,25 +66,24 @@
                         </a>
                     </li>
                     <li class="menu__item">
-                        <a href="https://inmobiliariazunigahn.web.app/propiedades#venta" class="menu__link menu__link--selected">
+                        <a href="https://inmobiliariazunigahn.web.app/propiedades" class="menu__link menu__link--selected">
                             Propiedades
                         </a>
                     </li>
                     <li class="menu__item">
-                        <a href="https://inmobiliariazunigahn.web.app/proyectos#projects" class="menu__link">
+                        <a href="https://inmobiliariazunigahn.web.app/proyectos" class="menu__link">
                             Proyectos
                         </a>
                     </li>
                 </ul>
             </nav>
-            <!-- ICONO ABRIR MENU -->
-            <i class="flaticon-menu icon open-icon"></i>
+            <i class="flaticon-menu icon open-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(0)'"></i>
         </div>
     </header>
 
     <!-- BANNER Y SLOGAN -->
     <div class="banner">
-        <img src="img/Banners/BannerPropiedades.jpg" alt="Banner Inmobiliaria Zuniga" class="banner__img">
+        <img src="/resources/images/banners/propiedades.jpg" alt="Banner Inmobiliaria Zuniga" class="banner__img">
         <h1 class="banner__slogan">Nuestras Propiedades</h1>
 
         <div class="banner__divider">
@@ -103,12 +96,12 @@
     <!-- PESTAÑA QUE MUESTRA MAS INFORMACION SOBRE LA PROPIEDAD SELECCIONADA -->
     <main class="moreaboutproperty" id="masinfopropiedad">
         <div class="moreaboutproperty__info">
-            <div class="property__details" id="contenedorDetallesPropiedad">
+            <div class="property__details" id="cntPrprtyDtls">
             </div>
             <div class="property__agents">
                 <div class="agent">
                     <figure class="agent__image-container">
-                        <img src="img/Agentes/JanethMeza.jpg" alt="Agente Janeth Meza" title="Agente Janeth Meza" class="agent__image">
+                        <img src="/resources/images/agentes/janeth_meza.jpg" alt="Agente Janeth Meza" title="Agente Janeth Meza" class="agent__image">
                     </figure>
                     <div class="agent__info">
                         <h2 class="agent__name">
@@ -128,7 +121,7 @@
                 </div>
                 <div class="agent">
                     <figure class="agent__image-container">
-                        <img src="img/Agentes/SusanMorel.jpg" alt="Agente Susan Morel" title="Agente Susan Morel" class="agent__image">
+                        <img src="/resources/images/agentes/susan_morel.jpg" alt="Agente Susan Morel" title="Agente Susan Morel" class="agent__image">
                     </figure>
                     <div class="agent__info">
                         <h2 class="agent__name">
@@ -148,7 +141,7 @@
                 </div>
                 <div class="agent">
                     <figure class="agent__image-container">
-                        <img src="img/Agentes/FranklinArita.jpg" alt="Agente Franklin Arita" title="Agente Franklin Arita" class="agent__image">
+                        <img src="/resources/images/agentes/franklin_arita.jpg" alt="Agente Franklin Arita" title="Agente Franklin Arita" class="agent__image">
                     </figure>
                     <div class="agent__info">
                         <h2 class="agent__name">
@@ -168,7 +161,7 @@
                 </div>
                 <div class="agent">
                     <figure class="agent__image-container">
-                        <img src="img/Agentes/JulissaZúniga.jpg" alt="Agente Julissa Zúniga" title="Agente Julissa Zúniga" class="agent__image">
+                        <img src="/resources/images/agentes/julissa_zuniga.jpg" alt="Agente Julissa Zúniga" title="Agente Julissa Zúniga" class="agent__image">
                     </figure>
                     <div class="agent__info">
                         <h2 class="agent__name">
@@ -188,7 +181,7 @@
                 </div>
                 <div class="agent">
                     <figure class="agent__image-container">
-                        <img src="img/Agentes/GloriaZúniga.jpg" alt="Agente Gloria Zúniga" title="Agente Gloria Zúniga" class="agent__image">
+                        <img src="/resources/images/agentes/gloria_zuniga.jpg" alt="Agente Gloria Zúniga" title="Agente Gloria Zúniga" class="agent__image">
                     </figure>
                     <div class="agent__info">
                         <h2 class="agent__name">
@@ -208,7 +201,7 @@
                 </div>
                 <div class="agent">
                     <figure class="agent__image-container">
-                        <img src="img/Agentes/WilsonZúniga.jpg" alt="Agente Wilson Zúniga" title="Agente Wilson Zúniga" class="agent__image">
+                        <img src="/resources/images/agentes/wilson_zuniga.jpg" alt="Agente Wilson Zúniga" title="Agente Wilson Zúniga" class="agent__image">
                     </figure>
                     <div class="agent__info">
                         <h2 class="agent__name">
@@ -239,7 +232,7 @@
             <div class="footer__allcolumns">
                 <!-- COLUMNA PRINCIPAL -->
                 <div class="main__column">
-                    <img src="img/Logos/logoBlanco.png" alt="Logo Inmobiliaria Zúniga Blanco" class="main__img">
+                    <img src="/resources/images/logos/inmozuniga_blanco.png" alt="Logo Inmobiliaria Zúniga Blanco" class="main__img">
                     <div class="main__links">
                         <container class="main__subcolumn">
                             <a href="https://inmobiliariazunigahn.web.app/contactanos#seccionprincipal" class="main__link">
@@ -316,7 +309,7 @@
                         </ul>
                     </section>
                     <section class="column">
-                        <h2 class="column__title">Categorias</h2>
+                        <h2 class="column__title">Categorías</h2>
                         <!-- LISTA ENLACES COLUMNA -->
                         <ul class="column__list">
                             <li class="column__item">
@@ -378,21 +371,23 @@
 
     <!-- PANTALLA DE CARGA MIENTRAS SE LEE LA BASE DE DATOS -->
     <div class="load">
-        <img src="img/Logos/LogoInmobiliariaZuniga.png" alt="Logo de pantalla de carga" class="load__img">
+        <img src="/resources/images/logos/inmozuniga.png" alt="Logo de pantalla de carga" class="load__img">
         <h2 class="load__text">Líderes en bienes raíces</h2>
     </div>
 
-    <div class="abrir-menu" id="flechaAbrirMenu">
-        <div class="abrir">
-            <i class="fa fa-arrow-right abrir__icono"></i>
+    <div class="arrow-menu" id="flechaAbrirMenu" onclick="document.querySelector('.menu').style.transform = 'translateX(0)'">
+        <div class="arrow-menu__container">
+            <i class="fa fa-arrow-right arrow-menu__icon"></i>
         </div>
     </div>
 
-    <!-- Apartado para mostrar el popup de la suscripcion de emails -->
     <div class="popup d-none">
         <div class="popup__container">
+            <div class="popup__icon" onclick="document.querySelector('.popup').classList.add('d-none')">
+                <i class="fa fa-times"></i>
+            </div>
             <div class="popup__info">
-                <img src="/img/newsletter.png" alt="imagen de boletin" class="popup__img">
+                <img src="/resources/images/general/newsletter.png" alt="imagen de boletin" class="popup__img">
                 <p class="popup__description">
                     Suscribete si deseas recibir información actualizada sobre nuestras propiedades, proyectos y demás.
                 </p>
@@ -405,27 +400,49 @@
 
     <div class="cookies d-none">
         <div class="cookies__container">
-            <img src="img/cookie.png" class="cookies__image" alt="Imagen de las politicas de cookies">
+            <img src="/resources/images/general/cookie.png" class="cookies__image" alt="Imagen de las politicas de cookies">
             <h2 class="cookies__title">Politicas de cookies</h2>
             <p class="cookies__description">
                 Utilizamos cookies propias y de terceros para mejorar nuestros servicios.
             </p>
-            <button class="cookies__btn">De acuerdo</button>
+            <button class="cookies__btn" onclick="document.querySelector('.cookies').classList.add('d-none')">De acuerdo</button>
             <a class="cookies__link" href="https://inmobiliariazunigahn.web.app/politicas#cookiesSection">Saber más</a>
         </div>
     </div>
 
 </body>
 
+<script>
+    let load = document.querySelector(".load");
+    load.addEventListener('animationend', (e) => {
+        if (e.animationName == 'loadImg') {
+            load.classList.add('vanish');
+        } else {
+            load.classList.add('d-none');
+        }
+    })
+
+    const bannerObserver = new IntersectionObserver(entries => {
+        const header = document.querySelector('.header');
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                header.classList.add('scrolled-header');
+            } else {
+                header.classList.remove('scrolled-header');
+            }
+        })
+    }, {rootMargin: "-100px 0px 0px 0px"})
+    bannerObserver.observe(document.querySelector('.banner'));
+</script>
 
 <!-- JavaScript interno -->
-<script src="js/app.js"></script>
-<script src="js/load.js"></script>
-<script src="js/navbar.js"></script>
-<script src="js/slider.js"></script>
-<script src="js/popupemails.js"></script>
+<script src="/js/app.js"></script>
+
+<script src="/js/general/slider.js"></script>
+<script src="/js/general/popups.js"></script>
 
 <!-- Script para cargar informacion de la propiedad de la base de datos -->
-<script src="js/cargar/cargarPropiedad.js"></script>
+<script src="/js/cargar_paginas_individuales/cargar_propiedad(es)/propiedad.js">
+</script>
 
 </html>

@@ -26,20 +26,20 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Inmobiliaria Zúniga y Asoc.">
     <meta property="og:url" content="https://inmobiliariazunigahn.web.app">
-    <meta property="og:image" content="https://inmobiliariazunigahn.web.app/img/Logos/LogoInmobiliariaZuniga.png">
-    <meta property="og:description" content="Comparte tus intereses con nosotros y buscaremos el hogar ideal para tí y tu familia. Contamos con proyectos residenciales, terrenos y propiedades tanto en venta como en renta.">
+    <meta property="og:image" content="https://inmobiliariazunigahn.web.app/resources/images/logos/inmozuniga.png">
+    <meta property="og:description" content="Conoce cuales son los proyectos a los que puedes aplicar en base a tu presupuesto de la manera mas facil, rapida y eficiente.">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Inmobiliaria Zúniga y Asoc.">
     <meta name="twitter:site" content="@InmobiliariaZuniga">
     <meta name="twitter:description" content="Comparte tus intereses con nosotros y buscaremos el hogar ideal para tí y tu familia. Contamos con proyectos residenciales, terrenos y propiedades tanto en venta como en renta.">
-    <meta name="twitter:image" content="https://inmobiliariazunigahn.web.app/img/Logos/LogoInmobiliariaZuniga.png">
+    <meta name="twitter:image" content="https://inmobiliariazunigahn.web.app/resources/images/logos/inmozuniga.png">
     <meta name="twitter:image:alt" content="Logo Inmobiliaria Zúniga y Asoc">
 
     <link rel=“canonical” href=“https://inmobiliariazunigahn.web.app/index.html” />
 
     <!-- ICON IMAGE -->
-    <link rel="icon" href="/img/Logos/icono.png" />
+    <link rel="icon" href="/resources/images/logos/inmozuniga_simplificado.png" />
 
     <title>Inmobiliaria Zúniga - Cotizador</title>
 
@@ -57,26 +57,21 @@
     <!-- Conexion con el Storage -->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
 
-    <link rel="stylesheet" href="css/font/flaticon.css">
+    <link rel="stylesheet" href="/resources/flaticon/flaticon.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="https://fx-rate.net/conversion.php?size=medium&layout=vertical&currency_pair=HNL&currency=USD"></script>
+    <script type="text/javascript" src="https://fx-rate.net/conversion.php?currency_pair=HNL&currency=USD"></script>
 </head>
 <body>
-    <!-- MENU DE NAVEGACION -->
+
     <header class="header">
-        <!-- BARRA NAVEGACION -->
         <div class="navbar">
-            <!-- LOGO -->
-            <img src="img/Logos/LogoInmobiliariaZuniga.png" alt="Logo Inmobiliaria Zúniga" class="navbar__img">
-            <!-- MENU -->
+            <img src="/resources/images/logos/inmozuniga.png" alt="Logo Inmobiliaria Zúniga" class="navbar__img" onclick="open('/#inicio', '_self')">
             <nav class="menu">
-                <!-- ICONO CERRAR MENU -->
-                <i class="flaticon-cancel icon close-icon"></i>
-                <!-- ENLACES MENU -->
+                <i class="flaticon-cancel icon close-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(-100%)'"></i>
                 <ul class="menu__items">
                     <li class="menu__item">
-                        <a href="https://inmobiliariazunigahn.web.app/index#inicio" class="menu__link">
+                        <a href="https://inmobiliariazunigahn.web.app/#inicio" class="menu__link">
                             Inicio
                         </a>
                     </li>
@@ -86,25 +81,24 @@
                         </a>
                     </li>
                     <li class="menu__item">
-                        <a href="https://inmobiliariazunigahn.web.app/propiedades#venta" class="menu__link">
+                        <a href="https://inmobiliariazunigahn.web.app/propiedades" class="menu__link">
                             Propiedades
                         </a>
                     </li>
                     <li class="menu__item">
-                        <a href="https://inmobiliariazunigahn.web.app/proyectos#projects" class="menu__link">
+                        <a href="https://inmobiliariazunigahn.web.app/proyectos" class="menu__link">
                             Proyectos
                         </a>
                     </li>
                 </ul>
             </nav>
-            <!-- ICONO ABRIR MENU -->
-            <i class="flaticon-menu icon open-icon"></i>
+            <i class="flaticon-menu icon open-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(0)'"></i>
         </div>
     </header>
 
     <!-- BANNER Y SLOGAN -->
     <div class="banner">
-        <img src="img/cotizar.jpg" alt="Banner Inmobiliaria Zuniga" class="banner__img">
+        <img src="resources/images/banners/cotizador.jpg" alt="Banner Inmobiliaria Zuniga" class="banner__img">
         <h1 class="banner__slogan">Encuentra tu proyecto ideal</h1>
         
         <div class="banner__divider">
@@ -117,12 +111,11 @@
     <main>
         
         <section class="form-projects-container">
-            <form class="form-projects" autocomplete="off">
+            <form class="form-projects" autocomplete="off" id="frmCotizador">
                 <div class="form-projects__fieldset">
-                    <!-- <legend class="form-projects__legend">Selección</legend> -->
                     <div class="form-projects__group">
-                        <label for="pagoMancomunado" class="form-projects__label">
-                            <input type="checkbox" name="pagoMancomunado" id="pagoMancomunado">
+                        <label for="inptMancomunado" class="form-projects__label">
+                            <input type="checkbox" name="inptMancomunado" id="inptMancomunado">
                             Si planeas pagar mancomunado marca la casilla.
                         </label>
                     </div>
@@ -134,16 +127,16 @@
                     <!-- <legend class="form-projects__legend">Edad</legend> -->
                     <section class="form-projects__section">
                         <div class="form-projects__group">
-                            <label for="edadPrimerCliente" class="form-projects__label">
+                            <label for="ageFrst" class="form-projects__label">
                                 Edad:
                             </label>
-                            <input type="text" class="form-projects__input form-projects__input--nosection" name="edadPrimerCliente" id="edadPrimerCliente" placeholder="ej: 21">
+                            <input type="number" class="form-projects__input form-projects__input--nosection" name="ageFrst" id="ageFrst" placeholder="ej: 21" required>
                         </div>
-                        <div class="form-projects__group form-projects__group--mancomunado">
-                            <label for="edadSegundoCliente" class="form-projects__label">
+                        <div class="form-projects__group group--mancomunado d-none">
+                            <label for="ageScnd" class="form-projects__label">
                                 Edad (2da persona):
                             </label>
-                            <input type="text" class="form-projects__input" name="edadSegundoCliente" id="edadSegundoCliente" placeholder="ej: 21">
+                            <input type="number" class="form-projects__input" name="ageScnd" id="ageScnd" placeholder="ej: 21">
                         </div>
                     </section>
                     <p class="form-projects__message">
@@ -154,23 +147,23 @@
                     <!-- <legend class="form-projects__legend">Salario</legend> -->
                     <section class="form-projects__section">
                         <div class="form-projects__group">
-                            <label for="salarioPrimerCliente" class="form-projects__label">
+                            <label for="salaryFrst" class="form-projects__label">
                                 Salario:
                             </label>
-                            <input type="text" class="form-projects__input form-projects__input--nosection" name="salarioPrimerCliente" id="salarioPrimerCliente" placeholder="ej: 32000">
+                            <input type="number" class="form-projects__input form-projects__input--nosection" name="salaryFrst" id="salaryFrst" placeholder="ej: 32000" required>
                         </div>
-                        <div class="form-projects__group form-projects__group--mancomunado">
-                            <label for="salarioSegundoCliente" class="form-projects__label">
+                        <div class="form-projects__group group--mancomunado d-none">
+                            <label for="salaryScnd" class="form-projects__label">
                                 Salario (2da persona):
                             </label>
-                            <input type="text" class="form-projects__input" name="salarioSegundoCliente" id="salarioSegundoCliente" placeholder="ej: 32000">
+                            <input type="number" class="form-projects__input" name="salaryScnd" id="salaryScnd" placeholder="ej: 32000">
                         </div>
                     </section>
-                    <div class="form-projects__group form-projects__group--mancomunado">
-                        <label for="totalSalarios" class="form-projects__label">
+                    <div class="form-projects__group group--mancomunado d-none">
+                        <label for="totSalary" class="form-projects__label">
                             Total:
                         </label>
-                        <input type="text" class="form-projects__input form-projects__input--nosection" name="totalSalarios" id="totalSalarios" readonly>
+                        <input type="text" class="form-projects__input form-projects__input--nosection" name="totSalary" id="totSalary" readonly>
                     </div>
                     <p class="form-projects__message">
                         *<strong>Importante: </strong> el ingreso mínimo para aplicar a alguno de nuestros proyectos es de HNL 26,000.00.
@@ -180,19 +173,19 @@
                     <!-- <legend class="form-projects__legend">Trabajo</legend> -->
                     <section class="form-projects__section">
                         <div class="form-projects__group">
-                            <label for="lugarDeTrabajo" class="form-projects__label">
+                            <label for="wrkPlaceFrst" class="form-projects__label">
                                 Caso:
                             </label>
-                            <select class="form-projects__input" name="lugarDeTrabajo" id="lugarDeTrabajo">
+                            <select class="form-projects__input" name="wrkPlaceFrst" id="wrkPlaceFrst">
                                 <option value="asalariado" selected>Asalariado</option>
-                                <option value="comercianteIndividual">Comerciante individual</option>
+                                <option value="comerciante">Comerciante individual</option>
                             </select>
                         </div>
                         <div class="form-projects__group">
-                            <label for="aniosAntiguedad" class="form-projects__label">
+                            <label for="antiquityFrst" class="form-projects__label">
                                 Años antiguedad:
                             </label>
-                            <select class="form-projects__input" name="aniosAntiguedad" id="aniosAntiguedad">
+                            <select class="form-projects__input" name="antiquityFrst" id="antiquityFrst">
                                 <option value="0">
                                     menos de 1 año
                                 </option>
@@ -205,24 +198,24 @@
                         </div>
                     </section>
                     <section class="form-projects__section">
-                        <div class="form-projects__group form-projects__group--mancomunado">
-                            <label for="lugarDeTrabajoSegundo" class="form-projects__label">
+                        <div class="form-projects__group group--mancomunado d-none">
+                            <label for="wrkPlaceScnd" class="form-projects__label">
                                 Caso (2da persona):
                             </label>
-                            <select class="form-projects__input" name="lugarDeTrabajo" id="lugarDeTrabajoSegundo">
+                            <select class="form-projects__input" name="wrkPlaceScnd" id="wrkPlaceScnd">
                                 <option value="asalariado" selected>
                                     Asalariado
                                 </option>
-                                <option value="comercianteIndividual">
+                                <option value="comerciante">
                                     Comerciante individual
                                 </option>
                             </select>
                         </div>
-                        <div class="form-projects__group form-projects__group--mancomunado">
-                            <label for="aniosAntiguedadSegundo" class="form-projects__label">
+                        <div class="form-projects__group group--mancomunado d-none">
+                            <label for="antiquityScnd" class="form-projects__label">
                                 Años antiguedad (2da persona):
                             </label>
-                            <select class="form-projects__input" name="aniosAntiguedad" id="aniosAntiguedadSegundo">
+                            <select class="form-projects__input" name="antiquityScnd" id="antiquityScnd">
                                 <option value="0">
                                     menos de 1 año
                                 </option>
@@ -242,22 +235,25 @@
                 <div class="form-projects__fieldset">
                     <!-- <legend class="form-projects__legend">Preferencias</legend> -->
                     <div class="form-projects__group">
-                        <label for="salarioPrimerCliente" class="form-projects__label">
+                        <label for="preferences" class="form-projects__label">
                             Preferencias:
                         </label>
-                        <select class="form-projects__input form-projects__input--nosection" name="preferenciaCliente" id="preferenciaCliente">
+                        <select class="form-projects__input form-projects__input--nosection" name="preferences" id="preferences">
                             <option value="terreno">
                                 Terreno
                             </option>
                             <option value="terrenoConstruccion" selected>
                                 Terreno + Construcción
                             </option>
+                            <option value="todos">
+                                Todos
+                            </option>
                         </select>
                     </div>
                 </div>
-                <p class="form-projects__message form-projects__message--error" id="msgFormularioCotizar">
+                <p class="form-projects__message form-projects__message--error" id="msgErrCotizador">
                 </p>
-                <input type="button" value="Cotizar" class="form-projects__button" id="btnFormularioCotizar">
+                <input type="submit" value="Cotizar" class="form-projects__button" id="btnFrmCotizador">
             </form>
             <p class="exchange"></p>
             <div class="form-projects__projects">
@@ -1660,7 +1656,7 @@
             <div class="form-projects__agents">
                 <div class="agent--fp">
                     <figure class="agent__image-container">
-                        <img src="img/Agentes/JanethMeza.jpg" alt="Agente Janeth Meza" title="Agente Janeth Meza" class="agent__image">
+                        <img src="/resources/images/agentes/janeth_meza.jpg" alt="Agente Janeth Meza" title="Agente Janeth Meza" class="agent__image">
                     </figure>
                     <div class="agent__info">
                         <h2 class="agent__name">
@@ -1673,14 +1669,14 @@
                         <a href="tel:96041622" class="agent__number">
                             +504 9604-1622
                         </a>
-                        <a href="mailto:janeth.inmozuniga@gmail.com?subject=Deseo obtener mas información&body=He visitado su sitio web y me encuentro interesado en obtener más información acerca de..." class="agent__mail">
-                            janeth.inmozuniga
+                        <a href="https://wa.me/50496041622?text=He%20visitado%20su%20sitio%20web%20y%20me%20encuentro%20interesado%20en%20uno%20de%20sus%20proyectos%20habitacionales.%20Espero%20puedan%20brindarme%20informacion%20lo%20mas%20pronto%20posible." class="agent__message" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Enviar mensaje
                         </a>
                     </div>
                 </div>
                 <div class="agent--fp">
                     <figure class="agent__image-container">
-                        <img src="img/Agentes/SusanMorel.jpg" alt="Agente Susan Morel" title="Agente Susan Morel" class="agent__image">
+                        <img src="/resources/images/agentes/susan_morel.jpg" alt="Agente Susan Morel" title="Agente Susan Morel" class="agent__image">
                     </figure>
                     <div class="agent__info">
                         <h2 class="agent__name">
@@ -1693,14 +1689,14 @@
                         <a href="tel:33843484" class="agent__number">
                             +504 3384-3484
                         </a>
-                        <a href="mailto:susan.inmozuniga@gmail.com?subject=Deseo obtener mas información&body=He visitado su sitio web y me encuentro interesado en obtener más información acerca de..." class="agent__mail">
-                            susan.inmozuniga
+                        <a href="https://wa.me/50433843484?text=He%20visitado%20su%20sitio%20web%20y%20me%20encuentro%20interesado%20en%20uno%20de%20sus%20proyectos%20habitacionales.%20Espero%20puedan%20brindarme%20informacion%20lo%20mas%20pronto%20posible." class="agent__message" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Enviar mensaje
                         </a>
                     </div>
                 </div>
                 <div class="agent--fp">
                     <figure class="agent__image-container">
-                        <img src="img/Agentes/FranklinArita.jpg" alt="Agente Franklin Arita" title="Agente Franklin Arita" class="agent__image">
+                        <img src="resources/images/agentes/franklin_arita.jpg" alt="Agente Franklin Arita" title="Agente Franklin Arita" class="agent__image">
                     </figure>
                     <div class="agent__info">
                         <h2 class="agent__name">
@@ -1713,14 +1709,14 @@
                         <a href="tel:89778805" class="agent__number">
                             +504 8977-8805
                         </a>
-                        <a href="mailto:franklin.inmozuniga@gmail.com?subject=Deseo obtener mas información&body=He visitado su sitio web y me encuentro interesado en obtener más información acerca de..." class="agent__mail">
-                            franklin.inmozuniga
+                        <a href="https://wa.me/50489778805?text=He%20visitado%20su%20sitio%20web%20y%20me%20encuentro%20interesado%20en%20uno%20de%20sus%20proyectos%20habitacionales.%20Espero%20puedan%20brindarme%20informacion%20lo%20mas%20pronto%20posible." class="agent__message" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Enviar mensaje
                         </a>
                     </div>
                 </div>
                 <div class="agent--fp">
                     <figure class="agent__image-container">
-                        <img src="img/Agentes/JulissaZúniga.jpg" alt="Agente Julissa Zúniga" title="Agente Julissa Zúniga" class="agent__image">
+                        <img src="resources/images/agentes/julissa_zuniga.jpg" alt="Agente Julissa Zúniga" title="Agente Julissa Zúniga" class="agent__image">
                     </figure>
                     <div class="agent__info">
                         <h2 class="agent__name">
@@ -1733,14 +1729,14 @@
                         <a href="tel:98585962" class="agent__number">
                             +504 9858-5962
                         </a>
-                        <a href="mailto:julissa.inmozuniga@gmail.com?subject=Deseo obtener mas información&body=He visitado su sitio web y me encuentro interesado en obtener más información acerca de..." class="agent__mail">
-                            julissa.inmozuniga
+                        <a href="https://wa.me/50498585962?text=He%20visitado%20su%20sitio%20web%20y%20me%20encuentro%20interesado%20en%20uno%20de%20sus%20proyectos%20habitacionales.%20Espero%20puedan%20brindarme%20informacion%20lo%20mas%20pronto%20posible." class="agent__message" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Enviar mensaje
                         </a>
                     </div>
                 </div>
                 <div class="agent--fp">
                     <figure class="agent__image-container">
-                        <img src="img/Agentes/GloriaZúniga.jpg" alt="Agente Gloria Zúniga" title="Agente Gloria Zúniga" class="agent__image">
+                        <img src="resources/images/agentes/gloria_zuniga.jpg" alt="Agente Gloria Zúniga" title="Agente Gloria Zúniga" class="agent__image">
                     </figure>
                     <div class="agent__info">
                         <h2 class="agent__name">
@@ -1753,14 +1749,14 @@
                         <a href="tel:33800295" class="agent__number">
                             +504 3380-0295
                         </a>
-                        <a href="mailto:mercadeo.inmozuniga@gmail.com?subject=Deseo obtener mas información&body=He visitado su sitio web y me encuentro interesado en obtener más información acerca de..." class="agent__mail">
-                            mercadeo.inmozuniga
+                        <a href="https://wa.me/50433800295?text=He%20visitado%20su%20sitio%20web%20y%20me%20encuentro%20interesado%20en%20uno%20de%20sus%20proyectos%20habitacionales.%20Espero%20puedan%20brindarme%20informacion%20lo%20mas%20pronto%20posible." class="agent__message" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Enviar mensaje
                         </a>
                     </div>
                 </div>
                 <div class="agent--fp">
                     <figure class="agent__image-container">
-                        <img src="img/Agentes/WilsonZúniga.jpg" alt="Agente Wilson Zúniga" title="Agente Wilson Zúniga" class="agent__image">
+                        <img src="resources/images/agentes/wilson_zuniga.jpg" alt="Agente Wilson Zúniga" title="Agente Wilson Zúniga" class="agent__image">
                     </figure>
                     <div class="agent__info">
                         <h2 class="agent__name">
@@ -1773,8 +1769,8 @@
                         <a href="tel:94529498" class="agent__number">
                             +504 9452-9498
                         </a>
-                        <a href="mailto:wilson.inmozuniga@gmail.com?subject=Deseo obtener mas información&body=He visitado su sitio web y me encuentro interesado en obtener más información acerca de..." class="agent__mail">
-                            wilson.inmozuniga
+                        <a href="https://wa.me/50494529498?text=He%20visitado%20su%20sitio%20web%20y%20me%20encuentro%20interesado%20en%20uno%20de%20sus%20proyectos%20habitacionales.%20Espero%20puedan%20brindarme%20informacion%20lo%20mas%20pronto%20posible." class="agent__message" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Enviar mensaje
                         </a>
                     </div>
                 </div>
@@ -1792,7 +1788,7 @@
             <div class="footer__allcolumns">
                 <!-- COLUMNA PRINCIPAL -->
                 <div class="main__column">
-                    <img src="img/Logos/logoBlanco.png" alt="Logo Inmobiliaria Zúniga Blanco" class="main__img">
+                    <img src="/resources/images/logos/inmozuniga_blanco.png" alt="Logo Inmobiliaria Zúniga Blanco" class="main__img">
                     <div class="main__links">
                         <container class="main__subcolumn">
                             <a href="https://inmobiliariazunigahn.web.app/contactanos#seccionprincipal" class="main__link">
@@ -1869,7 +1865,7 @@
                         </ul>
                     </section>
                     <section class="column">
-                        <h2 class="column__title">Categorias</h2>
+                        <h2 class="column__title">Categorías</h2>
                         <!-- LISTA ENLACES COLUMNA -->
                         <ul class="column__list">
                             <li class="column__item">
@@ -1910,7 +1906,7 @@
                 <a href="https://www.youtube.com/channel/UCTzraN0l1lE7OkgNYevJbvQ" target="_blank" class="social-media__link">
                     <i class="fab fa-youtube social-media__icon"></i>
                 </a>
-                <a href="https://api.whatsapp.com/send?phone=50497842424&text=Vengo%20de%20visitar%20su%20pagina%20y%20me%20encuentro%20interesado%20en%20obtener%20detalles%20sobre.." target="_blank" class="social-media__link">
+                <a href="https://wa.me/50497842424?text=He%20visitado%20su%20sitio%20web%20y%20me%20encuentro%20interesado%20en%20uno%20de%20sus%20proyectos%20habitacionales.%20Espero%20puedan%20brindarme%20informacion%20lo%20mas%20pronto%20posible." target="_blank" class="social-media__link">
                     <i class="fab fa-whatsapp social-media__icon"></i>
                 </a>
                 <a href="tel:25500833" class="social-media__link">
@@ -1931,21 +1927,23 @@
 
     <!-- PANTALLA DE CARGA MIENTRAS SE LEE LA BASE DE DATOS -->
     <div class="load">
-        <img src="img/Logos/LogoInmobiliariaZuniga.png" alt="Logo de pantalla de carga" class="load__img">
+        <img src="/resources/images/logos/inmozuniga.png" alt="Logo de pantalla de carga" class="load__img">
         <h2 class="load__text">Líderes en bienes raíces</h2>
     </div>
 
-    <div class="abrir-menu" id="flechaAbrirMenu">
-        <div class="abrir">
-            <i class="fa fa-arrow-right abrir__icono"></i>
+    <div class="arrow-menu" id="flechaAbrirMenu" onclick="document.querySelector('.menu').style.transform = 'translateX(0)'">
+        <div class="arrow-menu__container">
+            <i class="fa fa-arrow-right arrow-menu__icon"></i>
         </div>
     </div>
 
-    <!-- Apartado para mostrar el popup de la suscripcion de emails -->
     <div class="popup d-none">
         <div class="popup__container">
+            <div class="popup__icon" onclick="document.querySelector('.popup').classList.add('d-none')">
+                <i class="fa fa-times"></i>
+            </div>
             <div class="popup__info">
-                <img src="/img/newsletter.png" alt="imagen de boletin" class="popup__img">
+                <img src="/resources/images/general/newsletter.png" alt="imagen de boletin" class="popup__img">
                 <p class="popup__description">
                     Suscribete si deseas recibir información actualizada sobre nuestras propiedades, proyectos y demás.
                 </p>
@@ -1958,23 +1956,45 @@
 
     <div class="cookies d-none">
         <div class="cookies__container">
-            <img src="img/cookie.png" class="cookies__image" alt="Imagen de las politicas de cookies">
+            <img src="/resources/images/general/cookie.png" class="cookies__image" alt="Imagen de las politicas de cookies">
             <h2 class="cookies__title">Politicas de cookies</h2>
             <p class="cookies__description">
                 Utilizamos cookies propias y de terceros para mejorar nuestros servicios.
             </p>
-            <button class="cookies__btn">De acuerdo</button>
+            <button class="cookies__btn" onclick="document.querySelector('.cookies').classList.add('d-none')">De acuerdo</button>
             <a class="cookies__link" href="https://inmobiliariazunigahn.web.app/politicas#cookiesSection">Saber más</a>
         </div>
     </div>
 
 </body>
 
+<script>
+    let load = document.querySelector(".load");
+    load.addEventListener('animationend', (e) => {
+        if (e.animationName == 'loadImg') {
+            load.classList.add('vanish');
+        } else {
+            load.classList.add('d-none');
+        }
+    })
+
+    const bannerObserver = new IntersectionObserver(entries => {
+        const header = document.querySelector('.header');
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                header.classList.add('scrolled-header');
+            } else {
+                header.classList.remove('scrolled-header');
+            }
+        })
+    }, {rootMargin: "-100px 0px 0px 0px"})
+    bannerObserver.observe(document.querySelector('.banner'));
+</script>
+
 <!-- JavaScript Interno -->
-<script src="js/load.js"></script>
-<script src="js/navbar.js"></script>
-<script src="js/app.js"></script>
-<script src="js/cotizar.js"></script>
-<script src="js/popupemails.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/general/popups.js"></script>
+
+<script src="/js/paginas_individuales/cotizador.js"></script>
 
 </html>

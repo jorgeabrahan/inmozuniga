@@ -16,6 +16,16 @@
     padding: 0 20px;
 }
 
+.popup__container {
+    animation: emailEntrance 1s ease 10ms 1 normal forwards;
+}
+
+.popup__icon {
+    text-align: right;
+    font-size: map-get($size, subtitle);
+    cursor: pointer;
+}
+
 .popup__info {
     display: flex;
     gap: 0.5rem;

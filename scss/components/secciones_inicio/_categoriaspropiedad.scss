@@ -3,7 +3,10 @@
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 6rem);
     gap: 1rem;
-    margin-bottom: 3rem;    
+    margin-bottom: 3rem;
+    // .category {
+    //     opacity: 0;
+    // }
 }
 
 .category {

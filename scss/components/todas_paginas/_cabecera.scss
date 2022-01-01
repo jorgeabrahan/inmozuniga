@@ -56,6 +56,7 @@ $animation-time: 500ms;
     }
 }
 .navbar__img {
+    cursor: pointer;
     width: var(--menu-logo-size);
     transition: transform $animation-time ease-in-out, width $animation-time ease-in-out;
     @media (min-width: 820px) {
@@ -87,6 +88,7 @@ $animation-time: 500ms;
     }
     .menu__link {
         @include links(white);
+        color: white;
         width: 80%;
         margin: auto;
         text-align: right;
@@ -117,7 +119,32 @@ $animation-time: 500ms;
     }
 }
 
+//Boton para abrir menu en moviles
+.arrow-menu {
+    position: fixed;
+    left: 0;
+    bottom: 2rem;
+    z-index: 100;
+    cursor: pointer;
+}
+.arrow-menu__container {
+    border-radius: 0 5px 5px 0;
+    background-color: map-get($colors, yaleBlue);
+    pointer-events: none;
+}
+.arrow-menu__icon {
+    animation: mover 1s infinite linear alternate;
+    pointer-events: none;
+    color: white;
+    padding: 0.5rem 1rem .5rem .5rem;
+    font-size: map-get($size, subtitle);
+}
+
 @media (min-width: 769px) {
+    .arrow-menu {
+        display: none;
+    }
+
     .menu__items {
         list-style-type: none;
         display: flex;

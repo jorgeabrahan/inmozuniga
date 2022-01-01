@@ -13,6 +13,7 @@
         gtag('js', new Date());
 
         gtag('config', 'G-39R41BL039');
+
     </script>
 
     <meta charset="UTF-8">
@@ -28,6 +29,7 @@
     <meta property="og:title" content="Inmobiliaria Zúniga y Asoc.">
     <meta property="og:url" content="https://inmobiliariazunigahn.web.app">
     <meta property="og:image" content="https://inmobiliariazunigahn.web.app/resources/images/logos/inmozuniga.png">
+    <meta property="og:description" content="Comparte tus intereses con nosotros y buscaremos el hogar ideal para tí y tu familia.">
     <meta property="og:description" content="Visita nuestra página de blogs donde brindamos consejos en base a nuestra experiencia en el rubro inmobiliario para poder ayudarte con tu hogar o en la compra de uno.">
 
     <meta name="twitter:card" content="summary_large_image">
@@ -37,24 +39,24 @@
     <meta name="twitter:image" content="https://inmobiliariazunigahn.web.app/resources/images/logos/inmozuniga.png">
     <meta name="twitter:image:alt" content="Logo Inmobiliaria Zúniga y Asoc">
 
-    <link rel=“canonical” href=“https://inmobiliariazunigahn.web.app/index.html” />
+    <link rel=“canonical” href=“https://inmobiliariazunigahn.web.app” />
 
     <!-- ICON IMAGE -->
     <link rel="icon" href="/resources/images/logos/inmozuniga_simplificado.png" />
 
-    <title>Inmobiliaria Zúniga - Blogs</title>
+    <title>Inmobiliaria Zúniga - Blog</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
     <!-- Link para css de font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
     <!-- Documento que permite que las funciones de firebase funcionen -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+
     <!-- Conexion con Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+
     <!-- Conexion con el Storage -->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
 
@@ -93,21 +95,15 @@
             <i class="flaticon-menu icon open-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(0)'"></i>
         </div>
     </header>
-
+    <!-- BANNER Y SLOGAN -->
     <div class="banner">
-        <img src="/resources/images/banners/blogs.jpg" alt="Banner blog de inmobiliaria zuniga" class="banner__img">
+        <img class="banner__img blog__image" alt="cargando imagen blog">
         <h1 class="banner__slogan">Nuestros blogs</h1>
-
-        <div class="banner__divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
-            </svg>
-        </div>
     </div>
 
-    <main class="blogs">
-        <div class="blogs-container">
-        </div>
+    <main class="blog__content">
+        <p class="content"></p>
+        <a href="https://inmobiliariazunigahn.web.app/blogs" class="politics__download">Todos los blogs</a>
     </main>
 
     <footer class="footer">
@@ -121,7 +117,7 @@
                     <img src="/resources/images/logos/inmozuniga_blanco.png" alt="Logo Inmobiliaria Zúniga Blanco" class="main__img">
                     <div class="main__links">
                         <container class="main__subcolumn">
-                            <a href="https://inmobiliariazunigahn.web.app/contactanos#seccionprincipal" class="main__link">
+                            <a href="https://inmobiliariazunigahn.web.app/contactanos#SeccionContacto" class="main__link">
                                 Contáctanos
                             </a>
                             <a href="https://inmobiliariazunigahn.web.app/politicas" class="main__link">
@@ -267,6 +263,24 @@
         </div>
     </div>
 
+    <!-- Apartado para mostrar el popup de la suscripcion de emails -->
+    <div class="popup d-none">
+        <div class="popup__container">
+            <div class="popup__icon">
+                <i class="fa fa-times"></i>
+            </div>
+            <div class="popup__info">
+                <img src="/resources/images/general/newsletter.png" alt="imagen de boletin" class="popup__img">
+                <p class="popup__description">
+                    Suscribete si deseas recibir información actualizada sobre nuestras propiedades, proyectos y demás.
+                </p>
+            </div>
+            <div class="popup__btns">
+                <a class="popup__btn" href="https://docs.google.com/forms/d/e/1FAIpQLScGu-15HbS5JgOaFKOEz19NsA_Aahj64Y3S0EzPtVC_zzK7iw/viewform?usp=sf_link" target="_blank">Suscribirme</a>
+            </div>
+        </div>
+    </div>
+
     <div class="popup d-none">
         <div class="popup__container">
             <div class="popup__icon" onclick="document.querySelector('.popup').classList.add('d-none')">
@@ -319,10 +333,9 @@
     }, {rootMargin: "-100px 0px 0px 0px"})
     bannerObserver.observe(document.querySelector('.banner'));
 </script>
-
 <script src="/js/app.js"></script>
-<script src="/js/general/popups.js"></script>
+<script src="/js/general/popups.js"></script> 
 
-<script src="/js/cargar_paginas_individuales/cargar_blog(s)/blogs.js">
-</script> 
+<script src="/js/cargar_paginas_individuales/cargar_blog(s)/blog.js">
+</script>
 </html>

@@ -3,7 +3,7 @@ Allow: /index.html
 Disallow: /propiedad.html
 Disallow: /propiedades.html
 Disallow: /proyectos.html
-Disallow: /contáctanos.html
+Disallow: /contactanos.html
 Disallow: /404.html
 
 Sitemap: sitemap.xml

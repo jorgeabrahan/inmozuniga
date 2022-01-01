@@ -25,6 +25,7 @@
     background-color: white;
     box-shadow: 0 0 3px black;
     cursor: pointer;    
+    // opacity: 0;
     &:hover > .poll__more {
         background-color: map-get($colors, spanishBlue);
     }

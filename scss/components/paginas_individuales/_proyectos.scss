@@ -28,7 +28,6 @@
     cursor: pointer;
     border: none;
     background-color: map-get($colors, yaleBlue);
-    font-size: map-get($size, description);
     padding: 0.5rem 2rem;
     color: white;
     text-decoration: none;
@@ -100,22 +99,31 @@
     font-size: map-get($size, subtitle);
 }
 
+
+
 .stage__details {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    @media (max-width: 1250px) {
-        justify-content: center;
-    }
 }
 .stage__prices-contact {
+    flex: 1;
     @media (min-width: 1250px) {
         flex: 2;
     }
 }
+
+.stage__lots {
+    display: grid;
+    @media (min-width: 300px) {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
 .prices__title {
     font-size: map-get($size, subtitle);
-    font-family: CabinBold;
+    font-family: CabinSemiBold;
 }
 .prices__description {
     list-style-position: inside;
@@ -126,13 +134,12 @@
 }
 .stage__btn {
     width: 100%;
-    @media (max-width: 1240px) {
-        max-width: 300px;
-    }
-    margin: 1rem auto 0;
+    text-decoration: none;
+    display: block;
+    color: white;
+    margin: 0 auto 1rem;
     padding: .4em;
     text-align: center;
-    @include links(white);
     background-color: map-get($colors, yaleBlue);
 
     position: relative;

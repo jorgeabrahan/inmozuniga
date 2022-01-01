@@ -28,6 +28,11 @@
     position: relative;
     --separation: .7rem;
 }
+
+// .projects-index .project {
+//     opacity: 0;
+// }
+
 .project__img {
     transition: filter 500ms ease;
     filter: brightness(.4);
@@ -54,6 +59,7 @@
 .project__link {
     text-align: center;
     @include links(white);
+    color: white;
     background-color: map-get($colors, yaleBlue);
     padding: .4em 1.8em;
 

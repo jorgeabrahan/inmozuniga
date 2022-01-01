@@ -8,6 +8,9 @@
     @media (min-width: 1240px) {
         grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     }
+    // .agent {
+    //     opacity: 0;
+    // }
     .agent__image {
         position: relative;
     }
@@ -17,6 +20,10 @@
         @media (min-width: 1024px) {
             height: 25rem;
         }
+    }
+    .agent:hover .agent__img {
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
     }
     .agent__info {
         position: absolute;
@@ -48,6 +55,7 @@
     }
     .agent__link {
         @include links(white);
+        color: white;
         transition: all 250ms ease-in-out;
         &:hover {
             transform: scale(1.3);

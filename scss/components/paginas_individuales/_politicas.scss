@@ -19,7 +19,6 @@
 }
 
 .politics__download {
-    font-size: map-get($size, description);
     padding: .5rem 1rem;
     background-color: map-get($colors, yaleBlue);
     text-align: center;
@@ -28,7 +27,11 @@
     color: white;
     display: block;
     margin-left: auto;
-    max-width: 300px;
+    
+    @media (min-width: 400px) {
+        max-width: 300px;
+    }
+
     position: relative;
     z-index: 1;
 

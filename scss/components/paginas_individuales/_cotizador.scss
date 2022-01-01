@@ -6,80 +6,6 @@
     margin-bottom: 1em;
 }
 
-.section-budget {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url('/img/budgetcalculation.jpg') no-repeat center center;
-    background-size: cover;
-    color: white;
-    height: 100%;
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 40vh;
-    
-    @media (min-width: 1024px) {
-        min-height: 60vh;
-    }
-}
-
-.budget {
-    @include margins;
-    margin: auto;
-    width: 100%;
-}
-
-.budget__title {
-    font-size: map-get($size, title);
-    margin-bottom: .5rem;
-}
-.budget__description {
-    margin-bottom: 2rem;
-    max-width: 768px;
-}
-.budget__description, .budget__link {
-    font-size: map-get($size, description);
-}
-
-.budget__link {
-    text-decoration: none;
-    background: map-get($colors, yaleBlue);
-    color: white;
-    text-align: center;
-
-    display: inline-block;
-    width: 100%;
-    padding: 0.5em;
-    
-    @media (min-width: 450px) {
-        max-width: 400px;
-    }
-
-    position: relative;
-    z-index: 1;
-
-    --btn-dimensions: 1px;
-    overflow: hidden;
-
-    &:after {
-        content: " ";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: var(--btn-dimensions);
-        height: var(--btn-dimensions);
-        border-radius: 50%;
-        z-index: -1;
-        background-color: map-get($colors, spanishBlue);
-        transition: width 500ms ease-in-out,
-        height 500ms ease-in-out;
-    }
-
-    &:hover::after {
-        --btn-dimensions: 200px;
-    }
-}
 
 .form-projects-container {
     @include margins;
@@ -236,7 +162,8 @@
     .agent__role {
         color: map-get($colors, eerieBlack);
     }
-    .agent__number, .agent__mail {
+    .agent__number, .agent__message {
+        font-family: inherit;
         text-decoration: none;
         color: map-get($colors, yaleBlue);
         &:hover {

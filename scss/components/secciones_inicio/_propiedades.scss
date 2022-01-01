@@ -5,6 +5,10 @@
     @media (min-width: 768px) {
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
+
+    @media (min-width: 1240px) {
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    }
     
     gap: 1rem;
     margin-bottom: 3rem;
@@ -12,8 +16,13 @@
     .property {
         cursor: pointer;
         background-color: white;
-        box-shadow: 0 0 3px;
-    }
+        transition: box-shadow 250ms ease-in-out;
+        box-shadow: 0 0 1px;
+
+        &:hover {
+            box-shadow: 0 0 10px;
+        }
+    }  
     .property__img-container {
         overflow: hidden;
         margin: 0;
@@ -45,24 +54,23 @@
         }
     }
     
-    .property__links {
-        display: flex;
-        justify-content: flex-end;
-        gap: 1rem;
-        margin-top: .5rem;
-    }
     .property__link {
         @include links(white);
-        padding: .4rem;
-        flex: 1;
         max-width: 50%;
+
+        padding: .4rem;
+        margin-top: .5rem;
+        margin-left: auto;
         text-align: center;
+
+        color: white;
         background-color: map-get($colors, yaleBlue);
+        
         position: relative;
+        overflow: hidden;
         z-index: 1;
 
         --btn-dimensions: 1px;
-        overflow: hidden;
 
         &:after {
             content: " ";

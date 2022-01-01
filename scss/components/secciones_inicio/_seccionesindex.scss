@@ -52,7 +52,6 @@
 }
 
 .more-container {
-    margin: 1rem;
     text-align: center;
 }
 .more {
@@ -65,7 +64,7 @@
     color: map-get($colors, yaleBlue);
     transition: color 250ms ease, background-color 250ms ease;
     &:hover {
-        color: map-get($colors, white);
+        color: white;
         background-color: map-get($colors, yaleBlue);
     }
     .icon {
