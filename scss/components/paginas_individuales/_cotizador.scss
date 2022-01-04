@@ -45,7 +45,7 @@
     border: 1px solid;
     padding: .3em;
     margin-bottom: 0.8em;
-    min-width: 240px;
+    min-width: 260px;
     @media (max-width: 600px) {
         width: 100%;
     }
@@ -246,6 +246,10 @@ summary {
     @media (min-width: 450px) {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
+}
+
+.option__subtitle {
+    font-weight: bold;
 }
 
 .category__line {

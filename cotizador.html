@@ -20,8 +20,8 @@
     <meta name="author" content="Jor-G Design" />
     <meta name="copyright" content="Jor-G Design">
     <meta name="robots" content="index,follow" />
-    <meta name="description" content="Comparte tus intereses con nosotros y buscaremos el hogar ideal para tí y tu familia. Contamos con proyectos residenciales, terrenos y propiedades tanto en venta como en renta." />
-    <meta name="keywords" content="inmobiliaria, zuniga, casa, vivienda, rentar, alquilar, Inmobiliaria zuniga,  cotizar proyectos" />
+    <meta name="description" content="Conoce cuales son los proyectos a los que puedes aplicar en base a tu presupuesto de la manera mas facil, rapida y eficiente." />
+    <meta name="keywords" content="cotizar proyecto, proyectos habitacionales, proyectos residenciales" />
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Inmobiliaria Zúniga y Asoc.">
@@ -32,34 +32,23 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Inmobiliaria Zúniga y Asoc.">
     <meta name="twitter:site" content="@InmobiliariaZuniga">
-    <meta name="twitter:description" content="Comparte tus intereses con nosotros y buscaremos el hogar ideal para tí y tu familia. Contamos con proyectos residenciales, terrenos y propiedades tanto en venta como en renta.">
+    <meta name="twitter:description" content="Conoce cuales son los proyectos a los que puedes aplicar en base a tu presupuesto de la manera mas facil, rapida y eficiente.">
     <meta name="twitter:image" content="https://inmobiliariazunigahn.web.app/resources/images/logos/inmozuniga.png">
     <meta name="twitter:image:alt" content="Logo Inmobiliaria Zúniga y Asoc">
 
     <link rel=“canonical” href=“https://inmobiliariazunigahn.web.app/index.html” />
-
-    <!-- ICON IMAGE -->
     <link rel="icon" href="/resources/images/logos/inmozuniga_simplificado.png" />
 
     <title>Inmobiliaria Zúniga - Cotizador</title>
 
     <link rel="stylesheet" href="css/style.css">
-
     <!-- Link para css de font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
-    <!-- Documento que permite que las funciones de firebase funcionen -->
     <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
-
-    <!-- Conexion con Firebase -->
     <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
-
-    <!-- Conexion con el Storage -->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
 
-    <link rel="stylesheet" href="/resources/flaticon/flaticon.css">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script type="text/javascript" src="https://fx-rate.net/conversion.php?currency_pair=HNL&currency=USD"></script>
 </head>
 <body>
@@ -68,7 +57,7 @@
         <div class="navbar">
             <img src="/resources/images/logos/inmozuniga.png" alt="Logo Inmobiliaria Zúniga" class="navbar__img" onclick="open('/#inicio', '_self')">
             <nav class="menu">
-                <i class="flaticon-cancel icon close-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(-100%)'"></i>
+                <i class="fa fa-times icon close-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(-100%)'"></i>
                 <ul class="menu__items">
                     <li class="menu__item">
                         <a href="https://inmobiliariazunigahn.web.app/#inicio" class="menu__link">
@@ -92,14 +81,14 @@
                     </li>
                 </ul>
             </nav>
-            <i class="flaticon-menu icon open-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(0)'"></i>
+            <i class="fa fa-bars icon open-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(0)'"></i>
         </div>
     </header>
 
     <!-- BANNER Y SLOGAN -->
     <div class="banner">
         <img src="resources/images/banners/cotizador.jpg" alt="Banner Inmobiliaria Zuniga" class="banner__img">
-        <h1 class="banner__slogan">Encuentra tu proyecto ideal</h1>
+        <h1 class="banner__slogan">Cotizador de proyectos</h1>
         
         <div class="banner__divider">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -229,7 +218,7 @@
                     </section>
 
                     <p class="form-projects__message">
-                        *<strong>Importante: </strong> si es comerciante individual debe tener minimo 2 años, si es asalariado 1.
+                        *<strong>Importante: </strong> si es comerciante individual debe tener mínimo 2 años, si es asalariado 1.
                     </p>
                 </div>
                 <div class="form-projects__fieldset">
@@ -270,7 +259,7 @@
                         <div class="option__categories">
                             <details class="option__category" open>
                                 <summary class="option__subtitle">
-                                    <strong>Precios</strong>
+                                    Precios
                                 </summary>
                                 <div class="category__line">
                                     <p class="line__descripcion">
@@ -340,14 +329,14 @@
                             </details>
                             <details class="option__category" open>
                                 <summary class="option__subtitle">
-                                    <strong>Medidas</strong>
+                                    Medidas
                                 </summary>
                                 <div class="category__line">
                                     <p class="line__descripcion">
                                         Varas totales:
                                     </p>
                                     <p class="line__number">
-                                        215.14 <strong>v<sup>2</sup></strong>
+                                        215.14 v<sup>2</sup>
                                     </p>
                                 </div>
                                 <div class="category__line">
@@ -355,7 +344,7 @@
                                         Mtrs de construcción:
                                     </p>
                                     <p class="line__number">
-                                        65 <strong>m<sup>2</sup></strong>
+                                        65 m<sup>2</sup>
                                     </p>
                                 </div>
                                 <div class="category__line">
@@ -384,7 +373,7 @@
                         <div class="option__categories">
                             <details class="option__category" open>
                                 <summary class="option__subtitle">
-                                    <strong>Precios</strong>
+                                    Precios
                                 </summary>
                                 <div class="category__line">
                                     <p class="line__descripcion">
@@ -454,14 +443,14 @@
                             </details>
                             <details class="option__category" open>
                                 <summary class="option__subtitle">
-                                    <strong>Medidas</strong>
+                                    Medidas
                                 </summary>
                                 <div class="category__line">
                                     <p class="line__descripcion">
                                         Varas totales:
                                     </p>
                                     <p class="line__number">
-                                        215.14 <strong>v<sup>2</sup></strong>
+                                        215.14 v<sup>2</sup>
                                     </p>
                                 </div>
                                 <div class="category__line">
@@ -469,7 +458,7 @@
                                         Mtrs de construcción:
                                     </p>
                                     <p class="line__number">
-                                        75 <strong>m<sup>2</sup></strong>
+                                        75 m<sup>2</sup>
                                     </p>
                                 </div>
                                 <div class="category__line">
@@ -505,7 +494,7 @@
                         <div class="option__categories">
                             <details class="option__category" open>
                                 <summary class="option__subtitle">
-                                    <strong>Precios</strong>
+                                    Precios
                                 </summary>
                                 <div class="category__line">
                                     <p class="line__descripcion">
@@ -575,14 +564,14 @@
                             </details>
                             <details class="option__category" open>
                                 <summary class="option__subtitle">
-                                    <strong>Medidas</strong>
+                                    Medidas
                                 </summary>
                                 <div class="category__line">
                                     <p class="line__descripcion">
                                         Varas totales:
                                     </p>
                                     <p class="line__number">
-                                        236.65 <strong>v<sup>2</sup></strong>
+                                        236.65 v<sup>2</sup>
                                     </p>
                                 </div>
                                 <div class="category__line">
@@ -590,7 +579,7 @@
                                         Mtrs de construcción:
                                     </p>
                                     <p class="line__number">
-                                        60 <strong>m<sup>2</sup></strong>
+                                        60 m<sup>2</sup>
                                     </p>
                                 </div>
                                 <div class="category__line">
@@ -619,7 +608,7 @@
                         <div class="option__categories">
                             <details class="option__category" open>
                                 <summary class="option__subtitle">
-                                    <strong>Precios</strong>
+                                    Precios
                                 </summary>
                                 <div class="category__line">
                                     <p class="line__descripcion">
@@ -689,14 +678,14 @@
                             </details>
                             <details class="option__category" open>
                                 <summary class="option__subtitle">
-                                    <strong>Medidas</strong>
+                                    Medidas
                                 </summary>
                                 <div class="category__line">
                                     <p class="line__descripcion">
                                         Varas totales:
                                     </p>
                                     <p class="line__number">
-                                        236.65 <strong>v<sup>2</sup></strong>
+                                        236.65 v<sup>2</sup>
                                     </p>
                                 </div>
                                 <div class="category__line">
@@ -704,7 +693,7 @@
                                         Mtrs de construcción:
                                     </p>
                                     <p class="line__number">
-                                        75 <strong>m<sup>2</sup></strong>
+                                        75 m<sup>2</sup>
                                     </p>
                                 </div>
                                 <div class="category__line">
@@ -740,7 +729,7 @@
                         <div class="option__categories">
                             <details class="option__category" open>
                                 <summary class="option__subtitle">
-                                    <strong>Precios</strong>
+                                    Precios
                                 </summary>
                                 <div class="category__line">
                                     <p class="line__descripcion">
@@ -810,7 +799,7 @@
                             </details>
                             <details class="option__category" open>
                                 <summary class="option__subtitle">
-                                    <strong>Medidas</strong>
+                                    Medidas
                                 </summary>
                                 <div class="category__line">
                                     <p class="line__descripcion">
@@ -854,7 +843,7 @@
                         <div class="option__categories">
                             <details class="option__category" open>
                                 <summary class="option__subtitle">
-                                    <strong>Precios</strong>
+                                    Precios
                                 </summary>
                                 <div class="category__line">
                                     <p class="line__descripcion">
@@ -924,14 +913,14 @@
                             </details>
                             <details class="option__category" open>
                                 <summary class="option__subtitle">
-                                    <strong>Medidas</strong>
+                                    Medidas
                                 </summary>
                                 <div class="category__line">
                                     <p class="line__descripcion">
                                         Varas totales:
                                     </p>
                                     <p class="line__number">
-                                        286.85 <strong>v<sup>2</sup></strong>
+                                        286.85 v<sup>2</sup>
                                     </p>
                                 </div>
                                 <div class="category__line">
@@ -939,7 +928,7 @@
                                         Mtrs de construcción:
                                     </p>
                                     <p class="line__number">
-                                        78.92 <strong>m<sup>2</sup></strong>
+                                        78.92 m<sup>2</sup>
                                     </p>
                                 </div>
                                 <div class="category__line">
@@ -968,18 +957,18 @@
                         <div class="option__categories">
                             <details class="option__category" open>
                                 <summary class="option__subtitle">
-                                    <strong>Precios</strong>
+                                    Precios
                                 </summary>
                                 <div class="category__line">
                                     <p class="line__descripcion">
-                                        Lote tipico:
+                                        Lote típico:
                                     </p>
                                     <div class="line__price">
                                         <p class="line__format">
                                             $
                                         </p>
                                         <p class="line__number">
-                                            115.00 x<strong>v<sup>2</sup></strong>
+                                            115.00 xv<sup>2</sup>
                                         </p>
                                     </div>
                                 </div>
@@ -1051,14 +1040,14 @@
                             </details>
                             <details class="option__category" open>
                                 <summary class="option__subtitle">
-                                    <strong>Medidas</strong>
+                                    Medidas
                                 </summary>
                                 <div class="category__line">
                                     <p class="line__descripcion">
                                         Varas totales:
                                     </p>
                                     <p class="line__number">
-                                        286.85 <strong>v<sup>2</sup></strong>
+                                        286.85 v<sup>2</sup>
                                     </p>
                                 </div>
                                 <div class="category__line">
@@ -1066,7 +1055,7 @@
                                         Equivalencia en metros:
                                     </p>
                                     <p class="line__number">
-                                        200.45 <strong>m<sup>2</sup></strong>
+                                        200.45 m<sup>2</sup>
                                     </p>
                                 </div>
                             </details>
@@ -1079,7 +1068,7 @@
                         <div class="option__categories">
                             <details class="option__category" open>
                                 <summary class="option__subtitle">
-                                    <strong>Precios</strong>
+                                    Precios
                                 </summary>
                                 <div class="category__line">
                                     <p class="line__descripcion">
@@ -1090,7 +1079,7 @@
                                             $
                                         </p>
                                         <p class="line__number">
-                                            115.00 x<strong>v<sup>2</sup></strong>
+                                            115.00 xv<sup>2</sup>
                                         </p>
                                     </div>
                                 </div>
@@ -1148,7 +1137,7 @@
                                 </div>
                                 <div class="category__line">
                                     <p class="line__descripcion">
-                                        Ingresos minimos:
+                                        Ingreso mínimo:
                                     </p>
                                     <div class="line__price">
                                         <p class="line__format">
@@ -1162,14 +1151,14 @@
                             </details>
                             <details class="option__category" open>
                                 <summary class="option__subtitle">
-                                    <strong>Medidas</strong>
+                                    Medidas
                                 </summary>
                                 <div class="category__line">
                                     <p class="line__descripcion">
                                         Varas totales:
                                     </p>
                                     <p class="line__number">
-                                        329.88 <strong>v<sup>2</sup></strong>
+                                        329.88 v<sup>2</sup>
                                     </p>
                                 </div>
                                 <div class="category__line">
@@ -1177,7 +1166,7 @@
                                         Equivalencia en metros:
                                     </p>
                                     <p class="line__number">
-                                        230.52 <strong>m<sup>2</sup></strong>
+                                        230.52 m<sup>2</sup>
                                     </p>
                                 </div>
                             </details>
@@ -1197,18 +1186,18 @@
                         <div class="option__categories">
                             <details class="option__category" open>
                                 <summary class="option__subtitle">
-                                    <strong>Precios</strong>
+                                    Precios
                                 </summary>
                                 <div class="category__line">
                                     <p class="line__descripcion">
-                                        Lote tipico:
+                                        Lote típico:
                                     </p>
                                     <div class="line__price">
                                         <p class="line__format">
                                             $
                                         </p>
                                         <p class="line__number">
-                                            200.00 x<strong>v<sup>2</sup></strong>
+                                            200.00 xv<sup>2</sup>
                                         </p>
                                     </div>
                                 </div>
@@ -1280,14 +1269,14 @@
                             </details>
                             <details class="option__category" open>
                                 <summary class="option__subtitle">
-                                    <strong>Medidas</strong>
+                                    Medidas
                                 </summary>
                                 <div class="category__line">
                                     <p class="line__descripcion">
                                         Varas totales:
                                     </p>
                                     <p class="line__number">
-                                        481.91 <strong>v<sup>2</sup></strong>
+                                        481.91 v<sup>2</sup>
                                     </p>
                                 </div>
                                 <div class="category__line">
@@ -1295,7 +1284,7 @@
                                         Equivalencia en metros:
                                     </p>
                                     <p class="line__number">
-                                        336.75 <strong>m<sup>2</sup></strong>
+                                        336.75 m<sup>2</sup>
                                     </p>
                                 </div>
                             </details>
@@ -1308,7 +1297,7 @@
                         <div class="option__categories">
                             <details class="option__category" open>
                                 <summary class="option__subtitle">
-                                    <strong>Precios</strong>
+                                    Precios
                                 </summary>
                                 <div class="category__line">
                                     <p class="line__descripcion">
@@ -1319,7 +1308,7 @@
                                             $
                                         </p>
                                         <p class="line__number">
-                                            210.00 x<strong>v<sup>2</sup></strong>
+                                            210.00 xv<sup>2</sup>
                                         </p>
                                     </div>
                                 </div>
@@ -1377,7 +1366,7 @@
                                 </div>
                                 <div class="category__line">
                                     <p class="line__descripcion">
-                                        Ingresos minimos:
+                                        Ingreso mínimo:
                                     </p>
                                     <div class="line__price">
                                         <p class="line__format">
@@ -1398,7 +1387,7 @@
                                         Varas totales:
                                     </p>
                                     <p class="line__number">
-                                        548.99 <strong>v<sup>2</sup></strong>
+                                        548.99 v<sup>2</sup>
                                     </p>
                                 </div>
                                 <div class="category__line">
@@ -1406,7 +1395,7 @@
                                         Equivalencia en metros:
                                     </p>
                                     <p class="line__number">
-                                        383.63 <strong>m<sup>2</sup></strong>
+                                        383.63 m<sup>2</sup>
                                     </p>
                                 </div>
                             </details>
@@ -1426,7 +1415,7 @@
                         <div class="option__categories">
                             <details class="option__category" open>
                                 <summary class="option__subtitle">
-                                    <strong>Precios</strong>
+                                    Precios
                                 </summary>
                                 <div class="category__line">
                                     <p class="line__descripcion">
@@ -1496,14 +1485,14 @@
                             </details>
                             <details class="option__category" open>
                                 <summary class="option__subtitle">
-                                    <strong>Medidas</strong>
+                                    Medidas
                                 </summary>
                                 <div class="category__line">
                                     <p class="line__descripcion">
                                         Varas totales:
                                     </p>
                                     <p class="line__number">
-                                        271.41 <strong>v<sup>2</sup></strong>
+                                        271.41 v<sup>2</sup>
                                     </p>
                                 </div>
                                 <div class="category__line">
@@ -1511,7 +1500,7 @@
                                         Mtrs de construcción:
                                     </p>
                                     <p class="line__number">
-                                        155.33 <strong>m<sup>2</sup></strong>
+                                        155.33 m<sup>2</sup>
                                     </p>
                                 </div>
                                 <div class="category__line">
@@ -1540,7 +1529,7 @@
                         <div class="option__categories">
                             <details class="option__category" open>
                                 <summary class="option__subtitle">
-                                    <strong>Precios</strong>
+                                    Precios
                                 </summary>
                                 <div class="category__line">
                                     <p class="line__descripcion">
@@ -1610,14 +1599,14 @@
                             </details>
                             <details class="option__category" open>
                                 <summary class="option__subtitle">
-                                    <strong>Medidas</strong>
+                                    Medidas
                                 </summary>
                                 <div class="category__line">
                                     <p class="line__descripcion">
                                         Varas totales:
                                     </p>
                                     <p class="line__number">
-                                        271.41 <strong>v<sup>2</sup></strong>
+                                        271.41 v<sup>2</sup>
                                     </p>
                                 </div>
                                 <div class="category__line">
@@ -1625,7 +1614,7 @@
                                         Mtrs de construcción:
                                     </p>
                                     <p class="line__number">
-                                        210.80 <strong>m<sup>2</sup></strong>
+                                        210.80 m<sup>2</sup>
                                     </p>
                                 </div>
                                 <div class="category__line">
@@ -1914,12 +1903,12 @@
                 </a>
             </div>
 
-            <!-- <p class="copyright">
+            <p class="copyright">
                 &copy; Diseñada y elaborada por 
-                <a href="https://jor-gdesign.web.app" target="_blank" class="copyright__link">
+                <a href="https://github.com/JorgeAbrahan" target="_blank" class="copyright__link">
                     Jor-G Design
                 </a>
-            </p> -->
+            </p>
 
         </div>
 
@@ -1969,7 +1958,21 @@
 </body>
 
 <script>
-    let load = document.querySelector(".load");
+    const firebaseConfig = {
+        apiKey: "AIzaSyDIS8nlyOLjVHwK9C9Mqs-eF-4AxgBs29U",
+        authDomain: "inmobiliariazunigahn.firebaseapp.com",
+        projectId: "inmobiliariazunigahn",
+        storageBucket: "inmobiliariazunigahn.appspot.com",
+        messagingSenderId: "643368075781",
+        appId: "1:643368075781:web:59492d93ae9c08f118126c",
+        measurementId: "G-39R41BL039"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    const storageRef = firebase.storage().ref();
+
+    const load = document.querySelector(".load");
     load.addEventListener('animationend', (e) => {
         if (e.animationName == 'loadImg') {
             load.classList.add('vanish');
@@ -1989,12 +1992,31 @@
         })
     }, {rootMargin: "-100px 0px 0px 0px"})
     bannerObserver.observe(document.querySelector('.banner'));
+
+    const obtenerCookies = () => {
+    return document.cookie.split(';').map(cookie => cookie.split('=')).reduce((accumulator, [key, value]) =>
+        ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }),
+        {});
+    }
+    const parseBool = val => val === 'true' ? true : false;
+    const showPopup = (cnt, cookieNewVal) => {
+        cnt.classList.remove('d-none');
+        document.cookie = cookieNewVal;
+    }
+
+    //Se obtienen los valores de las cookies
+    const cookiePopup = obtenerCookies().mostrarcookies;
+    const mailPopup = obtenerCookies().mostrarmails;
+
+    //Se definen si no existen
+    if (cookiePopup === undefined) document.cookie = 'mostrarcookies = true';
+    if (mailPopup === undefined) document.cookie = 'mostrarmails = true';
+
+    //Se muestran si no se han mostrado
+    if (parseBool(cookiePopup)) showPopup(document.querySelector('.cookies'), 'mostrarcookies = false');
+    setTimeout(() => {
+        if (parseBool(mailPopup)) showPopup(document.querySelector('.popup'), 'mostrarmails = false');
+    }, 30000)
 </script>
-
-<!-- JavaScript Interno -->
-<script src="/js/app.js"></script>
-<script src="/js/general/popups.js"></script>
-
-<script src="/js/paginas_individuales/cotizador.js"></script>
-
+<script src="/js/paginas_individuales/cotizador.js" defer></script>
 </html>

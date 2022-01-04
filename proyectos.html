@@ -20,9 +20,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Jor-G Design" />
 	<meta name="copyright" content="Jor-G Design">
-	<meta name="robots" content="index,follow" />
+	<meta name="robots" content="noindex" />
     <meta name="description" content="Sigue el desarrollo de nuestros proyectos y conoce la diversidad de categorías de propiedades con las que contamos." />
-	<meta name="keywords" content="inmobiliaria, zuniga, casa, vivienda, rentar, alquilar, Inmobiliaria zuniga" />
+	<meta name="keywords" content="proyectos residenciales, proyectos habitacionales, Altos de Valencia, Jaragua, Altezza, Residencial Girona" />
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Inmobiliaria Zúniga y Asoc.">
@@ -38,30 +38,17 @@
     <meta name="twitter:image:alt" content="Logo Inmobiliaria Zúniga y Asoc">
 
     <link rel=“canonical” href=“https://inmobiliariazunigahn.web.app/proyectos” />
-
-    <!-- ICON IMAGE -->
     <link rel="icon" href="/resources/images/logos/inmozuniga_simplificado.png" />
 
     <title>Inmobiliaria Zúniga - Proyectos</title>
 
     <link rel="stylesheet" href="css/style.css">
-
     <!-- Link para css de font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
-    <!-- Documento que permite que las funciones de firebase funcionen -->
     <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
-
-    <!-- Conexion con Firebase -->
     <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
-
-    <!-- Conexion con el Storage -->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
-
-    <!-- ENLACE AL CSS DE FLATICON -->
-    <link rel="stylesheet" href="/resources/flaticon/flaticon.css">
-
-
 </head>
 
 <body>
@@ -70,7 +57,7 @@
         <div class="navbar">
             <img src="/resources/images/logos/inmozuniga.png" alt="Logo Inmobiliaria Zúniga" class="navbar__img" onclick="open('/#inicio', '_self')">
             <nav class="menu">
-                <i class="flaticon-cancel icon close-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(-100%)'"></i>
+                <i class="fa fa-times icon close-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(-100%)'"></i>
                 <ul class="menu__items">
                     <li class="menu__item">
                         <a href="https://inmobiliariazunigahn.web.app/#inicio" class="menu__link">
@@ -94,7 +81,7 @@
                     </li>
                 </ul>
             </nav>
-            <i class="flaticon-menu icon open-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(0)'"></i>
+            <i class="fa fa-bars icon open-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(0)'"></i>
         </div>
     </header>
 
@@ -246,7 +233,7 @@
                 <a href="https://www.youtube.com/channel/UCTzraN0l1lE7OkgNYevJbvQ" target="_blank" class="social-media__link">
                     <i class="fab fa-youtube social-media__icon"></i>
                 </a>
-                <a href="https://api.whatsapp.com/send?phone=50497842424&text=Vengo%20de%20visitar%20su%20pagina%20y%20me%20encuentro%20interesado%20en%20obtener%20detalles%20sobre.." target="_blank" class="social-media__link">
+                <a href="https://wa.me/50497842424?text=He%20visitado%20su%20sitio%20web%20y%20me%20encuentro%20interesado%20en%20uno%20de%20sus%20proyectos%20habitacionales.%20Espero%20puedan%20brindarme%20informacion%20lo%20mas%20pronto%20posible." target="_blank" class="social-media__link">
                     <i class="fab fa-whatsapp social-media__icon"></i>
                 </a>
                 <a href="tel:25500833" class="social-media__link">
@@ -254,12 +241,12 @@
                 </a>
             </div>
 
-            <!-- <p class="copyright">
+            <p class="copyright">
                 &copy; Diseñada y elaborada por 
-                <a href="https://jor-gdesign.web.app" target="_blank" class="copyright__link">
+                <a href="https://github.com/JorgeAbrahan" target="_blank" class="copyright__link">
                     Jor-G Design
                 </a>
-            </p> -->
+            </p>
 
         </div>
 
@@ -308,7 +295,21 @@
 </body>
 
 <script>
-    let load = document.querySelector(".load");
+    const firebaseConfig = {
+        apiKey: "AIzaSyDIS8nlyOLjVHwK9C9Mqs-eF-4AxgBs29U",
+        authDomain: "inmobiliariazunigahn.firebaseapp.com",
+        projectId: "inmobiliariazunigahn",
+        storageBucket: "inmobiliariazunigahn.appspot.com",
+        messagingSenderId: "643368075781",
+        appId: "1:643368075781:web:59492d93ae9c08f118126c",
+        measurementId: "G-39R41BL039"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    const storageRef = firebase.storage().ref();
+
+    const load = document.querySelector(".load");
     load.addEventListener('animationend', (e) => {
         if (e.animationName == 'loadImg') {
             load.classList.add('vanish');
@@ -329,17 +330,99 @@
     }, {rootMargin: "-100px 0px 0px 0px"})
     bannerObserver.observe(document.querySelector('.banner'));
 
+    const obtenerCookies = () => {
+    return document.cookie.split(';').map(cookie => cookie.split('=')).reduce((accumulator, [key, value]) =>
+        ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }),
+        {});
+    }
+    const parseBool = val => val === 'true' ? true : false;
+    const showPopup = (cnt, cookieNewVal) => {
+        cnt.classList.remove('d-none');
+        document.cookie = cookieNewVal;
+    }
+
+    const showErr = (cnt, err) => {
+        const msgErr = document.createElement('p');
+        msgErr.textContent = `${err}`;
+        cnt.appendChild(msgErr);
+    }
+
+    //Se obtienen los valores de las cookies
+    const cookiePopup = obtenerCookies().mostrarcookies;
+    const mailPopup = obtenerCookies().mostrarmails;
+
+    //Se definen si no existen
+    if (cookiePopup === undefined) document.cookie = 'mostrarcookies = true';
+    if (mailPopup === undefined) document.cookie = 'mostrarmails = true';
+
+    //Se muestran si no se han mostrado
+    if (parseBool(cookiePopup)) showPopup(document.querySelector('.cookies'), 'mostrarcookies = false');
+    setTimeout(() => {
+        if (parseBool(mailPopup)) showPopup(document.querySelector('.popup'), 'mostrarmails = false');
+    }, 30000);
+
+
+    const aftrTransition = (whereToInsrt, elmntToInsert, slider) => {
+        slider.addEventListener('transitionend', () => {
+            slider.style.transition = 'none';
+            slider.insertAdjacentElement(whereToInsrt, elmntToInsert);
+            slider.style.marginLeft = '-100%';
+        })
+    }
+
+    const sliderTrnsition = 'margin-left 250ms linear';
+
+    const nxtImg = slider => {
+        const sliderFrst = slider.firstElementChild;
+        slider.style.marginLeft = '-200%';
+        slider.style.transition = sliderTrnsition;
+
+        aftrTransition('beforeend', sliderFrst, slider);
+    }
+
+    const prevImg = slider => {
+        const sliderLast = slider.lastElementChild;
+        slider.style.marginLeft = '0';
+        slider.style.transition = sliderTrnsition;
+
+        aftrTransition('afterbegin', sliderLast, slider);
+    }
+
+    const toggleSliderView = (cntSlider, maxHeight) => {
+        for (let sliderChild of cntSlider.children) {
+            sliderChild.firstElementChild.style.maxHeight = maxHeight;
+        }
+    }
+
+    const setSliderView = cntBtnAmplify => {
+        const icnAmplify = cntBtnAmplify.firstElementChild;
+        const cntSlider = cntBtnAmplify.parentElement.firstElementChild;
+        let maxHeight = '38rem';
+        if (icnAmplify.classList.contains('fa-expand')) {
+            maxHeight = '90vh';
+        }
+        toggleSliderView(cntSlider, maxHeight);
+
+        icnAmplify.classList.toggle('fa-compress');
+        icnAmplify.classList.toggle('fa-expand');
+        cntBtnAmplify.parentElement.classList.toggle('expand__slider');
+    }
+
+    const removeAccents = (idProject) => {
+        const equiv = {'á': 'a','é': 'e','í': 'i','ó': 'o','ú': 'u'}
+        const regexAccent = /[^A-Za-z]/g;
+        const findAccent = idProject.match(regexAccent);
+        if (findAccent !== null) {
+            for (char of findAccent) {
+                Object.keys(equiv).find(key => {
+                    if (key == char) {
+                        idProject = idProject.replace(char, equiv[key]);
+                    }
+                })
+            }
+        }
+        return idProject;
+    }
 </script>
-
-<!-- JavaScript interno -->
-<script src="/js/app.js"></script>
-
-<script src="/js/general/slider.js"></script>
-<script src="/js/general/popups.js"></script>
-
-
-<!-- Script para cargar los proyectos de la base de datos -->
-<script src="/js/cargar_paginas_individuales/cargar_proyectos/proyectos.js">
-</script>
-
+<script src="/js/cargar_paginas_individuales/proyectos.js" defer></script>
 </html>

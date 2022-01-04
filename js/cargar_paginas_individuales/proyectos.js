@@ -171,5 +171,5 @@ db.collection('PROYECTOS').get().then(prjcts => {
     if (stgLink !== '') shwStg(stgLink);
 
 }).catch(err => {
-    mostrarError(cntPrjcts, err);
+    showErr(cntPrjcts, err);
 })

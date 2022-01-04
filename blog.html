@@ -21,54 +21,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Jor-G Design" />
     <meta name="copyright" content="Jor-G Design">
-    <meta name="robots" content="index,follow" />
-    <meta name="description" content="Visita nuestra página de blogs donde brindamos consejos en base a nuestra experiencia en el rubro inmobiliario para poder ayudarte con tu hogar o en la compra de uno." />
+    <meta name="robots" content="noindex" />
+    <meta name="description" content="Porque nos interesa tu bienestar te compartimos consejos practicos en base a nuestra experiencia" />
     <meta name="keywords" content="inmobiliaria, zuniga, casa, vivienda, rentar, alquilar, Inmobiliaria zuniga" />
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Inmobiliaria Zúniga y Asoc.">
     <meta property="og:url" content="https://inmobiliariazunigahn.web.app">
     <meta property="og:image" content="https://inmobiliariazunigahn.web.app/resources/images/logos/inmozuniga.png">
-    <meta property="og:description" content="Comparte tus intereses con nosotros y buscaremos el hogar ideal para tí y tu familia.">
-    <meta property="og:description" content="Visita nuestra página de blogs donde brindamos consejos en base a nuestra experiencia en el rubro inmobiliario para poder ayudarte con tu hogar o en la compra de uno.">
+    <meta property="og:description" content="Porque nos interesa tu bienestar te compartimos consejos practicos en base a nuestra experiencia">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Inmobiliaria Zúniga y Asoc.">
     <meta name="twitter:site" content="@InmobiliariaZuniga">
-    <meta name="twitter:description" content="Visita nuestra página de blogs donde brindamos consejos en base a nuestra experiencia en el rubro inmobiliario para poder ayudarte con tu hogar o en la compra de uno.">
+    <meta name="twitter:description" content="Porque nos interesa tu bienestar te compartimos consejos practicos en base a nuestra experiencia">
     <meta name="twitter:image" content="https://inmobiliariazunigahn.web.app/resources/images/logos/inmozuniga.png">
     <meta name="twitter:image:alt" content="Logo Inmobiliaria Zúniga y Asoc">
-
+    
     <link rel=“canonical” href=“https://inmobiliariazunigahn.web.app” />
-
-    <!-- ICON IMAGE -->
     <link rel="icon" href="/resources/images/logos/inmozuniga_simplificado.png" />
 
     <title>Inmobiliaria Zúniga - Blog</title>
 
     <link rel="stylesheet" href="/css/style.css">
-
     <!-- Link para css de font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
-    <!-- Documento que permite que las funciones de firebase funcionen -->
     <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
-
-    <!-- Conexion con Firebase -->
     <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
-
-    <!-- Conexion con el Storage -->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
-
-    <link rel="stylesheet" href="/resources/flaticon/flaticon.css">
-
 </head>
 <body>
     <header class="header">
         <div class="navbar">
             <img src="/resources/images/logos/inmozuniga.png" alt="Logo Inmobiliaria Zúniga" class="navbar__img" onclick="open('/#inicio', '_self')">
             <nav class="menu">
-                <i class="flaticon-cancel icon close-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(-100%)'"></i>
+                <i class="fa fa-times icon close-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(-100%)'"></i>
                 <ul class="menu__items">
                     <li class="menu__item">
                         <a href="https://inmobiliariazunigahn.web.app/#inicio" class="menu__link">
@@ -92,7 +80,7 @@
                     </li>
                 </ul>
             </nav>
-            <i class="flaticon-menu icon open-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(0)'"></i>
+            <i class="fa fa-bars icon open-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(0)'"></i>
         </div>
     </header>
     <!-- BANNER Y SLOGAN -->
@@ -240,12 +228,12 @@
                 </a>
             </div>
 
-            <!-- <p class="copyright">
+            <p class="copyright">
                 &copy; Diseñada y elaborada por 
-                <a href="https://jor-gdesign.web.app" target="_blank" class="copyright__link">
+                <a href="https://github.com/JorgeAbrahan" target="_blank" class="copyright__link">
                     Jor-G Design
                 </a>
-            </p> -->
+            </p>
 
         </div>
 
@@ -312,7 +300,21 @@
 
 </body>
 <script>
-    let load = document.querySelector(".load");
+    const firebaseConfig = {
+        apiKey: "AIzaSyDIS8nlyOLjVHwK9C9Mqs-eF-4AxgBs29U",
+        authDomain: "inmobiliariazunigahn.firebaseapp.com",
+        projectId: "inmobiliariazunigahn",
+        storageBucket: "inmobiliariazunigahn.appspot.com",
+        messagingSenderId: "643368075781",
+        appId: "1:643368075781:web:59492d93ae9c08f118126c",
+        measurementId: "G-39R41BL039"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    const storageRef = firebase.storage().ref();
+
+    const load = document.querySelector(".load");
     load.addEventListener('animationend', (e) => {
         if (e.animationName == 'loadImg') {
             load.classList.add('vanish');
@@ -332,10 +334,60 @@
         })
     }, {rootMargin: "-100px 0px 0px 0px"})
     bannerObserver.observe(document.querySelector('.banner'));
-</script>
-<script src="/js/app.js"></script>
-<script src="/js/general/popups.js"></script> 
 
-<script src="/js/cargar_paginas_individuales/cargar_blog(s)/blog.js">
+    const obtenerCookies = () => {
+    return document.cookie.split(';').map(cookie => cookie.split('=')).reduce((accumulator, [key, value]) =>
+        ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }),
+        {});
+    }
+    const parseBool = val => val === 'true' ? true : false;
+    const showPopup = (cnt, cookieNewVal) => {
+        cnt.classList.remove('d-none');
+        document.cookie = cookieNewVal;
+    }
+
+    const showErr = (cnt, err) => {
+        const msgErr = document.createElement('p');
+        msgErr.textContent = `${err}`;
+        cnt.appendChild(msgErr);
+    }
+
+    const blgToLoad = window.location.href.split('#')[1];
+
+    const loadBlgData = blgToLoad => {
+        db.collection('BLOGS').doc(blgToLoad).get().then(blg => {
+            storageRef.child(`img/blogs/${blg.id}`).getDownloadURL().then(src => {
+                document.querySelector('.blog__image').src = src;
+                document.querySelector('.blog__image').alt = `imagen del blog ${blg.data().titulo}`;
+            })
+            document.querySelector('.banner__slogan').textContent = blg.data().titulo;
+            document.querySelector('.content').innerHTML = blg.data().contenido;
+        }).catch(err => {
+            showErr(blgCntnt, err);
+        })
+    }
+
+    if (!blgToLoad) {
+        db.collection('BLOGS').limit(1).get().then(blgs => {
+            blgs.forEach(blg => {
+                loadBlgData(blg.id);
+                open(`#${blg.id}`, '_self');
+            })
+        })
+    } else loagBlgData(blgToLoad);
+
+    //Se obtienen los valores de las cookies
+    const cookiePopup = obtenerCookies().mostrarcookies;
+    const mailPopup = obtenerCookies().mostrarmails;
+
+    //Se definen si no existen
+    if (cookiePopup === undefined) document.cookie = 'mostrarcookies = true';
+    if (mailPopup === undefined) document.cookie = 'mostrarmails = true';
+
+    //Se muestran si no se han mostrado
+    if (parseBool(cookiePopup)) showPopup(document.querySelector('.cookies'), 'mostrarcookies = false');
+    setTimeout(() => {
+        if (parseBool(mailPopup)) showPopup(document.querySelector('.popup'), 'mostrarmails = false');
+    }, 30000)
 </script>
 </html>

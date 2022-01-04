@@ -1,9 +1,12 @@
 User-Agent: *
 Allow: /index.html
+Allow: /contactanos.html
+Allow: /politicas.html
 Disallow: /propiedad.html
 Disallow: /propiedades.html
 Disallow: /proyectos.html
-Disallow: /contactanos.html
+Disallow: /blog.html
+Disallow: /blogs.html
 Disallow: /404.html
 
 Sitemap: sitemap.xml

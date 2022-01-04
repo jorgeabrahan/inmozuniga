@@ -24,6 +24,30 @@ window.onload = () => {
 
     const dolFrmt = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
 
+    const createMetaTags = prprtyData => {
+        const desc = `Obten informacion detallada sobre nuestra propiedad: ${prprtyData.NombrePropiedad}, en: ${prprtyData.EstadoPropiedad}, con un costo total de: ${dolFrmt.format(prprtyData.CostoTotal)}.`;
+
+        const metaDesc = document.createElement('meta');
+        metaDesc.name = 'description';
+        metaDesc.content = desc;
+        document.head.appendChild(metaDesc);
+
+        const metaKeyWrds = document.createElement('meta');
+        metaKeyWrds.name = 'keywords';
+        metaKeyWrds.content = `lideres, bienes raices, propiedades, ${prprtyData.NombrePropiedad}, propiedades en ${prprtyData.EstadoPropiedad}`;
+        document.head.appendChild(metaKeyWrds);
+
+        const metaOgDesc = document.createElement('meta');
+        metaOgDesc.name = 'og:description';
+        metaOgDesc.content = desc;
+        document.head.appendChild(metaOgDesc);
+
+        const metaTwitDesc = document.createElement('meta');
+        metaTwitDesc.name = 'twitter:description';
+        metaTwitDesc.content = desc;
+        document.head.appendChild(metaTwitDesc);
+    }
+
     const createMapHtml = (prprtyLction, cntPrprtyDtls) => {
         if (prprtyLction === '') return;
 
@@ -148,29 +172,41 @@ window.onload = () => {
         return prprtyCnt;
     }
 
-    const prptyToLoad = window.location.href.split('#')[1];
+    const prprtyToLoad = window.location.href.split('#')[1];
     const cntPrprtyDtls = document.getElementById('cntPrprtyDtls');
 
-    db.collection('PROPIEDADES').doc(prptyToLoad).get().then(prprty => {
-        cntPrprtyDtls.id = prptyToLoad;
-        document.querySelector('.banner__slogan').innerText = prprty.data().NombrePropiedad;
+    const loadPrprtyData = prprtyToLoad => {
+        db.collection('PROPIEDADES').doc(prprtyToLoad).get().then(prprty => {
+            cntPrprtyDtls.id = prprtyToLoad;
+            document.querySelector('.banner__slogan').innerText = prprty.data().NombrePropiedad;
+    
+            const prprtyHtml = createPrprtyHtml(prprty.data(), cntPrprtyDtls);
+            const prprtySlider = prprtyHtml.firstElementChild.firstElementChild;
+            setPrprtySliderImgs(prprtySlider, prprtyToLoad);
+    
+            // Columnas para las caracteristicas de la propiedad
+            const frstCol = prprtyHtml.lastElementChild.lastElementChild.firstElementChild.firstElementChild;
+            const scndCol = prprtyHtml.lastElementChild.lastElementChild.firstElementChild.lastElementChild;
+            forEachChar(prprty.data(), frstCol, scndCol);
+    
+            const prprtyDesc = prprtyHtml.lastElementChild;
+            createTotCostHtml(prprty.data().CuotaPropiedad, prprty.data().CostoTotal, prprtyDesc);
+            createVidAnclHtml(prprty.data().url, prprtyDesc, prprty.data().NombrePropiedad);
+            createMapHtml(prprty.data().ubicacion, cntPrprtyDtls);
+            prsnlizeAgntMsg(prprty.data().NombrePropiedad, prprtyToLoad, prprty.data().EstadoPropiedad);
+            createMetaTags(prprty.data());
+        }).catch(err => {
+            showErr(cntPrprtyDtls, err);
+        })
+    }
 
-        const prprtyHtml = createPrprtyHtml(prprty.data(), cntPrprtyDtls);
-        const prprtySlider = prprtyHtml.firstElementChild.firstElementChild;
-        setPrprtySliderImgs(prprtySlider, prprty.id);
-
-        // Columnas para las caracteristicas de la propiedad
-        const frstCol = prprtyHtml.lastElementChild.lastElementChild.firstElementChild.firstElementChild;
-        const scndCol = prprtyHtml.lastElementChild.lastElementChild.firstElementChild.lastElementChild;
-        forEachChar(prprty.data(), frstCol, scndCol);
-
-        const prprtyDesc = prprtyHtml.lastElementChild;
-        createTotCostHtml(prprty.data().CuotaPropiedad, prprty.data().CostoTotal, prprtyDesc);
-        createVidAnclHtml(prprty.data().url, prprtyDesc, prprty.data().NombrePropiedad);
-        createMapHtml(prprty.data().ubicacion, cntPrprtyDtls);
-        prsnlizeAgntMsg(prprty.data().NombrePropiedad, prptyToLoad, prprty.data().EstadoPropiedad);
-        
-    }).catch(err => {
-        mostrarError(cntPrprtyDtls, err);
-    })
+    if (!prprtyToLoad) {
+        // Si no se paso un id
+        db.collection('PROPIEDADES').limit(1).get().then(prprtis => {
+            prprtis.forEach(prprti => {
+                loadPrprtyData(prprti.id);
+                open(`#${prprti.id}`, '_self');
+            })
+        })
+    } else loadPrprtyData(prprtyToLoad);
 }

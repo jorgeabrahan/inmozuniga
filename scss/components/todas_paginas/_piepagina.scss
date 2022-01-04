@@ -120,17 +120,17 @@
                 }
             }
         }
-        // .copyright {
-        //     margin-top: 2rem;
-        //     text-align: center;
-        //     color: white;
-        //     .copyright__link {
-        //         color: map-get($colors, spanishBlue);
-        //         text-decoration: none;
-        //         &:hover {
-        //             text-decoration: underline;
-        //         }
-        //     }
-        // }
+        .copyright {
+            margin-top: 2rem;
+            text-align: center;
+            color: white;
+            .copyright__link {
+                color: map-get($colors, spanishBlue);
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
     }
 }

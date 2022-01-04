@@ -16,6 +16,18 @@
     src: url(/resources/fonts/cabin_semibold.ttf);
 }
 
+
+input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0; 
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
 // Estilos de los svg divisores
 .main-banner__divider, .banner__divider {
     position: absolute;
