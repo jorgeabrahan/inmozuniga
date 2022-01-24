@@ -5,6 +5,11 @@
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    .moreaboutproperty__related > h2 {
+        font-size: map-get($size, subtitle);
+        margin-bottom: .5rem;
     }
     .property__details {
         grid-column: 1 / 6;
@@ -12,18 +17,7 @@
             grid-column: 1 / 4;
         }
         @media (max-width: 1150px) {
-            margin-bottom: 2rem;
-        }
-
-        .expand__slider {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 90vw;
-            z-index: 500;
-            outline: 100vw solid rgba(0, 0, 0, 0.9);
-            background-color: white;
+            margin-bottom: 1rem;
         }
 
         .property__price-status {
@@ -52,29 +46,18 @@
             border-radius: 3px;
         }
         .more__list {
-            display: flex;
-            flex-wrap: wrap;
-            list-style-position: inside;
             list-style-type: none;
-            @media (max-width: 500px) {
-                gap: .5em;
-                flex-direction: column;
+            display: grid;
+            gap: .3em;
+            @media (min-width: 500px) {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         .item__icon {
             margin-right: .4em;
             transform: scale(1.2);
         }
-        .more__group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5em;
-            list-style-type: none;
-            flex: 1;
-        }
         .more__item {
-            display: flex;
-            align-items: center;
             font-size: map-get($size, description);
         }
 
@@ -187,27 +170,4 @@
         }
     }
 }
-
-.expand {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 0 1rem 1rem;
-    padding: .8rem;
-    background-color: map-get($colors, yaleBlue);
-    border-radius: 5px;
-    cursor: pointer;
-
-    transition: opacity 250ms ease-in-out;
-    opacity: .6;
-    &:hover {
-        opacity: 1;
-    }
-}
-.expand__icon {
-    pointer-events: none;
-    font-size: map-get($size, subtitle);
-    color: white;
-}
-
 

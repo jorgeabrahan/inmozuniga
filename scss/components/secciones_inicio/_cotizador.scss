@@ -1,5 +1,4 @@
-.section-budget {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url('/resources/images/general/budgetcalculation.jpg') no-repeat center center;
+.section-redirect {
     background-size: cover;
     color: white;
     height: 100%;
@@ -16,24 +15,35 @@
 }
 
 .budget {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url('/resources/images/general/budgetcalculation.jpg') no-repeat center center;
+}
+.blogs {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url('/resources/images/general/blogs.jpg') no-repeat center center;
+    text-align: right;
+}
+
+.redirect__cnt {
     @include margins;
     margin: auto;
     width: 100%;
 }
 
-.budget__title {
+.redirect__title {
     font-size: map-get($size, title);
     margin-bottom: .5rem;
 }
-.budget__description {
+.redirect__description {
     margin-bottom: 2rem;
     max-width: 768px;
 }
-.budget__description, .budget__link {
+.blogs .redirect__description {
+    margin-left: auto
+}
+.redirect__description, .redirect__link {
     font-size: map-get($size, description);
 }
 
-.budget__link {
+.redirect__link {
     text-decoration: none;
     background: map-get($colors, yaleBlue);
     color: white;

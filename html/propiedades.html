@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-39R41BL039"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-39R41BL039');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jor-G Design" />
+	<meta name="copyright" content="Jor-G Design">
+	<meta name="robots" content="noindex" />
+    <meta name="description" content="Conoce el amplio catalogo de propiedades con los que contamos pertenecientes a una gran diversided de categorías." />
+	<meta name="keywords" content="viviendas, apartamentos, condominios, town house, locales comerciales, bodegas, naves industriales, en venta, en renta" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Inmobiliaria Zúniga y Asoc.">
+    <meta property="og:url" content="https://inmozuniga.com">
+    <meta property="og:image" content="https://inmozuniga.com/resources/images/logos/inmozuniga.png">
+    <meta property="og:description" content="Visita nuestro catalogo de propiedades y escoge la que mas se adecúe a tus necesidades y presupuesto.">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Inmobiliaria Zúniga y Asoc.">
+    <meta name="twitter:site" content="@InmobiliariaZuniga">
+    <meta name="twitter:description" content="Visita nuestro catalogo de propiedades y escoge la que mas se adecúe a tus necesidades y presupuesto.">
+    <meta name="twitter:image" content="https://inmozuniga.com/resources/images/logos/inmozuniga.png">
+    <meta name="twitter:image:alt" content="Logo Inmobiliaria Zúniga y Asoc">
+
+    <link rel=“canonical” href=“https://inmozuniga.com/propiedades” />
+    <link rel="icon" href="/resources/images/logos/inmozuniga_simplificado.png" />
+
+    <title>Inmobiliaria Zúniga - Propiedades</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Link para css de font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="navbar">
+            <img src="resources/images/logos/inmozuniga.png" alt="Logo Inmobiliaria Zúniga" class="navbar__img" onclick="open('/#inicio', '_self')">
+            <nav class="menu">
+                <i class="fa fa-times icon close-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(-100%)'"></i>
+                <ul class="menu__items">
+                    <li class="menu__item">
+                        <a href="https://inmozuniga.com/#inicio" class="menu__link">
+                            Inicio
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="https://inmozuniga.com/contactanos#seccionprincipal" class="menu__link">
+                            Contáctanos
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="https://inmozuniga.com/propiedades" class="menu__link menu__link--selected">
+                            Propiedades
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="https://inmozuniga.com/proyectos" class="menu__link">
+                            Proyectos
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <i class="fa fa-bars icon open-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(0)'"></i>
+        </div>
+    </header>
+    <!-- BANNER Y SLOGAN -->
+    <div class="banner">
+        <img src="resources/images/banners/propiedades.jpg" alt="Banner Inmobiliaria Zuniga" class="banner__img">
+        <h1 class="banner__slogan">Nuestras Propiedades</h1>
+
+        <div class="banner__divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </div>
+
+    <main class="propertiesbycategory">
+        <section class="properties__section">
+            <!-- BARRA DE NAVEGACION ENTRE LAS DOS PESTAÑAS DE PROPIEDADES -->
+            <nav class="properties__navbar">
+                <div class="properties__buttons">
+                    <button class="properties__btn properties__btn--active" id="venta">
+                        Comprar
+                    </button>
+                    <button class="properties__btn" id="renta">
+                        Rentar
+                    </button>
+                </div>
+                <hr class="properties__divisor">
+            </nav>
+
+            <!-- PESTAÑA DE PROPIEDADES EN VENTA -->
+            <div class="properties__buy">
+                <div class="buy__category">
+                    <div class="category vivienda" id="vivienda-venta">
+                        <div class="category__info">
+                            <h2 class="category__name">Viviendas</h2>
+                            <i class="fa fa-chevron-down category__arrow"></i>
+                        </div>
+                        <!-- PROPIEDADES -->
+                        <div class="category__properties">
+                            <!-- <div class="category__property">
+                                <img src="img/Propiedades/ColUniversidad.jpg" alt="" class="property__image">
+                                <div class="property__details">
+                                    <h2 class="property__title">
+                                        Nombre Propiedad
+                                    </h2>
+                                    <p class="property__price">
+                                        1500
+                                    </p>
+                                </div>
+                                <p class="property__description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, voluptate!
+                                </p>
+                                <div class="property__btn-container">
+                                    <button class="property__btn">
+                                        Me Interesa
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="category__property">
+                                <img src="img/Propiedades/ColoniaTrejo.jpg" alt="" class="property__image">
+                                <div class="property__details">
+                                    <h2 class="property__title">
+                                        Nombre Propiedad
+                                    </h2>
+                                    <p class="property__price">
+                                        1500
+                                    </p>
+                                </div>
+                                <p class="property__description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, voluptate!
+                                </p>
+                                <div class="property__btn-container">
+                                    <button class="property__btn">
+                                        Me Interesa
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="category__property">
+                                <img src="img/Propiedades/Mediterranea.jpg" alt="" class="property__image">
+                                <div class="property__details">
+                                    <h2 class="property__title">
+                                        Nombre Propiedad
+                                    </h2>
+                                    <p class="property__price">
+                                        1500
+                                    </p>
+                                </div>
+                                <p class="property__description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, voluptate!
+                                </p>
+                                <div class="property__btn-container">
+                                    <button class="property__btn">
+                                        Me Interesa
+                                    </button>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="category condominio" id="condominio-venta">
+                        <div class="category__info">
+                            <h2 class="category__name">Condominios</h2>
+                            <i class="fa fa-chevron-down category__arrow"></i>
+                        </div>
+                        <!-- PROPIEDADES -->
+                        <div class="category__properties">
+                        </div>
+                    </div>
+                    <div class="category townhouse" id="townhouse-venta">
+                        <div class="category__info">
+                            <h2 class="category__name">Town House</h2>
+                            <i class="fa fa-chevron-down category__arrow"></i>
+                        </div>
+                        <!-- PROPIEDADES -->
+                        <div class="category__properties">
+                        </div>
+                    </div>
+                    <div class="category terrenoresidencial" id="terrenoresidencial-venta">
+                        <div class="category__info">
+                            <h2 class="category__name">Terrenos Residenciales</h2>
+                            <i class="fa fa-chevron-down category__arrow"></i>
+                        </div>
+                        <!-- PROPIEDADES -->
+                        <div class="category__properties">
+                        </div>
+                    </div>
+                    <div class="category terrenoplaya" id="terrenoplaya-venta">
+                        <div class="category__info">
+                            <h2 class="category__name">Terrenos de Playa</h2>
+                            <i class="fa fa-chevron-down category__arrow"></i>
+                        </div>
+                        <!-- PROPIEDADES -->
+                        <div class="category__properties">
+                        </div>
+                    </div>
+                    <div class="category propiedadinversion" id="propiedadinversion-venta">
+                        <div class="category__info">
+                            <h2 class="category__name">Propiedades de Inversión</h2>
+                            <i class="fa fa-chevron-down category__arrow"></i>
+                        </div>
+                        <!-- PROPIEDADES -->
+                        <div class="category__properties">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- PROPIEDADES EN RENTA -->
+            <div class="properties__rent d-none">
+                <div class="rent__category">
+                    <div class="category vivienda" id="vivienda-renta">
+                        <div class="category__info">
+                            <h2 class="category__name">Viviendas</h2>
+                            <i class="fa fa-chevron-down category__arrow"></i>
+                        </div>
+                        <!-- PROPIEDADES -->
+                        <div class="category__properties">
+                        </div>
+                    </div>
+                    <div class="category apartamento" id="apartamento-renta">
+                        <div class="category__info">
+                            <h2 class="category__name">Apartamentos</h2>
+                            <i class="fa fa-chevron-down category__arrow"></i>
+                        </div>
+                        <!-- PROPIEDADES -->
+                        <div class="category__properties">
+                        </div>
+                    </div>
+                    <div class="category condominio" id="condominio-renta">
+                        <div class="category__info">
+                            <h2 class="category__name">Condominios</h2>
+                            <i class="fa fa-chevron-down category__arrow"></i>
+                        </div>
+                        <!-- PROPIEDADES -->
+                        <div class="category__properties">
+                        </div>
+                    </div>
+                    <div class="category townhouse" id="townhouse-renta">
+                        <div class="category__info">
+                            <h2 class="category__name">Town House</h2>
+                            <i class="fa fa-chevron-down category__arrow"></i>
+                        </div>
+                        <!-- PROPIEDADES -->
+                        <div class="category__properties">
+                        </div>
+                    </div>
+                    <div class="category localcomercial" id="localcomercial-renta">
+                        <div class="category__info">
+                            <h2 class="category__name">Locales Comerciales</h2>
+                            <i class="fa fa-chevron-down category__arrow"></i>
+                        </div>
+                        <!-- PROPIEDADES -->
+                        <div class="category__properties">
+                        </div>
+                    </div>
+                    <div class="category bodega" id="bodega-renta">
+                        <div class="category__info">
+                            <h2 class="category__name">Bodegas</h2>
+                            <i class="fa fa-chevron-down category__arrow"></i>
+                        </div>
+                        <!-- PROPIEDADES -->
+                        <div class="category__properties">
+                        </div>
+                    </div>
+                    <div class="category naveindustrial" id="naveindustrial-renta">
+                        <div class="category__info">
+                            <h2 class="category__name">Naves Industriales</h2>
+                            <i class="fa fa-chevron-down category__arrow"></i>
+                        </div>
+                        <!-- PROPIEDADES -->
+                        <div class="category__properties">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+
+        <!-- CONTENIDO PIE DE PAGINA -->
+        <div class="footer__content">
+
+            <div class="footer__allcolumns">
+                <!-- COLUMNA PRINCIPAL -->
+                <div class="main__column">
+                    <img src="resources/images/logos/inmozuniga_blanco.png" alt="Logo Inmobiliaria Zúniga Blanco" class="main__img">
+                    <div class="main__links">
+                        <container class="main__subcolumn">
+                            <a href="https://inmozuniga.com/contactanos#seccionprincipal" class="main__link">
+                                Contáctanos
+                            </a>
+                            <a href="https://inmozuniga.com/politicas" class="main__link">
+                                Políticas
+                            </a>
+                        </container>
+                        <container class="main__subcolumn">
+                            <a href="https://inmozuniga.com/propiedades#venta" class="main__link">
+                                Comprar
+                            </a>
+                            <a href="https://inmozuniga.com/propiedades#renta" class="main__link">
+                                Rentar
+                            </a>
+                        </container>
+                    </div>
+                </div>
+
+                <!-- OTRAS COLUMNAS -->
+                <div class="footer__columns">
+
+                    <section class="column">
+                        <h2 class="column__title">Comprar</h2>
+                        <!-- LISTA ENLACES COLUMNA -->
+                        <ul class="column__list">
+                            <li class="column__item">
+                                <a href="https://inmozuniga.com/propiedades#vivienda-venta" class="column__link">
+                                    Viviendas
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmozuniga.com/propiedades#terrenoresidencial-venta" class="column__link">
+                                    Terrenos Residenciales
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmozuniga.com/propiedades#terrenoplaya-venta" class="column__link">
+                                    Terrenos de playa
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmozuniga.com/propiedades#propiedadinversion-venta" class="column__link">
+                                    Propiedades de Inversión
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="column">
+                        <h2 class="column__title">Rentar</h2>
+                        <!-- LISTA ENLACES COLUMNA -->
+                        <ul class="column__list">
+                            <li class="column__item">
+                                <a href="https://inmozuniga.com/propiedades#apartamento-renta" class="column__link">
+                                    Apartamentos
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmozuniga.com/propiedades#localcomercial-renta" class="column__link">
+                                    Locales Comerciales
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmozuniga.com/propiedades#bodega-renta" class="column__link">
+                                    Bodegas
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmozuniga.com/propiedades#naveindustrial-renta" class="column__link">
+                                    Naves Industriales
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="column">
+                        <h2 class="column__title">Categorías</h2>
+                        <!-- LISTA ENLACES COLUMNA -->
+                        <ul class="column__list">
+                            <li class="column__item">
+                                <a href="https://inmozuniga.com/propiedades#vivienda-renta" class="column__link">
+                                    Viviendas en Venta y Renta
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmozuniga.com/propiedades#condominio-renta" class="column__link">
+                                    Condominios en Venta y Renta
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmozuniga.com/propiedades#townhouse-renta" class="column__link">
+                                    Town House en Venta y Renta
+                                </a>
+                            </li>
+                            <li class="column__item">
+                                <a href="https://inmozuniga.com/propiedades#naveindustrial-renta" class="column__link">
+                                    Naves Industriales en Renta
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+
+                </div>
+            </div>
+
+            <hr class="footer__divisor">
+
+            <div class="footer__social-media">
+                <a href="https://www.facebook.com/inmobiliariazunigayasociados" target="_blank" class="social-media__link">
+                    <i class="fab fa-facebook social-media__icon"></i>
+                </a>
+                <a href="https://www.instagram.com/inmobiliariazuniga/" target="_blank" class="social-media__link">
+                    <i class="fab fa-instagram social-media__icon"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCTzraN0l1lE7OkgNYevJbvQ" target="_blank" class="social-media__link">
+                    <i class="fab fa-youtube social-media__icon"></i>
+                </a>
+                <a href="https://wa.me/50497842424?text=He%20visitado%20su%20sitio%20web%20y%20me%20encuentro%20interesado%20en%20sus%20propiedades.%20Espero%20puedan%20brindarme%20informacion%20lo%20mas%20pronto%20posible." target="_blank" class="social-media__link">
+                    <i class="fab fa-whatsapp social-media__icon"></i>
+                </a>
+                <a href="tel:25500833" class="social-media__link">
+                    <i class="fa fa-phone social-media__icon"></i>
+                </a>
+            </div>
+
+            <p class="copyright">
+                &copy; Diseñada y elaborada por 
+                <a href="https://github.com/JorgeAbrahan" target="_blank" class="copyright__link">
+                    Jor-G Design
+                </a>
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- PANTALLA DE CARGA MIENTRAS SE LEE LA BASE DE DATOS -->
+    <div class="load">
+        <img src="resources/images/logos/inmozuniga.png" alt="Logo de pantalla de carga" class="load__img">
+        <h2 class="load__text">Líderes en bienes raíces</h2>
+    </div>
+
+    <div class="arrow-menu" id="flechaAbrirMenu" onclick="document.querySelector('.menu').style.transform = 'translateX(0)'">
+        <div class="arrow-menu__container">
+            <i class="fa fa-arrow-right arrow-menu__icon"></i>
+        </div>
+    </div>
+
+    <div class="popup d-none">
+        <div class="popup__container">
+            <div class="popup__icon" onclick="document.querySelector('.popup').classList.add('d-none')">
+                <i class="fa fa-times"></i>
+            </div>
+            <div class="popup__info">
+                <img src="resources/images/general/newsletter.png" alt="imagen de boletin" class="popup__img">
+                <p class="popup__description">
+                    Suscribete si deseas recibir información actualizada sobre nuestras propiedades, proyectos y demás.
+                </p>
+            </div>
+            <div class="popup__btns">
+                <a class="popup__btn" href="https://docs.google.com/forms/d/e/1FAIpQLScGu-15HbS5JgOaFKOEz19NsA_Aahj64Y3S0EzPtVC_zzK7iw/viewform?usp=sf_link" target="_blank">Suscribirme</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="cookies d-none">
+        <div class="cookies__container">
+            <img src="resources/images/general/cookie.png" class="cookies__image" alt="Imagen de las politicas de cookies">
+            <h2 class="cookies__title">Politicas de cookies</h2>
+            <p class="cookies__description">
+                Utilizamos cookies propias y de terceros para mejorar nuestros servicios.
+            </p>
+            <button class="cookies__btn" onclick="document.querySelector('.cookies').classList.add('d-none')">De acuerdo</button>
+            <a class="cookies__link" href="https://inmozuniga.com/politicas#cookiesSection">Saber más</a>
+        </div>
+    </div>
+</body>
+
+<script>
+        const firebaseConfig = {
+        apiKey: "AIzaSyDIS8nlyOLjVHwK9C9Mqs-eF-4AxgBs29U",
+        authDomain: "inmobiliariazunigahn.firebaseapp.com",
+        projectId: "inmobiliariazunigahn",
+        storageBucket: "inmobiliariazunigahn.appspot.com",
+        messagingSenderId: "643368075781",
+        appId: "1:643368075781:web:59492d93ae9c08f118126c",
+        measurementId: "G-39R41BL039"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    const storageRef = firebase.storage().ref();
+
+    const load = document.querySelector(".load");
+    setTimeout(() => load.classList.add('vanish'), 2000);
+    setTimeout(() => load.classList.add('d-none'), 3000);
+
+    const bannerObserver = new IntersectionObserver(entries => {
+        const header = document.querySelector('.header');
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                header.classList.add('scrolled-header');
+            } else {
+                header.classList.remove('scrolled-header');
+            }
+        })
+    }, {rootMargin: "-100px 0px 0px 0px"})
+    bannerObserver.observe(document.querySelector('.banner'));
+
+    const obtenerCookies = () => {
+    return document.cookie.split(';').map(cookie => cookie.split('=')).reduce((accumulator, [key, value]) =>
+        ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }),
+        {});
+    }
+    const parseBool = val => val === 'true' ? true : false;
+    const showPopup = (cnt, cookieNewVal) => {
+        cnt.classList.remove('d-none');
+        document.cookie = cookieNewVal;
+    }
+
+    //Se obtienen los valores de las cookies
+    const cookiePopup = obtenerCookies().mostrarcookies;
+    const mailPopup = obtenerCookies().mostrarmails;
+
+    //Se definen si no existen
+    if (cookiePopup === undefined) document.cookie = 'mostrarcookies = true';
+    if (mailPopup === undefined) document.cookie = 'mostrarmails = true';
+
+    //Se muestran si no se han mostrado
+    if (parseBool(cookiePopup)) showPopup(document.querySelector('.cookies'), 'mostrarcookies = false');
+    setTimeout(() => {
+        if (parseBool(mailPopup)) showPopup(document.querySelector('.popup'), 'mostrarmails = false');
+    }, 30000);
+</script>
+<script src="js.min/paginas-individuales/propiedades.min.js" defer></script>
+</html>
