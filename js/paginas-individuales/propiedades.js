@@ -6,10 +6,10 @@ window.onload = () => {
     const btnRenta = document.getElementById('renta');
     
     const showPrprtiesByState = (btn) => {
-        if (btn.classList.contains('properties__btn--active')) return;
+        if (btn.classList.contains('subnavbar__btn--active')) return;
 
-        btnRenta.classList.toggle('properties__btn--active');
-        btnVenta.classList.toggle('properties__btn--active');
+        btnRenta.classList.toggle('subnavbar__btn--active');
+        btnVenta.classList.toggle('subnavbar__btn--active');
     
         document.querySelector('.properties__buy').classList.toggle('d-none');
         document.querySelector('.properties__rent').classList.toggle('d-none');
@@ -79,11 +79,11 @@ window.onload = () => {
     
     const lastCat = obtenerCookies().ultimacategoria;
     if (!anchor) { //Si anchor es un <empty string>
-        if (!!lastCat) { //Si no es undefined o no esta vacia
+        if (!!lastCat) { //Si la ultima categoria no es undefined o no esta vacia
             shwCatByName(lastCat, 2000);
         }
-    }
-    
+    } else if (anchor === 'venta') showPrprtiesByState(btnVenta);
+    else if (anchor === 'renta') showPrprtiesByState(btnRenta);
 
     const cntCatSale = document.querySelector('.buy__category');
     const cntCatRent = document.querySelector('.rent__category');

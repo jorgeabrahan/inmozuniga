@@ -48,7 +48,7 @@
                     .main__link {
                         @include links(spanishBlue);
                         font-size: map-get($size, subtitle);
-                        font-family: cabinBold;
+                        font-family: josefin-bold;
                         transition: all 250ms ease-in-out;
                         @media (min-width: 1501px) {
                             margin-bottom: .5rem;
@@ -75,7 +75,7 @@
                     margin: 1.5rem 0 .5rem;
                     color: white;
                     font-size: map-get($size, title);
-                    font-family: CabinBold;
+                    font-family: josefin-bold;
                 }
                 .column__list {
                     list-style-type: none;
@@ -84,7 +84,7 @@
                         .column__link {
                             @include links(spanishBlue);
                             font-size: map-get($size, description);
-                            font-family: cabinMedium;
+                            font-family: josefin-medium;
                             transition: all 250ms ease-in-out;
                             &:hover {
                                 padding-left: .5rem;

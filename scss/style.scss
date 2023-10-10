@@ -1,20 +1,21 @@
 /* IMPORTACION DE FUENTES */
 @font-face {
-    font-family: CabinBold;
-    src: url(/resources/fonts/cabin_bold.ttf);
+    font-family: josefin-regular;
+    src: url(../resources/fonts/josefinsans-regular.ttf);
 }
 @font-face {
-    font-family: CabinMedium;
-    src: url(/resources/fonts/cabin_medium.ttf);
+    font-family: josefin-medium;
+    src: url(../resources/fonts/josefinsans-medium.ttf);
 }
 @font-face {
-    font-family: CabinRegular;
-    src: url(/resources/fonts/cabin_regular.ttf);
+    font-family: josefin-semibold;
+    src: url(../resources/fonts/josefinsans-semibold.ttf);
 }
 @font-face {
-    font-family: CabinSemiBold;
-    src: url(/resources/fonts/cabin_semibold.ttf);
+    font-family: josefin-bold;
+    src: url(../resources/fonts/josefinsans-bold.ttf);
 }
+
 
 
 input[type=number] { 
@@ -74,7 +75,8 @@ input[type=number]::-webkit-outer-spin-button {
 $colors: (
     yaleBlue: #134B7C,
     spanishBlue: #1E73BE,
-    eerieBlack: #222222
+    eerieBlack: #1B1B1B,
+    unemphasis: #444,
 );
 
 $size: (
@@ -86,9 +88,8 @@ $size: (
     blogContent: clamp(1em, 2vw, 1.2em),
 );
 
-/* Se establece cabin regular como familia de fuente general */
 body {
-    font-family: CabinRegular;
+    font-family: josefin-regular;
     scroll-behavior: smooth;
     user-select: none;
 }
@@ -329,26 +330,35 @@ div.expand__slider {
     @include margins;
     margin: 3rem auto;
 }
-.contact__navbar, .properties__navbar {
+.subnavbar {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
-.contact__btn, .properties__btn {
+.subnavbar__buttons {
+    display: flex;
+}
+.subnavbar__btn {
     background: none;
     border: none;
     padding: 0.5rem 1rem;
     font-size: map-get($size, description);
     cursor: pointer;
-    border-radius: 5px 5px 0 0;
-    color: map-get($colors, yaleBlue);
-    font-family: CabinBold;
+    font-family: josefin-bold;
 }
-.contact__btn--active, .properties__btn--active {
+@media (max-width: 768px) {
+    .subnavbar__buttons {
+        width: 100%;
+    }
+    .subnavbar__btn {
+        flex: 1;
+    }
+}
+.subnavbar__btn--active {
     color: white;
     background-color: map-get($colors, yaleBlue);
 }
-.contact__divisor, .properties__divisor {
+.subnavbar__divisor {
     display: block;
     width: 100%;
     background-color: map-get($colors, yaleBlue);

@@ -50,7 +50,7 @@
 <body>
     <header class="header">
         <div class="navbar">
-            <img src="resources/images/logos/inmozuniga.png" alt="Logo Inmobiliaria Zúniga" class="navbar__img" onclick="open('/#inicio', '_self')">
+            <img src="resources/images/logos/inmozuniga.png" alt="Logo Inmobiliaria Zúniga" class="navbar__img" onclick="openIndex()">
             <nav class="menu">
                 <i class="fa fa-times icon close-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(-100%)'"></i>
                 <ul class="menu__items">
@@ -446,6 +446,8 @@
     }, {rootMargin: "-100px 0px 0px 0px"})
     bannerObserver.observe(document.querySelector('.banner'));
 
+    const openIndex = () => open('https://inmozuniga.com/#inicio', '_self');
+
     const obtenerCookies = () => {
     return document.cookie.split(';').map(cookie => cookie.split('=')).reduce((accumulator, [key, value]) =>
         ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }),
@@ -468,13 +470,13 @@
     const mailPopup = obtenerCookies().mostrarmails;
 
     //Se definen si no existen
-    if (cookiePopup === undefined) document.cookie = 'mostrarcookies = true';
-    if (mailPopup === undefined) document.cookie = 'mostrarmails = true';
+    if (cookiePopup === undefined) document.cookie = 'mostrarcookies=true;sameSite=None;Secure';
+    if (mailPopup === undefined) document.cookie = 'mostrarmails=true;sameSite=None;Secure';
 
     //Se muestran si no se han mostrado
-    if (parseBool(cookiePopup)) showPopup(document.querySelector('.cookies'), 'mostrarcookies = false');
+    if (parseBool(cookiePopup)) showPopup(document.querySelector('.cookies'), 'mostrarcookies=false;sameSite=None;Secure');
     setTimeout(() => {
-        if (parseBool(mailPopup)) showPopup(document.querySelector('.popup'), 'mostrarmails = false');
+        if (parseBool(mailPopup)) showPopup(document.querySelector('.popup'), 'mostrarmails=false;sameSite=None;Secure');
     }, 30000);
 </script>
 <script src="js.min/general/slider.min.js" defer></script>

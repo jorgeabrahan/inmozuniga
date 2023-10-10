@@ -10,5 +10,6 @@
     "editor.glyphMargin": false,
     "explorer.openEditors.visible": 0,
     "workbench.activityBar.visible": false,
-    "editor.fontFamily": "agave Nerd Font r"
+    "editor.fontFamily": "agave Nerd Font",
+    "liveServer.settings.port": 5501
 }

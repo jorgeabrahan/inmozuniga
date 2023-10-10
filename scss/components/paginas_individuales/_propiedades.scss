@@ -100,7 +100,6 @@
         display: flex;
         justify-content: flex-end;
         padding: 1rem var(--property-pad) var(--property-pad);
-
     }
     .property__btn {
         cursor: pointer;
@@ -113,7 +112,7 @@
         text-decoration: none;
         --btn-dimensions: 1px;
         overflow: hidden;
-
+    
         &:after {
             content: " ";
             position: absolute;
@@ -128,7 +127,7 @@
             transition: width 500ms ease-in-out,
             height 500ms ease-in-out;
         }
-
+    
         &:hover::after {
             --btn-dimensions: 90px;
         }
@@ -136,7 +135,7 @@
 }
 .category__message {
     font-size: map-get($size, description);
-    font-family: CabinBold;
+    font-family: josefin-bold;
     @media (min-width: 656px) {
         grid-column: 1 / 3;
     }

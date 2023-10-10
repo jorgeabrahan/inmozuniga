@@ -64,11 +64,9 @@ window.onload = () => {
     setTimeout(() => {
         load.classList.add('vanish');
         allPrjcts = document.querySelectorAll('.project');
-        allBlogs = document.querySelectorAll('.blog');
         allPolls = document.querySelectorAll('.poll');
 
         setObserver(allPrjcts);
-        setObserver(allBlogs);
         setObserver(allPolls);
 
         
@@ -166,46 +164,6 @@ window.onload = () => {
         showErr(cntPjctsSec, err);
     })
 
-
-
-
-    // Cargar seccion blogs
-    const cntSecBlgs = document.getElementById('cntSecBlgs');
-    const blgsSecFrgmnt = document.createDocumentFragment();
-
-    const createBlgSecHtml = (blgData, blgCnt) => {
-        blgCnt.innerHTML = `
-        <img src="" alt="${blgData.titulo}" class="blog__img">
-        <h3 class="blog__title">${blgData.titulo}</h3>
-        `;
-        return blgCnt;
-    }
-
-    db.collection('BLOGS').limit(3).get().then(blgs => {
-        blgs.forEach(blg => {
-            const blgCnt = document.createElement('div');
-            blgCnt.className = 'blog';
-            blgCnt.id = blg.id;
-            blgCnt.onclick = () => { open(`/blog#${blg.id}`, '_self') };
-
-            const blgHtml = createBlgSecHtml(blg.data(), blgCnt);
-            const blgImg = blgHtml.firstElementChild;
-            storageRef.child(`img/blogs/${blg.id}`).getDownloadURL().then(src => {
-                blgImg.src = src;
-            })
-
-            blgsSecFrgmnt.appendChild(blgHtml);
-        })
-        cntSecBlgs.appendChild(blgsSecFrgmnt);
-
-    }).catch(err => {
-        showErr(cntSecBlgs, err);
-    })
-
-
-
-
-
     // Cargar seccion encuestas
     const cntPolls = document.getElementById('cntPolls');
     const pollsFrgmnt = document.createDocumentFragment();
@@ -213,7 +171,7 @@ window.onload = () => {
     const createPollHtml = (pollData, pollShrtDesc, pollCnt) => {
         pollCnt.innerHTML = `
             <div class="poll__content">
-                <h3 class="poll__title">${pollData.Titulo}</h3>
+                <h3 class="poll__title">${pollData.titulo}</h3>
                 <p class="poll__description">
                     ${pollShrtDesc}...
                 </p>
@@ -229,7 +187,7 @@ window.onload = () => {
             const pollCnt = document.createElement('article');
             pollCnt.className = 'poll';
             pollCnt.onclick = () => { open(`${poll.data().url}`, '_blank') };
-            const shrtndDesc = poll.data().Descripcion.substring(0, 60);
+            const shrtndDesc = poll.data().descripcion.substring(0, 60);
 
             createPollHtml(poll.data(), shrtndDesc, pollCnt);
 

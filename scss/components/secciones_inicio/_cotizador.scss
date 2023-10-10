@@ -19,7 +19,9 @@
 }
 .blogs {
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url('/resources/images/general/blogs.jpg') no-repeat center center;
-    text-align: right;
+}
+.appointment {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url('/resources/images/general/appointment.jpeg') no-repeat center center;
 }
 
 .redirect__cnt {
@@ -36,9 +38,14 @@
     margin-bottom: 2rem;
     max-width: 768px;
 }
-.blogs .redirect__description {
+
+.section-redirect--right {
+    text-align: right;
+}
+.section-redirect--right .redirect__description {
     margin-left: auto
 }
+
 .redirect__description, .redirect__link {
     font-size: map-get($size, description);
 }

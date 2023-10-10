@@ -64,7 +64,7 @@ const createPrjctHtml = (prjctData, prjctId, prjctCnt) => {
         <p class="project__description">${prjctData.descripcion}</p>
     </div>
     <div class="project__buttons">
-        <button class="project__btn" onclick="shwStg(${prjctId})">Saber mas</button>
+        <button class="project__btn" onclick="shwStg(${prjctId})">Saber más</button>
         <button class="project__btn" onclick="shwImg(this.parentElement.parentElement.firstElementChild)">
             Ver imagen
         </button>

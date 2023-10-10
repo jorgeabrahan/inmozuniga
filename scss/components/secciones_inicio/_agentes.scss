@@ -8,9 +8,6 @@
     @media (min-width: 1240px) {
         grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     }
-    // .agent {
-    //     opacity: 0;
-    // }
     .agent__image {
         position: relative;
     }
@@ -41,7 +38,7 @@
         color: white;
         text-align: center;
         font-size: map-get($size, subtitle);
-        font-family: CabinSemiBold;
+        font-family: josefin-semibold;
     }
     .agent__links {
         background-color: map-get($colors, yaleBlue);

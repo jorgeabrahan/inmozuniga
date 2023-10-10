@@ -38,13 +38,14 @@
     <meta name="twitter:image:alt" content="Logo Inmobiliaria Zúniga y Asoc">
     
     <link rel=“canonical” href=“https://inmozuniga.com/contactanos” />
-    <link rel="icon" href="/resources/images/logos/inmozuniga_simplificado.png" />
+    <link rel="icon" href="resources/images/logos/inmozuniga_simplificado.png" />
 
     <title>Inmobiliaria Zúniga - Contáctanos</title>
 
     <link rel="stylesheet" href="css/style.css">
     <!-- Link para css de font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
 
     <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
@@ -55,7 +56,7 @@
 
     <header class="header">
         <div class="navbar">
-            <img src="resources/images/logos/inmozuniga.png" alt="Logo Inmobiliaria Zúniga" class="navbar__img" onclick="open('/#inicio', '_self')">
+            <img src="resources/images/logos/inmozuniga.png" alt="Logo Inmobiliaria Zúniga" class="navbar__img" onclick="openIndex()">
             <nav class="menu">
                 <i class="fa fa-times icon close-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(-100%)'"></i>
                 <ul class="menu__items">
@@ -88,7 +89,7 @@
     <!-- BANNER Y SLOGAN -->
     <div class="banner">
         <img src="resources/images/banners/contactanos.jpg" alt="Banner Inmobiliaria Zuniga" class="banner__img">
-        <h1 class="banner__slogan">Contacto y mas información</h1>
+        <h1 class="banner__slogan">Contacto y más información</h1>
 
         <div class="banner__divider">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -101,80 +102,92 @@
 
         <section class="contact__section" id="seccionprincipal">
             <!-- BARRA DE NAVEGACION ENTRE LAS DOS PESTAÑAS DE CONTACTO -->
-            <nav class="contact__navbar" id="contactanos">
-                <div class="contact__buttons">
-                    <button class="contact__btn contact__btn--active" id="btnContact">
+            <nav class="subnavbar" id="contactanos">
+                <div class="subnavbar__buttons">
+                    <button class="subnavbar__btn subnavbar__btn--active" id="btnContact">
                         Contacto
                     </button>
-                    <button class="contact__btn" id="btnMoreInfo">
-                        Mas información
+                    <button class="subnavbar__btn" id="btnMoreInfo">
+                        Más información
                     </button>
                 </div>
-                <hr class="contact__divisor">
+                <hr class="subnavbar__divisor">
             </nav>
 
             <!-- PESTAÑA DE MAS INFORMACION DE CONTACTO -->
-            <div class="contact__info">
+            <div class="contact-columns" id="contact">
+                <form class="contact-form" id="frmSchdlAppntmnt" autocomplete="off">
+                    <h2 class="contact-form__title"><i class="far fa-calendar-check"></i> Agenda una cita:</h2>
+                    <div class="group">
+                        <label for="inptUserName" class="group__label">Ingresa tu nombre:</label>
+                        <input type="text" name="inptUserName" id="inptUserName" placeholder="Ej. Nicolas Martínez" class="group__input" onclick="select()" autofocus required>
+                    </div>
+                    <div class="group">
+                        <label for="inptUserPhone" class="group__label">Ingresa tu numero de teléfono:</label>
+                        <input type="tel" pattern="[0-9]{4}-[0-9]{4}" placeholder="Ej. 9770-4345" name="inptUserPhone" id="inptUserPhone" class="group__input" onclick="select()" required>
+                    </div>
+                    <div class="group">
+                        <label for="inptUserType" class="group__label">Seleccione que tipo de cliente es:</label>
+                        <select name="inptUserType" id="inptUserType" class="group__input"  required>
+                            <option value="cliente particular" selected>Cliente particular</option>
+                            <option value="inversionista">Inversionista</option>
+                        </select>
+                    </div>
+                    <div class="group">
+                        <label for="inptAppntmntReason" class="group__label">Cual es el objetivo de la cita:</label>
+                        <select name="inptAppntmntReason" id="inptAppntmntReason" class="group__input" required>
+                            <option value="visitar uno de sus proyectos" selected>Visitar uno de sus proyectos</option>
+                            <option value="vender una propiedad">Vender una propiedad</option>
+                            <option value="rentar una propiedad">Rentar una propiedad</option>
+                            <option value="comprar una propiedad">Comprar una propiedad</option>
+                            <option value="asesoria inmobiliaria">Asesoria inmobiliaria</option>
+                        </select>
+                    </div>
+                    <p class="contact-form__msg" id="frmSchdlAppntmntMsg"></p>
+                    <button type="submit" class="link contact-form__submit">Agendar cita</button>
+                </form>
                 <div class="info__cards">
                     <div class="card">
-                        <div class="card__text">
-                            <p class="card__title">Ubicación</p>
-                            <a href="https://goo.gl/maps/2sgozwHRp9W3FsNQ8" target="_blank" class="card__link">
-                                Bo. Los Andes, 16 Ave. 7 Calle NO, San Pedro Sula, Honduras
-                            </a>
-                        </div>
-                        <i class="fas fa-location-arrow card__icon"></i>
+                        <p class="card__title">
+                            <i class="fas fa-location-arrow"></i> Ubicación
+                        </p>
+                        <a href="https://goo.gl/maps/2sgozwHRp9W3FsNQ8" target="_blank" class="card__link">
+                            Bo. Los Andes, 16 Ave. 7 Calle NO, San Pedro Sula, Honduras
+                        </a>
                     </div>
                     <div class="card">
-                        <div class="card__text">
-                            <p class="card__title">Teléfonos</p>
-                            <a href="tel:25500833" target="_blank" class="card__link">
-                                (+504) 2550-0833
-                            </a>
-                            <a href="tel:94529498" target="_blank" class="card__link">
-                                (+504) 9452-9498
-                            </a>
-                            <a href="tel:97842424" target="_blank" class="card__link">
-                                (+504) 9784-2424
-                            </a>
-                        </div>
-                        <i class="fas fa-phone card__icon"></i>
+                        <p class="card__title">
+                            <i class="fab fa-whatsapp"></i> Whatsapp
+                        </p>
+                        <a href="https://wa.me/50494529498" target="_blank" class="card__link">
+                            (+504) 9452-9498
+                        </a>
+                        <a href="https://wa.me/50497842424" target="_blank" class="card__link">
+                            (+504) 9784-2424
+                        </a>
                     </div>
                     <div class="card">
-                        <div class="card__text">
-                            <p class="card__title">Correos</p>
-                            <a href="mailto:inmobiliariazuniga@gmail.com?subject=Deseo obtener mas información&body=He visitado su sitio web y me encuentro interesado en obtener más información acerca de..." target="_blank" class="card__link">
-                                inmobiliariazuniga
-                            </a>
-                            <a href="mailto:gerencia.inmobiliariazuniga@gmail.com?subject=Deseo obtener mas información&body=He visitado su sitio web y me encuentro interesado en obtener más información acerca de..." target="_blank" class="card__link">
-                                gerencia.inmobiliariazuniga
-                            </a>
-                        </div>
-                        <i class="fa fa-envelope card__icon"></i>
+                        <p class="card__title">
+                            <i class="fa fa-envelope"></i> Correos
+                        </p>
+                        <a href="mailto:inmobiliariazuniga@gmail.com" target="_blank" class="card__link">
+                            inmobiliariazuniga
+                        </a>
+                        <a href="mailto:gerencia.inmobiliariazuniga@gmail.com" target="_blank" class="card__link">
+                            gerencia.inmobiliariazuniga
+                        </a>
                     </div>
-                </div>
-                <div class="info__social-media">
-                    <div class="social-media" data-target="https://bit.ly/3H0ZNpc">
-                        <i class="fab fa-facebook-square social-media__icon"></i>
-                        <a href="https://bit.ly/3H0ZNpc" target="_blank" class="social-media__link">Inmobiliaria Zúniga</a>
-                    </div>
-                    <div class="social-media" data-target="https://bit.ly/3JcxoOI">
-                        <i class="fab fa-instagram social-media__icon"></i>
-                        <a href="https://bit.ly/3JcxoOI" target="_blank" class="social-media__link">Inmobiliaria Zúniga</a>
-                    </div>
-                    <div class="social-media" data-target="https://bit.ly/3moEQwA">
-                        <i class="fab fa-youtube social-media__icon"></i>
-                        <a href="https://bit.ly/3moEQwA" target="_blank" class="social-media__link">Inmobiliaria Zúniga</a>
-                    </div>
-                    <div class="social-media" data-target="https://bit.ly/3phY7Bz">
-                        <i class="fab fa-tiktok social-media__icon"></i>
-                        <a href="https://bit.ly/3phY7Bz" target="_blank" class="social-media__link">Inmobiliaria Zúniga</a>
+                    <div class="info__social-media">
+                        <a href="https://bit.ly/3H0ZNpc" target="_blank" class="link">Facebook</a>
+                        <a href="https://bit.ly/3JcxoOI" target="_blank" class="link">Instagram</a>
+                        <a href="https://bit.ly/3moEQwA" target="_blank" class="link">Youtube</a>
+                        <a href="https://bit.ly/3phY7Bz" target="_blank" class="link">tik tok</a>
                     </div>
                 </div>
             </div>
 
             <!-- PESTAÑA DE LA MISION, VISION E HISTORIA DE LA EMPRESA -->
-            <div class="contact__more-info d-none">
+            <div class="contact-columns d-none" id="aboutUs">
                 <div class="mision-vision">
                     <div class="mision">
                         <p class="mision__title">Misión</p>
@@ -410,6 +423,8 @@
     setTimeout(() => load.classList.add('vanish'), 2000);
     setTimeout(() => load.classList.add('d-none'), 3000);
 
+    const openIndex = () => open('https://inmozuniga.com/#inicio', '_self');
+
     const bannerObserver = new IntersectionObserver(entries => {
         const header = document.querySelector('.header');
         entries.forEach(entry => {
@@ -437,13 +452,13 @@
     const btnMoreInfo = document.getElementById('btnMoreInfo');
     
     const shwSlctdTab = btn => {
-        if (btn.classList.contains('contact__btn--active')) return;
+        if (btn.classList.contains('subnavbar__btn--active')) return;
     
-        btnContact.classList.toggle('contact__btn--active');
-        btnMoreInfo.classList.toggle('contact__btn--active');
+        btnContact.classList.toggle('subnavbar__btn--active');
+        btnMoreInfo.classList.toggle('subnavbar__btn--active');
     
-        document.querySelector('.contact__info').classList.toggle('d-none');
-        document.querySelector('.contact__more-info').classList.toggle('d-none');
+        document.getElementById('contact').classList.toggle('d-none');
+        document.getElementById('aboutUs').classList.toggle('d-none');
     }
     
     btnContact.addEventListener('click', e => {
@@ -452,26 +467,20 @@
     btnMoreInfo.addEventListener('click', e => {
         shwSlctdTab(e.target)
     });
-    
-    
-    document.querySelectorAll('.social-media').forEach(sclMedia => {
-        sclMedia.addEventListener('click', () => {
-            open(`${sclMedia.getAttribute('data-target')}`, '_blank');
-        });
-    })
 
     //Se obtienen los valores de las cookies
     const cookiePopup = obtenerCookies().mostrarcookies;
     const mailPopup = obtenerCookies().mostrarmails;
 
     //Se definen si no existen
-    if (cookiePopup === undefined) document.cookie = 'mostrarcookies = true';
-    if (mailPopup === undefined) document.cookie = 'mostrarmails = true';
+    if (cookiePopup === undefined) document.cookie = 'mostrarcookies=true;sameSite=None;Secure';
+    if (mailPopup === undefined) document.cookie = 'mostrarmails=true;sameSite=None;Secure';
 
     //Se muestran si no se han mostrado
-    if (parseBool(cookiePopup)) showPopup(document.querySelector('.cookies'), 'mostrarcookies = false');
+    if (parseBool(cookiePopup)) showPopup(document.querySelector('.cookies'), 'mostrarcookies=false;sameSite=None;Secure');
     setTimeout(() => {
-        if (parseBool(mailPopup)) showPopup(document.querySelector('.popup'), 'mostrarmails = false');
+        if (parseBool(mailPopup)) showPopup(document.querySelector('.popup'), 'mostrarmails=false;sameSite=None;Secure');
     }, 30000)
 </script>
+<script src="js.min/paginas-individuales/contactanos.min.js" defer></script>
 </html>

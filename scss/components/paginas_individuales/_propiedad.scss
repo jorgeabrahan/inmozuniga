@@ -28,7 +28,7 @@
         }
 
         .property__status {
-            font-family: cabinBold;
+            font-family: josefin-bold;
             font-size: map-get($size, description);
             color: map-get($colors, yaleBlue);
         }
@@ -63,7 +63,7 @@
 
         
         .property__totalcost, .property__price {
-            font-family: CabinSemiBold;
+            font-family: josefin-semibold;
             font-size: map-get($size, subtitle);
             border-left: 4px solid map-get($colors, yaleBlue);
             padding-left: .4rem;

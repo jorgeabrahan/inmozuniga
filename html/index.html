@@ -59,7 +59,7 @@
 <body>
     <header class="header">
         <div class="navbar">
-            <img src="resources/images/logos/inmozuniga.png" alt="Logo Inmobiliaria Zúniga" class="navbar__img" onclick="() => open('/index.html#inicio', '_self')">
+            <img src="resources/images/logos/inmozuniga.png" alt="Logo Inmobiliaria Zúniga" class="navbar__img" onclick="openIndex()">
             <nav class="menu">
                 <i class="fa fa-times icon close-icon" onclick="document.querySelector('.menu').style.transform = 'translateX(-100%)'"></i>
                 <ul class="menu__items">
@@ -118,7 +118,7 @@
                     <a href="https://inmozuniga.com/propiedades#renta" class="need__btn">
                         Rentar
                     </a>
-                    <a href="https://wa.me/50497842424?text=Acabo%20de%20visitar%20su%20sitio%20web%20y%20me%20encuentro%20interesado%20en%20vender%20una%20propiedad%20,%20espero%20puedan%20brindarme%20información%20lo%20mas%20pronto%20posible." class="need__btn">
+                    <a href="https://inmozuniga.com/contactanos#seccionprincipal" class="need__btn">
                         Vender
                     </a>
                 </nav>
@@ -149,6 +149,20 @@
                 <a href="https://inmozuniga.com/propiedades" class="more">Ver más propiedades</a>
             </div>
         </section>
+
+        <div class="section-redirect section-redirect--right appointment">
+            <div class="redirect__cnt">
+                <h2 class="redirect__title">
+                    Agenda una cita
+                </h2>
+                <p class="redirect__description">
+                    Si deseas visitar uno de nuestros proyectos; si quieres adquirir, rentar o vender una propiedad; o si solo necesitas asesoria inmobiliaria, puedes agendar una cita y nosotros te ayudaremos.
+                </p>
+                <a href="https://inmozuniga.com/contactanos#seccionprincipal" class="redirect__link">
+                    Agendar cita
+                </a>
+            </div>
+        </div>
 
         <!-- Seccion de CATEGORIAS -->
         <section class="section">
@@ -223,10 +237,10 @@
         <div class="section-redirect budget">
             <div class="redirect__cnt">
                 <h2 class="redirect__title">
-                    Cotizador de proyectos
+                    Cotizador de propiedades y proyectos
                 </h2>
                 <p class="redirect__description">
-                    Contamos con una gran variedad de proyectos habitacionales, encuentra el que mejor se adapte a tus preferencias y a tu presupuesto.
+                    Utiliza nuestra herramienta de cotizador para saber a cual de nuestras propiedades y proyectos puedes aplicar con tu salario.
                 </p>
                 <a href="https://inmozuniga.com/cotizador" class="redirect__link">
                     Realizar cotización
@@ -259,15 +273,15 @@
             </div>
         </section>
 
-        <div class="section-redirect blogs">
+        <div class="section-redirect section-redirect--right blogs">
             <div class="redirect__cnt">
                 <h2 class="redirect__title">
                     Nuestros blogs
                 </h2>
                 <p class="redirect__description">
-                    Nuestra página de blogs esta repleta de recomendaciones basadas en nuestra experiencia que te seran utiles tanto si ya tienes una vivienda como si deseas adquirir una.
+                    Nuestros blogs estan repletos de recomendaciones basadas en nuestra experiencia en el rubro inmobiliario. Esperamos te sean de gran utilidad.
                 </p>
-                <a href="https://blog.inmozuniga.com" class="redirEect__link">
+                <a href="https://blog.inmozuniga.com" class="redirect__link">
                     Visitar blogs
                 </a>
             </div>
@@ -310,6 +324,29 @@
                 </div>
                 <div class="agent">
                     <div class="agent__image">
+                        <img src="resources/images/agentes/franklin_arita.jpg" alt="Agente Franklin Arita"
+                            class="agent__img" loading="lazy">
+                        <div class="agent__info">
+                            <p class="agent__name">Franklin Arita</p>
+                        </div>
+                    </div>
+                    <div class="agent__links">
+                        <a href="https://www.facebook.com/inmobiliariazunigayasociados"
+                            target="_blank" class="agent__link">
+                            <i class="fab fa-facebook icon"></i>
+                        </a>
+                        <a href="https://www.instagram.com/inmobiliariazuniga/" target="_blank"
+                            class="agent__link">
+                            <i class="fab fa-instagram icon"></i>
+                        </a>
+                        <a href="https://api.whatsapp.com/send?phone=50489778805&text=He%20visitado%20su%20página%20y%20me%20encuentro%20interesado%20en%20obtener%20mas%20información%20acerca%20de..."
+                            target="_blank" class="agent__link">
+                            <i class="fab fa-whatsapp icon"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="agent">
+                    <div class="agent__image">
                         <img src="resources/images/agentes/susan_morel.jpg" alt="Agente Susan Morel"
                             class="agent__img" loading="lazy">
                         <div class="agent__info">
@@ -333,10 +370,10 @@
                 </div>
                 <div class="agent">
                     <div class="agent__image">
-                        <img src="resources/images/agentes/franklin_arita.jpg" alt="Agente Franklin Arita"
+                        <img src="resources/images/agentes/isaac-morel.jpg" alt="Agente Isaac Morel"
                             class="agent__img" loading="lazy">
                         <div class="agent__info">
-                            <p class="agent__name">Franklin Arita</p>
+                            <p class="agent__name">Isaac Morel</p>
                         </div>
                     </div>
                     <div class="agent__links">
@@ -348,7 +385,7 @@
                             class="agent__link">
                             <i class="fab fa-instagram icon"></i>
                         </a>
-                        <a href="https://api.whatsapp.com/send?phone=50489778805&text=He%20visitado%20su%20página%20y%20me%20encuentro%20interesado%20en%20obtener%20mas%20información%20acerca%20de..."
+                        <a href="https://api.whatsapp.com/send?phone=50494997980&text=He%20visitado%20su%20página%20y%20me%20encuentro%20interesado%20en%20obtener%20mas%20información%20acerca%20de..."
                             target="_blank" class="agent__link">
                             <i class="fab fa-whatsapp icon"></i>
                         </a>
@@ -379,29 +416,6 @@
                 </div>
                 <div class="agent">
                     <div class="agent__image">
-                        <img src="resources/images/agentes/gloria_zuniga.jpg" alt="Agente Gloria Zúniga"
-                            class="agent__img" loading="lazy">
-                        <div class="agent__info">
-                            <p class="agent__name">Gloria Zúniga</p>
-                        </div>
-                    </div>
-                    <div class="agent__links">
-                        <a href="https://www.facebook.com/inmobiliariazunigayasociados"
-                            target="_blank" class="agent__link">
-                            <i class="fab fa-facebook icon"></i>
-                        </a>
-                        <a href="https://www.instagram.com/inmobiliariazuniga/" target="_blank"
-                            class="agent__link">
-                            <i class="fab fa-instagram icon"></i>
-                        </a>
-                        <a href="https://api.whatsapp.com/send?phone=50433800295&text=He%20visitado%20su%20página%20y%20me%20encuentro%20interesado%20en%20obtener%20mas%20información%20acerca%20de..."
-                            target="_blank" class="agent__link">
-                            <i class="fab fa-whatsapp icon"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="agent">
-                    <div class="agent__image">
                         <img src="resources/images/agentes/wilson_zuniga.jpg" alt="Agente Wilson Zúniga"
                             class="agent__img" loading="lazy">
                         <div class="agent__info">
@@ -418,6 +432,29 @@
                             <i class="fab fa-instagram icon"></i>
                         </a>
                         <a href="https://api.whatsapp.com/send?phone=50494529498&text=He%20visitado%20su%20página%20y%20me%20encuentro%20interesado%20en%20obtener%20mas%20información%20acerca%20de..."
+                            target="_blank" class="agent__link">
+                            <i class="fab fa-whatsapp icon"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="agent">
+                    <div class="agent__image">
+                        <img src="resources/images/agentes/gloria_zuniga.jpg" alt="Agente Gloria Zúniga"
+                            class="agent__img" loading="lazy">
+                        <div class="agent__info">
+                            <p class="agent__name">Gloria Zúniga</p>
+                        </div>
+                    </div>
+                    <div class="agent__links">
+                        <a href="https://www.facebook.com/inmobiliariazunigayasociados"
+                            target="_blank" class="agent__link">
+                            <i class="fab fa-facebook icon"></i>
+                        </a>
+                        <a href="https://www.instagram.com/inmobiliariazuniga/" target="_blank"
+                            class="agent__link">
+                            <i class="fab fa-instagram icon"></i>
+                        </a>
+                        <a href="https://api.whatsapp.com/send?phone=50433800295&text=He%20visitado%20su%20página%20y%20me%20encuentro%20interesado%20en%20obtener%20mas%20información%20acerca%20de..."
                             target="_blank" class="agent__link">
                             <i class="fab fa-whatsapp icon"></i>
                         </a>
@@ -644,6 +681,8 @@
     }, {rootMargin: "-100px 0px 0px 0px"})
     bannerObserver.observe(document.querySelector('.banner'));
 
+    const openIndex = () => open('https://inmozuniga.com/#inicio', '_self');
+
     const obtenerCookies = () => {
     return document.cookie.split(';').map(cookie => cookie.split('=')).reduce((accumulator, [key, value]) =>
         ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }),
@@ -666,13 +705,13 @@
     const mailPopup = obtenerCookies().mostrarmails;
 
     //Se definen si no existen
-    if (cookiePopup === undefined) document.cookie = 'mostrarcookies = true';
-    if (mailPopup === undefined) document.cookie = 'mostrarmails = true';
+    if (cookiePopup === undefined) document.cookie = 'mostrarcookies=true;sameSite=None;Secure';
+    if (mailPopup === undefined) document.cookie = 'mostrarmails=true;sameSite=None;Secure';
 
     //Se muestran si no se han mostrado
-    if (parseBool(cookiePopup)) showPopup(document.querySelector('.cookies'), 'mostrarcookies = false');
+    if (parseBool(cookiePopup)) showPopup(document.querySelector('.cookies'), 'mostrarcookies=false;sameSite=None;Secure');
     setTimeout(() => {
-        if (parseBool(mailPopup)) showPopup(document.querySelector('.popup'), 'mostrarmails = false');
+        if (parseBool(mailPopup)) showPopup(document.querySelector('.popup'), 'mostrarmails=false;sameSite=None;Secure');
     }, 30000)
 
     const removeAccents = (idProject) => {
